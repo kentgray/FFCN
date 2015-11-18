@@ -630,3 +630,6 @@ C:\Users\earsie1977\Documents\GitHubVisualStudio\FFCN\FFCNMaintenance\FFCNMainte
 C:\Users\earsie1977\Documents\GitHubVisualStudio\FFCN\FFCNMaintenance\FFCNMaintenance\obj\Debug\FFCNMaintenance.csprojResolveAssemblyReference.cache
 C:\Users\earsie1977\Documents\GitHubVisualStudio\FFCN\FFCNMaintenance\FFCNMaintenance\obj\Debug\FFCNMaintenance.dll
 C:\Users\earsie1977\Documents\GitHubVisualStudio\FFCN\FFCNMaintenance\FFCNMaintenance\obj\Debug\FFCNMaintenance.pdb
+C:\Users\Owner\Documents\GitHubVisualStudio\FFCN\FFCNMaintenance\FFCNMaintenance\obj\Debug\FFCNMaintenance.csprojResolveAssemblyReference.cache
+C:\Users\Owner\Documents\GitHubVisualStudio\FFCN\FFCNMaintenance\FFCNMaintenance\obj\Debug\FFCNMaintenance.dll
+C:\Users\Owner\Documents\GitHubVisualStudio\FFCN\FFCNMaintenance\FFCNMaintenance\obj\Debug\FFCNMaintenance.pdb
