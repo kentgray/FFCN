@@ -1,0 +1,36 @@
+﻿@model IList<FFCNMaintenance.Models.tblPhone>
+
+@*  On second thought...Phones might return null values and First and Last name wouldn't
+    be available in that case. Better to let something else handle First and Last name.
+    HOWEVER: here is some reference code for pulling values WITHOUT having to use a foreach
+    loop.
+
+    First Name: @Html.TextBox("FirstName", Model[0].FirstName, new { style = "width: 600px" })<br />
+    Last Name: @Html.TextBox("LastName", Model[0].LastName, new { style = "width: 600px" })<br />*@
+
+@{ foreach (var item in Model)
+ {
+     ViewBag.PhoneSelectList = item.PhoneTypeSelectList;
+     {
+        <div>
+            <label class="label-fixed-width">Phone:</label>
+            @Html.TextBox("Phone", item.Phone, new { style = "width: 600px" })
+            @Html.DropDownList("PhoneSelectList",null, new
+                   {
+                       @class = "form-control-inline dropdown",
+                       style = "width: 100px"
+                   })
+            
+
+
+            @*<label>Phone Type</label>
+                @Html.DropDownList("PhoneType", null, item.PhoneType ,new { @class = "form-control-inline dropdown", form-control-inline is custom css in bootstrap
+                @*style = "width: 100px"})*@
+        </div>
+     }
+
+ }
+
+
+}
+

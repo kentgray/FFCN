@@ -1,0 +1,60 @@
+﻿@model FFCNMaintenance.Models.MasterModel
+
+
+@if (Model == null)
+{
+    SelectList phonetypes = ViewBag.PhoneType;
+    <div class="scroll-partial-phone">
+
+        <label class="label-fixed-width">Phone:</label>
+        @Html.TextBox("masterModel.Phone[0].Phone", null, new { style = "width: 600px" })
+        @Html.DropDownList("masterModel.Phone[0].PhoneType", phonetypes, "--------", new
+   {
+       @class = "form-control-inline dropdown",
+       style = "width: 100px;"
+   })
+
+        <br />
+
+    </div>
+
+}
+
+else
+{
+    SelectList phonetypes = ViewBag.PhoneType;
+    var model = Model.Phone;
+    <div class="scroll-partial-phone">
+        <label class="label-fixed-width">Phone:</label>
+        @for (int i = 0; i <= model.Count(); i++)
+        {
+            if (i < model.Count())
+            {
+                @Html.TextBox("masterModel.Phone[" + i + "].Phone", model[i].Phone, null, new { style = "width: 600px" })
+                @Html.DropDownList("masterModel.Phone{" + i + "].PhoneType", model[i].PhoneTypeSelectList, "--------", new
+           {
+               @class = "form-control-inline dropdown",
+               style = "width: 100px;"
+
+           })
+                @Html.Hidden("masterModel.Phone[" + i + "].id", model[i].id)
+                @Html.Hidden("masterModel.Phone[" + i + "].CareGiverID", model[i].CareGiverID)
+                <br />
+                <label class="label-fixed-width"></label>
+            }
+            else
+            {
+                @Html.TextBox("masterModel.Phone[" + i + "].Phone", null, new { style = "width: 600px" })
+                @Html.DropDownList("masterModel.Phone[" + i + "].PhoneType", phonetypes, "--------", new
+           {
+               @class = "form-control-inline dropdown",
+               style = "width: 100px; "
+           })
+            }
+
+        }
+
+
+    </div>
+
+}

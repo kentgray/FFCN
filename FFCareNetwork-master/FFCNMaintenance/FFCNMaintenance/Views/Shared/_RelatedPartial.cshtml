@@ -1,0 +1,116 @@
+﻿@model FFCNMaintenance.Models.MasterModel
+
+@{SelectList relatedtypes = ViewBag.RelatedType;}
+@{   
+    if (Model != null)
+    {
+        <div class="scroll-partial-related">
+
+            @for (int i = 0; i <= Model.Related.Count(); i++)
+            {
+                if (i == Model.Related.Count())
+                {
+                    @Html.Hidden("Model.Related[" + i + "].CareGiverID", Model.Related[0].CareGiverID)
+                    <label class="label-fixed-width-wide">First:</label>
+                    @Html.TextBox("Model.Related[" + i + "].FirstName",
+                                 null, new { style = "width: 300px" })
+                    <br />
+
+                    <label class="label-fixed-width-wide">Last:</label>
+                    @Html.TextBox("Model.Related[" + i + "].LastName",
+                                 null, new { style = "width: 300px" })
+
+                    <br />
+
+                    <label class="label-fixed-width-wide">Phone:</label>
+                    @Html.TextBox("Model.Related[" + i + "].Phone",
+                                 null, new { style = "width: 300px" })
+
+                    <br />
+
+                    <label class="label-fixed-width-wide">Email:</label>
+                    @Html.TextBox("Model.Related[" + i + "].Email",
+                                 null, new { style = "width: 300px" })
+
+                    <br />
+
+                    <label class="label-fixed-width-wide">Relationship:</label>
+                    @Html.DropDownList("Model.Related[" + i + "].Relationship", relatedtypes,
+                             "--------", new { style = "width: 300px" })
+
+                }
+                else
+                {
+                    if (Model.Related[i].FirstName != null)
+                    {
+                        @Html.Hidden("Model.Related[" + i + "].id", Model.Related[i].id)
+                        @Html.Hidden("Model.Related[" + i + "].CareGiverID", Model.Related[i].CareGiverID)
+
+                        <label class="label-fixed-width-wide">First:</label>
+                        @Html.TextBox("Model.Related[" + i + "].FirstName",
+                                         Model.Related[i].FirstName, new { style = "width: 300px" })
+                        <br />
+
+                        <label class="label-fixed-width-wide">Last:</label>
+                        @Html.TextBox("Model.Related[" + i + "].LastName",
+                                        Model.Related[i].LastName, new { style = "width: 300px" })
+
+                        <br />
+
+                        <label class="label-fixed-width-wide">Phone:</label>
+                        @Html.TextBox("Model.Related[" + i + "].Phone",
+                                         Model.Related[i].Phone, new { style = "width: 300px" })
+
+                        <br />
+
+                        <label class="label-fixed-width-wide">Email:</label>
+                        @Html.TextBox("Model.Related[" + i + "].Email",
+                                         Model.Related[i].Email, new { style = "width: 300px" })
+
+                        <br />
+
+                        <label class="label-fixed-width-wide">Relationship:</label>
+                        @Html.DropDownList("Model.Related[" + i + "].Relationship",
+                                         Model.Related[i].RelationshipSelectList, "--------", new { style = "width: 300px" })
+
+                        <hr />
+                    }
+                }
+
+            }
+        </div>
+    }
+    else
+    {
+        <div class="scroll-partial-related">
+            <label class="label-fixed-width-wide">First:</label>
+            @Html.TextBox("Model.Related[0].FirstName",
+                        null, new { style = "width: 300px" })
+            <br />
+
+            <label class="label-fixed-width-wide">Last:</label>
+            @Html.TextBox("Model.Related[0].LastName",
+                        null, new { style = "width: 300px" })
+
+            <br />
+
+            <label class="label-fixed-width-wide">Phone:</label>
+            @Html.TextBox("Model.Related[0].Phone",
+                        null, new { style = "width: 300px" })
+
+            <br />
+
+            <label class="label-fixed-width-wide">Email:</label>
+            @Html.TextBox("Model.Related[0].Email",
+                        null, new { style = "width: 300px" })
+
+            <br />
+
+            <label class="label-fixed-width-wide">Relationship:</label>
+            @Html.DropDownList("Model.Related[0].Relationship", relatedtypes,
+                        "--------", new { style = "width: 300px" })
+        </div>
+    }
+
+
+}

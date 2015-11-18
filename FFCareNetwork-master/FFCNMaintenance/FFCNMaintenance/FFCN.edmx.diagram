@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e55f34d682a34ab9b3787e27c26c73ea" Name="Diagram1">
+        <EntityTypeShape EntityType="FFCN_Model.sysdiagram" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FFCN_Model.tblAddress" Width="1.5" PointX="3" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FFCN_Model.tblCommunication" Width="1.5" PointX="3" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FFCN_Model.tblEmail" Width="1.5" PointX="3" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FFCN_Model.tblInquiryReferralStatu" Width="1.5" PointX="3" PointY="20.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FFCN_Model.tblPhone" Width="1.5" PointX="3" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FFCN_Model.tblPrimaryCaregiverdata" Width="1.5" PointX="0.75" PointY="17.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FFCN_Model.tblRelatedCaregiver" Width="1.5" PointX="3" PointY="16.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FFCN_Model.tblTrainingHistoryMain" Width="1.5" PointX="3" PointY="33.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FFCN_Model.tblUser" Width="1.5" PointX="5.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FFCN_Model.tlkpAddressType" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FFCN_Model.tlkpAgency" Width="1.5" PointX="7.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FFCN_Model.tlkpCommunicationType" Width="1.5" PointX="5.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FFCN_Model.tlkpInactive" Width="1.5" PointX="7.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FFCN_Model.tlkpPhoneType" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FFCN_Model.tlkpProgram" Width="1.5" PointX="9.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FFCN_Model.tlkpRecruitmentCategory" Width="1.5" PointX="9.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FFCN_Model.tlkpRelationship" Width="1.5" PointX="7.75" PointY="9.75" IsExpanded="true" />
+        <AssociationConnector Association="FFCN_Model.FK__tblAddres__CareG__469D7149" ManuallyRouted="false" />
+        <AssociationConnector Association="FFCN_Model.FK__tblCommun__CareG__4979DDF4" ManuallyRouted="false" />
+        <AssociationConnector Association="FFCN_Model.FK__tblEmails__CareG__47919582" ManuallyRouted="false" />
+        <AssociationConnector Association="FFCN_Model.tblInquiryReferralStatus_tblPrimaryCaregiverdatatblInquiryReferralStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="FFCN_Model.FK__tblPhones__CareG__4885B9BB" ManuallyRouted="false" />
+        <AssociationConnector Association="FFCN_Model.FK__tblRelate__CareG__4A6E022D" ManuallyRouted="false" />
+        <AssociationConnector Association="FFCN_Model.tblTrainingHistoryMain_tblPrimaryCaregiverdatatblTrainingHistoryMain" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

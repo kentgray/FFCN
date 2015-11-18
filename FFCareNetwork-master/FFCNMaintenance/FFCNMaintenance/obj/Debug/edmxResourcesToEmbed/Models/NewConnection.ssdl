@@ -1,0 +1,1665 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FFCNv5Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tblAddresses">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CareGiverID" Type="int" />
+    <Property Name="Street1" Type="nvarchar" MaxLength="50" />
+    <Property Name="Street2" Type="nvarchar" MaxLength="50" />
+    <Property Name="City" Type="nvarchar" MaxLength="50" />
+    <Property Name="State" Type="nvarchar" MaxLength="2" />
+    <Property Name="Zip" Type="nvarchar" MaxLength="10" />
+    <Property Name="AddressType" Type="int" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="SSMA_TimeStamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblCommunications">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Agency" Type="int" />
+    <Property Name="CareGiverID" Type="int" />
+    <Property Name="CommnDate" Type="datetime2" Precision="0" />
+    <Property Name="CommType" Type="int" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="Userbak" Type="int" />
+    <Property Name="Notes" Type="nvarchar(max)" />
+    <Property Name="TypeDescr" Type="nvarchar" MaxLength="255" />
+    <Property Name="First" Type="varchar" MaxLength="50" />
+    <Property Name="Last" Type="varchar" MaxLength="50" />
+    <Property Name="SSMA_TimeStamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblEmails">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CareGiverID" Type="int" />
+    <Property Name="EMail" Type="nvarchar" MaxLength="150" />
+    <Property Name="EmailType" Type="int" />
+  </EntityType>
+  <EntityType Name="tblInquiryReferralStatus">
+    <Key>
+      <PropertyRef Name="IDIRS" />
+    </Key>
+    <Property Name="CareGiverID" Type="int" />
+    <Property Name="InitialInquiry1" Type="bit" />
+    <Property Name="DateInitialInquiry" Type="datetime2" Precision="0" />
+    <Property Name="StaffInitialInquiry" Type="int" />
+    <Property Name="DidntPass2" Type="bit" />
+    <Property Name="DateDidntPass" Type="datetime2" Precision="0" />
+    <Property Name="StaffDidntPass" Type="int" />
+    <Property Name="LookingJob3" Type="bit" />
+    <Property Name="DateLookingJob" Type="datetime2" Precision="0" />
+    <Property Name="StaffLookingJob" Type="int" />
+    <Property Name="OutOfState4" Type="bit" />
+    <Property Name="DateOutOfStat" Type="datetime2" Precision="0" />
+    <Property Name="StaffOutOfStat" Type="int" />
+    <Property Name="Inactive5" Type="bit" />
+    <Property Name="DateInactive" Type="datetime2" Precision="0" />
+    <Property Name="StaffInactive" Type="int" />
+    <Property Name="Active6" Type="bit" />
+    <Property Name="DateActive" Type="datetime2" Precision="0" />
+    <Property Name="StaffActive" Type="int" />
+    <Property Name="AppReceived7" Type="bit" />
+    <Property Name="DateAppReceived" Type="datetime2" Precision="0" />
+    <Property Name="StaffAppReceived" Type="int" />
+    <Property Name="AppProgram8" Type="bit" />
+    <Property Name="DateAppProgram" Type="datetime2" Precision="0" />
+    <Property Name="StaffAppProgram" Type="int" />
+    <Property Name="AppReferrdProg9" Type="bit" />
+    <Property Name="DateAppReferredProg" Type="datetime2" Precision="0" />
+    <Property Name="StaffAppReferredProg" Type="int" />
+    <Property Name="HomeCert10" Type="bit" />
+    <Property Name="DateHomeCert1" Type="datetime2" Precision="0" />
+    <Property Name="StaffHomeCert" Type="int" />
+    <Property Name="HomeClosed11" Type="bit" />
+    <Property Name="DateHomeClosed" Type="datetime2" Precision="0" />
+    <Property Name="StaffHomeClosed" Type="int" />
+    <Property Name="AppOnHold12" Type="bit" />
+    <Property Name="DateAppOnHold" Type="datetime2" Precision="0" />
+    <Property Name="StaffAppOnHold" Type="int" />
+    <Property Name="AppReturned13" Type="bit" />
+    <Property Name="DateAppReturned" Type="datetime2" Precision="0" />
+    <Property Name="StaffAppReturned" Type="int" />
+    <Property Name="AppReferredtoAnother14" Type="bit" />
+    <Property Name="DateAppReferredtoAnother" Type="datetime2" Precision="0" />
+    <Property Name="StaffAppReferredtoAnother" Type="int" />
+    <Property Name="AppRejectedProg15" Type="bit" />
+    <Property Name="DateAppRejectedFFCN" Type="datetime2" Precision="0" />
+    <Property Name="StaffAppRejectedFFCN" Type="int" />
+    <Property Name="AppRejectedFFCN16" Type="bit" />
+    <Property Name="DateAppRejectedProg" Type="datetime2" Precision="0" />
+    <Property Name="StaffAppRejectedProg" Type="int" />
+    <Property Name="ReasonAppProgram" Type="int" />
+    <Property Name="ReasonAppReferredProg" Type="int" />
+    <Property Name="ReasonHomeCert" Type="int" />
+    <Property Name="ReasonHomeClosed" Type="int" />
+    <Property Name="ReasonAppOnHold" Type="int" />
+    <Property Name="ReasonAppReturned" Type="int" />
+    <Property Name="ReasonAppReferredAnother" Type="int" />
+    <Property Name="ReasonAppRejectedProg" Type="int" />
+    <Property Name="IDIRS" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ReasonAppRejectedFFCN" Type="int" />
+    <Property Name="ReasonInactive" Type="int" />
+    <Property Name="SSMA_TimeStamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblPhones">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CareGiverID" Type="int" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="PhoneType" Type="int" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="SSMA_TimeStamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblPrimaryCaregiverdata">
+    <Key>
+      <PropertyRef Name="CareGiverID" />
+    </Key>
+    <Property Name="CareGiverID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+    <Property Name="BestReached" Type="int" />
+    <Property Name="DOB" Type="datetime2" Precision="0" />
+    <Property Name="Status" Type="int" />
+    <Property Name="Gender" Type="int" />
+    <Property Name="Certifier" Type="int" />
+    <Property Name="Agency" Type="int" />
+    <Property Name="Neighborhood" Type="int" />
+    <Property Name="Notes" Type="nvarchar(max)" />
+    <Property Name="CreateDate" Type="datetime2" Precision="0" />
+    <Property Name="CreateBy" Type="int" />
+    <Property Name="LastUpdate" Type="datetime2" Precision="0" />
+    <Property Name="UpdateBy" Type="int" />
+    <Property Name="PhysicianRel" Type="bit" />
+    <Property Name="English" Type="bit" />
+    <Property Name="InternetAccess" Type="bit" />
+    <Property Name="LivesNear" Type="bit" />
+    <Property Name="Recovery" Type="bit" />
+    <Property Name="DHSRelease" Type="bit" />
+    <Property Name="ExtraRoom" Type="bit" />
+    <Property Name="Income" Type="bit" />
+    <Property Name="Over25" Type="bit" />
+    <Property Name="Roommate" Type="bit" />
+    <Property Name="DUI" Type="bit" />
+    <Property Name="Transportation" Type="bit" />
+    <Property Name="ParentChild" Type="bit" />
+    <Property Name="ChildrenHome" Type="nvarchar" MaxLength="255" />
+    <Property Name="Spanish" Type="bit" />
+    <Property Name="Respite" Type="bit" />
+    <Property Name="ChildrenInHome" Type="int" />
+    <Property Name="Volunteer" Type="bit" />
+    <Property Name="Donor" Type="bit" />
+    <Property Name="HeardAbout" Type="int" />
+    <Property Name="SSMA_TimeStamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblRelatedCaregiver">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Relationship" Type="int" />
+    <Property Name="DOB" Type="datetime2" Precision="0" />
+    <Property Name="Gender" Type="int" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="255" />
+    <Property Name="Email" Type="nvarchar" MaxLength="255" />
+    <Property Name="CareGiverID" Type="int" />
+  </EntityType>
+  <EntityType Name="tblTrainingHistoryMain">
+    <Key>
+      <PropertyRef Name="IDTR" />
+    </Key>
+    <Property Name="IDTR" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CareGiverID" Type="int" />
+    <Property Name="Orientationmtg" Type="bit" />
+    <Property Name="DateOrient" Type="datetime2" Precision="0" />
+    <Property Name="StaffOrient" Type="int" />
+    <Property Name="RSVPd" Type="bit" />
+    <Property Name="StaffIntro" Type="int" />
+    <Property Name="IntroFoster" Type="bit" />
+    <Property Name="StaffAttendedIntro" Type="int" />
+    <Property Name="RSVPpreservice" Type="bit" />
+    <Property Name="StaffPreserviceRSVP" Type="int" />
+    <Property Name="AttendPreservice1" Type="bit" />
+    <Property Name="StaffAttendedPreservice1" Type="int" />
+    <Property Name="AttendPreservice2" Type="bit" />
+    <Property Name="StaffAttendedPreservice2" Type="int" />
+    <Property Name="OnHold" Type="bit" />
+    <Property Name="PreFinished8" Type="bit" />
+    <Property Name="DatePreService" Type="datetime2" Precision="0" />
+    <Property Name="StaffPreserviceComp" Type="int" />
+    <Property Name="OngoingTraining9" Type="int" />
+    <Property Name="DateOngoing" Type="datetime2" Precision="0" />
+    <Property Name="StaffOngoing" Type="int" />
+    <Property Name="OnetoOneOrientation" Type="bit" />
+    <Property Name="DateOneOnOne" Type="datetime2" Precision="0" />
+    <Property Name="StaffOneOnOne" Type="int" />
+    <Property Name="AttendedPrebefore2009" Type="bit" />
+    <Property Name="StaffPreservicePrior" Type="int" />
+    <Property Name="TrainDateIntro" Type="int" />
+    <Property Name="TrainDateAttendedIntro" Type="int" />
+    <Property Name="TrainDatePreserviceRSVP" Type="int" />
+    <Property Name="TrainDateAttendedPreservice1" Type="int" />
+    <Property Name="TrainDateAttendedPreservice2" Type="int" />
+    <Property Name="TrainDatePreserviceComp" Type="int" />
+    <Property Name="TrainDatePreservice2009" Type="int" />
+    <Property Name="SSMA_TimeStamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblUsers">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="First" Type="nvarchar" MaxLength="50" />
+    <Property Name="Last" Type="nvarchar" MaxLength="50" />
+    <Property Name="Agency" Type="int" />
+    <Property Name="UserGroup" Type="int" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="SSMA_TimeStamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tlkpAddressType">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descr" Type="nvarchar" MaxLength="50" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="SSMA_TimeStamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tlkpAgencies">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descr" Type="nvarchar" MaxLength="50" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="SSMA_TimeStamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tlkpAppOnHold">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Reason" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tlkpAppRejectedFFCN">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Reason" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tlkpAppRejectedProg">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Reason" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tlkpAppReturned">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Reason" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tlkpCommunicationTypes">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descr" Type="nvarchar" MaxLength="50" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="SSMA_TimeStamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tlkpEmailTypes">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Descr" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tlkpHomeClosed">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Reason" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tlkpInactive">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="255" />
+    <Property Name="Action" Type="bit" />
+    <Property Name="SSMA_TimeStamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tlkpOngoingTraining">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descr" Type="nvarchar" MaxLength="255" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="SSMA_TimeStamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tlkpPhoneTypes">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descr" Type="nvarchar" MaxLength="50" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="SSMA_TimeStamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tlkpProgram">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="50" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="SSMA_TimeStamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tlkpRecruitmentCategories">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descr" Type="nvarchar" MaxLength="255" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="SSMA_TimeStamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tlkpRelationship">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descr" Type="nvarchar" MaxLength="50" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="SSMA_TimeStamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tlkpTrainAttendIntro">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TrainDate" Type="date" />
+  </EntityType>
+  <EntityType Name="tlkpTrainIntroRSVP">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TrainDate" Type="date" />
+  </EntityType>
+  <EntityType Name="tlkpTrainPreservice1">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TrainDate" Type="date" />
+  </EntityType>
+  <EntityType Name="tlkpTrainPreservice2">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TrainDate" Type="date" />
+  </EntityType>
+  <EntityType Name="tlkpTrainPreservice2009">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TrainDate" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="tlkpTrainPreserviceComp">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TrainDate" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="tlkpTrainPreserviceRSVP">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TrainDate" Type="date" />
+  </EntityType>
+  <EntityType Name="tlkpUserGroups">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descr" Type="nvarchar" MaxLength="50" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="SSMA_TimeStamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__tblAddres__Addre__5F141958">
+    <End Role="tlkpAddressType" Type="Self.tlkpAddressType" Multiplicity="0..1" />
+    <End Role="tblAddresses" Type="Self.tblAddresses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tlkpAddressType">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tblAddresses">
+        <PropertyRef Name="AddressType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblAddres__CareG__53A266AC">
+    <End Role="tblPrimaryCaregiverdata" Type="Self.tblPrimaryCaregiverdata" Multiplicity="0..1" />
+    <End Role="tblAddresses" Type="Self.tblAddresses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblPrimaryCaregiverdata">
+        <PropertyRef Name="CareGiverID" />
+      </Principal>
+      <Dependent Role="tblAddresses">
+        <PropertyRef Name="CareGiverID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblCommun__CareG__567ED357">
+    <End Role="tblPrimaryCaregiverdata" Type="Self.tblPrimaryCaregiverdata" Multiplicity="0..1" />
+    <End Role="tblCommunications" Type="Self.tblCommunications" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblPrimaryCaregiverdata">
+        <PropertyRef Name="CareGiverID" />
+      </Principal>
+      <Dependent Role="tblCommunications">
+        <PropertyRef Name="CareGiverID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblCommun__CommT__7132C993">
+    <End Role="tlkpCommunicationTypes" Type="Self.tlkpCommunicationTypes" Multiplicity="0..1" />
+    <End Role="tblCommunications" Type="Self.tblCommunications" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tlkpCommunicationTypes">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tblCommunications">
+        <PropertyRef Name="CommType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblCommun__UserI__7BB05806">
+    <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="0..1" />
+    <End Role="tblCommunications" Type="Self.tblCommunications" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="tblCommunications">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblEmails__CareG__54968AE5">
+    <End Role="tblPrimaryCaregiverdata" Type="Self.tblPrimaryCaregiverdata" Multiplicity="0..1" />
+    <End Role="tblEmails" Type="Self.tblEmails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblPrimaryCaregiverdata">
+        <PropertyRef Name="CareGiverID" />
+      </Principal>
+      <Dependent Role="tblEmails">
+        <PropertyRef Name="CareGiverID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblEmails__Email__5D2BD0E6">
+    <End Role="tlkpEmailTypes" Type="Self.tlkpEmailTypes" Multiplicity="0..1" />
+    <End Role="tblEmails" Type="Self.tblEmails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tlkpEmailTypes">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblEmails">
+        <PropertyRef Name="EmailType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblInquir__Reaso__0FB750B3">
+    <End Role="tlkpHomeClosed" Type="Self.tlkpHomeClosed" Multiplicity="0..1" />
+    <End Role="tblInquiryReferralStatus" Type="Self.tblInquiryReferralStatus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tlkpHomeClosed">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tblInquiryReferralStatus">
+        <PropertyRef Name="ReasonHomeClosed" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblInquir__Reaso__10AB74EC">
+    <End Role="tlkpAppOnHold" Type="Self.tlkpAppOnHold" Multiplicity="0..1" />
+    <End Role="tblInquiryReferralStatus" Type="Self.tblInquiryReferralStatus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tlkpAppOnHold">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tblInquiryReferralStatus">
+        <PropertyRef Name="ReasonAppOnHold" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblInquir__Reaso__119F9925">
+    <End Role="tlkpAppReturned" Type="Self.tlkpAppReturned" Multiplicity="0..1" />
+    <End Role="tblInquiryReferralStatus" Type="Self.tblInquiryReferralStatus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tlkpAppReturned">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tblInquiryReferralStatus">
+        <PropertyRef Name="ReasonAppReturned" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblInquir__Reaso__1293BD5E">
+    <End Role="tlkpProgram" Type="Self.tlkpProgram" Multiplicity="0..1" />
+    <End Role="tblInquiryReferralStatus" Type="Self.tblInquiryReferralStatus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tlkpProgram">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tblInquiryReferralStatus">
+        <PropertyRef Name="ReasonAppProgram" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblInquir__Reaso__1387E197">
+    <End Role="tlkpProgram" Type="Self.tlkpProgram" Multiplicity="0..1" />
+    <End Role="tblInquiryReferralStatus" Type="Self.tblInquiryReferralStatus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tlkpProgram">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tblInquiryReferralStatus">
+        <PropertyRef Name="ReasonHomeCert" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblInquir__Reaso__147C05D0">
+    <End Role="tlkpProgram" Type="Self.tlkpProgram" Multiplicity="0..1" />
+    <End Role="tblInquiryReferralStatus" Type="Self.tblInquiryReferralStatus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tlkpProgram">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tblInquiryReferralStatus">
+        <PropertyRef Name="ReasonAppReferredProg" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblInquir__Reaso__15702A09">
+    <End Role="tlkpProgram" Type="Self.tlkpProgram" Multiplicity="0..1" />
+    <End Role="tblInquiryReferralStatus" Type="Self.tblInquiryReferralStatus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tlkpProgram">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tblInquiryReferralStatus">
+        <PropertyRef Name="ReasonAppReferredAnother" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblInquir__Reaso__16644E42">
+    <End Role="tlkpAppRejectedProg" Type="Self.tlkpAppRejectedProg" Multiplicity="0..1" />
+    <End Role="tblInquiryReferralStatus" Type="Self.tblInquiryReferralStatus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tlkpAppRejectedProg">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tblInquiryReferralStatus">
+        <PropertyRef Name="ReasonAppRejectedProg" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblInquir__Reaso__1758727B">
+    <End Role="tlkpAppRejectedFFCN" Type="Self.tlkpAppRejectedFFCN" Multiplicity="0..1" />
+    <End Role="tblInquiryReferralStatus" Type="Self.tblInquiryReferralStatus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tlkpAppRejectedFFCN">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tblInquiryReferralStatus">
+        <PropertyRef Name="ReasonAppRejectedFFCN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblInquir__Reaso__30592A6F">
+    <End Role="tlkpInactive" Type="Self.tlkpInactive" Multiplicity="0..1" />
+    <End Role="tblInquiryReferralStatus" Type="Self.tblInquiryReferralStatus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tlkpInactive">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tblInquiryReferralStatus">
+        <PropertyRef Name="ReasonInactive" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblInquir__Staff__00750D23">
+    <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="0..1" />
+    <End Role="tblInquiryReferralStatus" Type="Self.tblInquiryReferralStatus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="tblInquiryReferralStatus">
+        <PropertyRef Name="StaffAppReceived" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblInquir__Staff__0169315C">
+    <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="0..1" />
+    <End Role="tblInquiryReferralStatus" Type="Self.tblInquiryReferralStatus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="tblInquiryReferralStatus">
+        <PropertyRef Name="StaffAppProgram" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblInquir__Staff__025D5595">
+    <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="0..1" />
+    <End Role="tblInquiryReferralStatus" Type="Self.tblInquiryReferralStatus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="tblInquiryReferralStatus">
+        <PropertyRef Name="StaffAppReferredProg" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblInquir__Staff__035179CE">
+    <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="0..1" />
+    <End Role="tblInquiryReferralStatus" Type="Self.tblInquiryReferralStatus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="tblInquiryReferralStatus">
+        <PropertyRef Name="StaffHomeCert" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblInquir__Staff__04459E07">
+    <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="0..1" />
+    <End Role="tblInquiryReferralStatus" Type="Self.tblInquiryReferralStatus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="tblInquiryReferralStatus">
+        <PropertyRef Name="StaffHomeClosed" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblInquir__Staff__0539C240">
+    <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="0..1" />
+    <End Role="tblInquiryReferralStatus" Type="Self.tblInquiryReferralStatus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="tblInquiryReferralStatus">
+        <PropertyRef Name="StaffAppOnHold" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblInquir__Staff__062DE679">
+    <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="0..1" />
+    <End Role="tblInquiryReferralStatus" Type="Self.tblInquiryReferralStatus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="tblInquiryReferralStatus">
+        <PropertyRef Name="StaffAppReturned" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblInquir__Staff__07220AB2">
+    <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="0..1" />
+    <End Role="tblInquiryReferralStatus" Type="Self.tblInquiryReferralStatus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="tblInquiryReferralStatus">
+        <PropertyRef Name="StaffAppReferredtoAnother" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblInquir__Staff__08162EEB">
+    <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="0..1" />
+    <End Role="tblInquiryReferralStatus" Type="Self.tblInquiryReferralStatus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="tblInquiryReferralStatus">
+        <PropertyRef Name="StaffAppRejectedFFCN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblInquir__Staff__090A5324">
+    <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="0..1" />
+    <End Role="tblInquiryReferralStatus" Type="Self.tblInquiryReferralStatus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="tblInquiryReferralStatus">
+        <PropertyRef Name="StaffAppRejectedProg" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblInquir__Staff__09FE775D">
+    <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="0..1" />
+    <End Role="tblInquiryReferralStatus" Type="Self.tblInquiryReferralStatus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="tblInquiryReferralStatus">
+        <PropertyRef Name="StaffInitialInquiry" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblInquir__Staff__0AF29B96">
+    <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="0..1" />
+    <End Role="tblInquiryReferralStatus" Type="Self.tblInquiryReferralStatus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="tblInquiryReferralStatus">
+        <PropertyRef Name="StaffDidntPass" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblInquir__Staff__60083D91">
+    <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="0..1" />
+    <End Role="tblInquiryReferralStatus" Type="Self.tblInquiryReferralStatus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="tblInquiryReferralStatus">
+        <PropertyRef Name="StaffLookingJob" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblInquir__Staff__60FC61CA">
+    <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="0..1" />
+    <End Role="tblInquiryReferralStatus" Type="Self.tblInquiryReferralStatus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="tblInquiryReferralStatus">
+        <PropertyRef Name="StaffOutOfStat" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblInquir__Staff__61F08603">
+    <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="0..1" />
+    <End Role="tblInquiryReferralStatus" Type="Self.tblInquiryReferralStatus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="tblInquiryReferralStatus">
+        <PropertyRef Name="StaffInactive" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblInquir__Staff__62E4AA3C">
+    <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="0..1" />
+    <End Role="tblInquiryReferralStatus" Type="Self.tblInquiryReferralStatus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="tblInquiryReferralStatus">
+        <PropertyRef Name="StaffActive" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblInquir__Staff__63D8CE75">
+    <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="0..1" />
+    <End Role="tblInquiryReferralStatus" Type="Self.tblInquiryReferralStatus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="tblInquiryReferralStatus">
+        <PropertyRef Name="StaffAppReceived" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblInquir__Staff__64CCF2AE">
+    <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="0..1" />
+    <End Role="tblInquiryReferralStatus" Type="Self.tblInquiryReferralStatus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="tblInquiryReferralStatus">
+        <PropertyRef Name="StaffAppProgram" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblInquir__Staff__65C116E7">
+    <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="0..1" />
+    <End Role="tblInquiryReferralStatus" Type="Self.tblInquiryReferralStatus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="tblInquiryReferralStatus">
+        <PropertyRef Name="StaffAppReferredProg" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblInquir__Staff__66B53B20">
+    <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="0..1" />
+    <End Role="tblInquiryReferralStatus" Type="Self.tblInquiryReferralStatus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="tblInquiryReferralStatus">
+        <PropertyRef Name="StaffHomeCert" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblInquir__Staff__67A95F59">
+    <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="0..1" />
+    <End Role="tblInquiryReferralStatus" Type="Self.tblInquiryReferralStatus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="tblInquiryReferralStatus">
+        <PropertyRef Name="StaffHomeClosed" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblInquir__Staff__689D8392">
+    <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="0..1" />
+    <End Role="tblInquiryReferralStatus" Type="Self.tblInquiryReferralStatus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="tblInquiryReferralStatus">
+        <PropertyRef Name="StaffAppOnHold" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblInquir__Staff__6991A7CB">
+    <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="0..1" />
+    <End Role="tblInquiryReferralStatus" Type="Self.tblInquiryReferralStatus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="tblInquiryReferralStatus">
+        <PropertyRef Name="StaffAppReturned" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblInquir__Staff__6A85CC04">
+    <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="0..1" />
+    <End Role="tblInquiryReferralStatus" Type="Self.tblInquiryReferralStatus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="tblInquiryReferralStatus">
+        <PropertyRef Name="StaffAppReferredtoAnother" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblInquir__Staff__6B79F03D">
+    <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="0..1" />
+    <End Role="tblInquiryReferralStatus" Type="Self.tblInquiryReferralStatus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="tblInquiryReferralStatus">
+        <PropertyRef Name="StaffAppRejectedFFCN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblInquir__Staff__6C6E1476">
+    <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="0..1" />
+    <End Role="tblInquiryReferralStatus" Type="Self.tblInquiryReferralStatus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="tblInquiryReferralStatus">
+        <PropertyRef Name="StaffAppRejectedProg" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblInquir__Staff__6D6238AF">
+    <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="0..1" />
+    <End Role="tblInquiryReferralStatus" Type="Self.tblInquiryReferralStatus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="tblInquiryReferralStatus">
+        <PropertyRef Name="StaffInitialInquiry" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblInquir__Staff__6E565CE8">
+    <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="0..1" />
+    <End Role="tblInquiryReferralStatus" Type="Self.tblInquiryReferralStatus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="tblInquiryReferralStatus">
+        <PropertyRef Name="StaffDidntPass" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblInquir__Staff__7CA47C3F">
+    <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="0..1" />
+    <End Role="tblInquiryReferralStatus" Type="Self.tblInquiryReferralStatus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="tblInquiryReferralStatus">
+        <PropertyRef Name="StaffLookingJob" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblInquir__Staff__7D98A078">
+    <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="0..1" />
+    <End Role="tblInquiryReferralStatus" Type="Self.tblInquiryReferralStatus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="tblInquiryReferralStatus">
+        <PropertyRef Name="StaffOutOfStat" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblInquir__Staff__7E8CC4B1">
+    <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="0..1" />
+    <End Role="tblInquiryReferralStatus" Type="Self.tblInquiryReferralStatus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="tblInquiryReferralStatus">
+        <PropertyRef Name="StaffInactive" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblInquir__Staff__7F80E8EA">
+    <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="0..1" />
+    <End Role="tblInquiryReferralStatus" Type="Self.tblInquiryReferralStatus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="tblInquiryReferralStatus">
+        <PropertyRef Name="StaffActive" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblPhones__CareG__558AAF1E">
+    <End Role="tblPrimaryCaregiverdata" Type="Self.tblPrimaryCaregiverdata" Multiplicity="0..1" />
+    <End Role="tblPhones" Type="Self.tblPhones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblPrimaryCaregiverdata">
+        <PropertyRef Name="CareGiverID" />
+      </Principal>
+      <Dependent Role="tblPhones">
+        <PropertyRef Name="CareGiverID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblPhones__Phone__5A4F643B">
+    <End Role="tlkpPhoneTypes" Type="Self.tlkpPhoneTypes" Multiplicity="0..1" />
+    <End Role="tblPhones" Type="Self.tblPhones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tlkpPhoneTypes">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tblPhones">
+        <PropertyRef Name="PhoneType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblPrimar__Heard__58671BC9">
+    <End Role="tlkpRecruitmentCategories" Type="Self.tlkpRecruitmentCategories" Multiplicity="0..1" />
+    <End Role="tblPrimaryCaregiverdata" Type="Self.tblPrimaryCaregiverdata" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tlkpRecruitmentCategories">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tblPrimaryCaregiverdata">
+        <PropertyRef Name="HeardAbout" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblRelate__CareG__5772F790">
+    <End Role="tblPrimaryCaregiverdata" Type="Self.tblPrimaryCaregiverdata" Multiplicity="0..1" />
+    <End Role="tblRelatedCaregiver" Type="Self.tblRelatedCaregiver" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblPrimaryCaregiverdata">
+        <PropertyRef Name="CareGiverID" />
+      </Principal>
+      <Dependent Role="tblRelatedCaregiver">
+        <PropertyRef Name="CareGiverID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblRelate__Relat__595B4002">
+    <End Role="tlkpRelationship" Type="Self.tlkpRelationship" Multiplicity="0..1" />
+    <End Role="tblRelatedCaregiver" Type="Self.tblRelatedCaregiver" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tlkpRelationship">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tblRelatedCaregiver">
+        <PropertyRef Name="Relationship" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblTraini__Ongoi__5E1FF51F">
+    <End Role="tlkpOngoingTraining" Type="Self.tlkpOngoingTraining" Multiplicity="0..1" />
+    <End Role="tblTrainingHistoryMain" Type="Self.tblTrainingHistoryMain" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tlkpOngoingTraining">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tblTrainingHistoryMain">
+        <PropertyRef Name="OngoingTraining9" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblTraini__Staff__7226EDCC">
+    <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="0..1" />
+    <End Role="tblTrainingHistoryMain" Type="Self.tblTrainingHistoryMain" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="tblTrainingHistoryMain">
+        <PropertyRef Name="StaffOrient" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblTraini__Staff__731B1205">
+    <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="0..1" />
+    <End Role="tblTrainingHistoryMain" Type="Self.tblTrainingHistoryMain" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="tblTrainingHistoryMain">
+        <PropertyRef Name="StaffIntro" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblTraini__Staff__740F363E">
+    <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="0..1" />
+    <End Role="tblTrainingHistoryMain" Type="Self.tblTrainingHistoryMain" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="tblTrainingHistoryMain">
+        <PropertyRef Name="StaffAttendedIntro" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblTraini__Staff__75035A77">
+    <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="0..1" />
+    <End Role="tblTrainingHistoryMain" Type="Self.tblTrainingHistoryMain" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="tblTrainingHistoryMain">
+        <PropertyRef Name="StaffPreserviceRSVP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblTraini__Staff__75F77EB0">
+    <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="0..1" />
+    <End Role="tblTrainingHistoryMain" Type="Self.tblTrainingHistoryMain" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="tblTrainingHistoryMain">
+        <PropertyRef Name="StaffAttendedPreservice1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblTraini__Staff__76EBA2E9">
+    <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="0..1" />
+    <End Role="tblTrainingHistoryMain" Type="Self.tblTrainingHistoryMain" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="tblTrainingHistoryMain">
+        <PropertyRef Name="StaffAttendedPreservice2" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblTraini__Staff__77DFC722">
+    <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="0..1" />
+    <End Role="tblTrainingHistoryMain" Type="Self.tblTrainingHistoryMain" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="tblTrainingHistoryMain">
+        <PropertyRef Name="StaffPreserviceComp" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblTraini__Staff__78D3EB5B">
+    <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="0..1" />
+    <End Role="tblTrainingHistoryMain" Type="Self.tblTrainingHistoryMain" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="tblTrainingHistoryMain">
+        <PropertyRef Name="StaffOngoing" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblTraini__Staff__79C80F94">
+    <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="0..1" />
+    <End Role="tblTrainingHistoryMain" Type="Self.tblTrainingHistoryMain" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="tblTrainingHistoryMain">
+        <PropertyRef Name="StaffOneOnOne" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblTraini__Staff__7ABC33CD">
+    <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="0..1" />
+    <End Role="tblTrainingHistoryMain" Type="Self.tblTrainingHistoryMain" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="tblTrainingHistoryMain">
+        <PropertyRef Name="StaffPreservicePrior" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblTraini__Train__0BE6BFCF">
+    <End Role="tlkpTrainPreserviceComp" Type="Self.tlkpTrainPreserviceComp" Multiplicity="0..1" />
+    <End Role="tblTrainingHistoryMain" Type="Self.tblTrainingHistoryMain" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tlkpTrainPreserviceComp">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tblTrainingHistoryMain">
+        <PropertyRef Name="TrainDatePreserviceComp" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblTraini__Train__0CDAE408">
+    <End Role="tlkpTrainPreservice2009" Type="Self.tlkpTrainPreservice2009" Multiplicity="0..1" />
+    <End Role="tblTrainingHistoryMain" Type="Self.tblTrainingHistoryMain" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tlkpTrainPreservice2009">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tblTrainingHistoryMain">
+        <PropertyRef Name="TrainDatePreservice2009" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblTraini__Train__0DCF0841">
+    <End Role="tlkpTrainPreservice2" Type="Self.tlkpTrainPreservice2" Multiplicity="0..1" />
+    <End Role="tblTrainingHistoryMain" Type="Self.tblTrainingHistoryMain" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tlkpTrainPreservice2">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tblTrainingHistoryMain">
+        <PropertyRef Name="TrainDateAttendedPreservice2" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblTraini__Train__0EC32C7A">
+    <End Role="tlkpTrainPreserviceRSVP" Type="Self.tlkpTrainPreserviceRSVP" Multiplicity="0..1" />
+    <End Role="tblTrainingHistoryMain" Type="Self.tblTrainingHistoryMain" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tlkpTrainPreserviceRSVP">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tblTrainingHistoryMain">
+        <PropertyRef Name="TrainDatePreserviceRSVP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblTraini__Train__184C96B4">
+    <End Role="tlkpTrainPreservice1" Type="Self.tlkpTrainPreservice1" Multiplicity="0..1" />
+    <End Role="tblTrainingHistoryMain" Type="Self.tblTrainingHistoryMain" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tlkpTrainPreservice1">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tblTrainingHistoryMain">
+        <PropertyRef Name="TrainDateAttendedPreservice1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblTraini__Train__1940BAED">
+    <End Role="tlkpTrainIntroRSVP" Type="Self.tlkpTrainIntroRSVP" Multiplicity="0..1" />
+    <End Role="tblTrainingHistoryMain" Type="Self.tblTrainingHistoryMain" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tlkpTrainIntroRSVP">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tblTrainingHistoryMain">
+        <PropertyRef Name="TrainDateIntro" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblTraini__Train__1A34DF26">
+    <End Role="tlkpTrainAttendIntro" Type="Self.tlkpTrainAttendIntro" Multiplicity="0..1" />
+    <End Role="tblTrainingHistoryMain" Type="Self.tblTrainingHistoryMain" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tlkpTrainAttendIntro">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tblTrainingHistoryMain">
+        <PropertyRef Name="TrainDateAttendedIntro" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblUsers__Agency__703EA55A">
+    <End Role="tlkpAgencies" Type="Self.tlkpAgencies" Multiplicity="0..1" />
+    <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tlkpAgencies">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tblUsers">
+        <PropertyRef Name="Agency" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblUsers__UserGr__6F4A8121">
+    <End Role="tlkpUserGroups" Type="Self.tlkpUserGroups" Multiplicity="0..1" />
+    <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tlkpUserGroups">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tblUsers">
+        <PropertyRef Name="UserGroup" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="tblInquiryReferralStatus$tblPrimaryCaregiverdatatblInquiryReferralStatus">
+    <End Role="tblPrimaryCaregiverdata" Type="Self.tblPrimaryCaregiverdata" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="tblInquiryReferralStatus" Type="Self.tblInquiryReferralStatus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblPrimaryCaregiverdata">
+        <PropertyRef Name="CareGiverID" />
+      </Principal>
+      <Dependent Role="tblInquiryReferralStatus">
+        <PropertyRef Name="CareGiverID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="tblTrainingHistoryMain$tblPrimaryCaregiverdatatblTrainingHistoryMain">
+    <End Role="tblPrimaryCaregiverdata" Type="Self.tblPrimaryCaregiverdata" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="tblTrainingHistoryMain" Type="Self.tblTrainingHistoryMain" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblPrimaryCaregiverdata">
+        <PropertyRef Name="CareGiverID" />
+      </Principal>
+      <Dependent Role="tblTrainingHistoryMain">
+        <PropertyRef Name="CareGiverID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="FFCNv5ModelStoreContainer">
+    <EntitySet Name="tblAddresses" EntityType="Self.tblAddresses" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblCommunications" EntityType="Self.tblCommunications" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblEmails" EntityType="Self.tblEmails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblInquiryReferralStatus" EntityType="Self.tblInquiryReferralStatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblPhones" EntityType="Self.tblPhones" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblPrimaryCaregiverdata" EntityType="Self.tblPrimaryCaregiverdata" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblRelatedCaregiver" EntityType="Self.tblRelatedCaregiver" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblTrainingHistoryMain" EntityType="Self.tblTrainingHistoryMain" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblUsers" EntityType="Self.tblUsers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tlkpAddressType" EntityType="Self.tlkpAddressType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tlkpAgencies" EntityType="Self.tlkpAgencies" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tlkpAppOnHold" EntityType="Self.tlkpAppOnHold" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tlkpAppRejectedFFCN" EntityType="Self.tlkpAppRejectedFFCN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tlkpAppRejectedProg" EntityType="Self.tlkpAppRejectedProg" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tlkpAppReturned" EntityType="Self.tlkpAppReturned" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tlkpCommunicationTypes" EntityType="Self.tlkpCommunicationTypes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tlkpEmailTypes" EntityType="Self.tlkpEmailTypes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tlkpHomeClosed" EntityType="Self.tlkpHomeClosed" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tlkpInactive" EntityType="Self.tlkpInactive" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tlkpOngoingTraining" EntityType="Self.tlkpOngoingTraining" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tlkpPhoneTypes" EntityType="Self.tlkpPhoneTypes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tlkpProgram" EntityType="Self.tlkpProgram" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tlkpRecruitmentCategories" EntityType="Self.tlkpRecruitmentCategories" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tlkpRelationship" EntityType="Self.tlkpRelationship" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tlkpTrainAttendIntro" EntityType="Self.tlkpTrainAttendIntro" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tlkpTrainIntroRSVP" EntityType="Self.tlkpTrainIntroRSVP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tlkpTrainPreservice1" EntityType="Self.tlkpTrainPreservice1" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tlkpTrainPreservice2" EntityType="Self.tlkpTrainPreservice2" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tlkpTrainPreservice2009" EntityType="Self.tlkpTrainPreservice2009" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tlkpTrainPreserviceComp" EntityType="Self.tlkpTrainPreserviceComp" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tlkpTrainPreserviceRSVP" EntityType="Self.tlkpTrainPreserviceRSVP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tlkpUserGroups" EntityType="Self.tlkpUserGroups" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__tblAddres__Addre__5F141958" Association="Self.FK__tblAddres__Addre__5F141958">
+      <End Role="tlkpAddressType" EntitySet="tlkpAddressType" />
+      <End Role="tblAddresses" EntitySet="tblAddresses" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblAddres__CareG__53A266AC" Association="Self.FK__tblAddres__CareG__53A266AC">
+      <End Role="tblPrimaryCaregiverdata" EntitySet="tblPrimaryCaregiverdata" />
+      <End Role="tblAddresses" EntitySet="tblAddresses" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblCommun__CareG__567ED357" Association="Self.FK__tblCommun__CareG__567ED357">
+      <End Role="tblPrimaryCaregiverdata" EntitySet="tblPrimaryCaregiverdata" />
+      <End Role="tblCommunications" EntitySet="tblCommunications" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblCommun__CommT__7132C993" Association="Self.FK__tblCommun__CommT__7132C993">
+      <End Role="tlkpCommunicationTypes" EntitySet="tlkpCommunicationTypes" />
+      <End Role="tblCommunications" EntitySet="tblCommunications" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblCommun__UserI__7BB05806" Association="Self.FK__tblCommun__UserI__7BB05806">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblCommunications" EntitySet="tblCommunications" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblEmails__CareG__54968AE5" Association="Self.FK__tblEmails__CareG__54968AE5">
+      <End Role="tblPrimaryCaregiverdata" EntitySet="tblPrimaryCaregiverdata" />
+      <End Role="tblEmails" EntitySet="tblEmails" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblEmails__Email__5D2BD0E6" Association="Self.FK__tblEmails__Email__5D2BD0E6">
+      <End Role="tlkpEmailTypes" EntitySet="tlkpEmailTypes" />
+      <End Role="tblEmails" EntitySet="tblEmails" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblInquir__Reaso__0FB750B3" Association="Self.FK__tblInquir__Reaso__0FB750B3">
+      <End Role="tlkpHomeClosed" EntitySet="tlkpHomeClosed" />
+      <End Role="tblInquiryReferralStatus" EntitySet="tblInquiryReferralStatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblInquir__Reaso__10AB74EC" Association="Self.FK__tblInquir__Reaso__10AB74EC">
+      <End Role="tlkpAppOnHold" EntitySet="tlkpAppOnHold" />
+      <End Role="tblInquiryReferralStatus" EntitySet="tblInquiryReferralStatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblInquir__Reaso__119F9925" Association="Self.FK__tblInquir__Reaso__119F9925">
+      <End Role="tlkpAppReturned" EntitySet="tlkpAppReturned" />
+      <End Role="tblInquiryReferralStatus" EntitySet="tblInquiryReferralStatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblInquir__Reaso__1293BD5E" Association="Self.FK__tblInquir__Reaso__1293BD5E">
+      <End Role="tlkpProgram" EntitySet="tlkpProgram" />
+      <End Role="tblInquiryReferralStatus" EntitySet="tblInquiryReferralStatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblInquir__Reaso__1387E197" Association="Self.FK__tblInquir__Reaso__1387E197">
+      <End Role="tlkpProgram" EntitySet="tlkpProgram" />
+      <End Role="tblInquiryReferralStatus" EntitySet="tblInquiryReferralStatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblInquir__Reaso__147C05D0" Association="Self.FK__tblInquir__Reaso__147C05D0">
+      <End Role="tlkpProgram" EntitySet="tlkpProgram" />
+      <End Role="tblInquiryReferralStatus" EntitySet="tblInquiryReferralStatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblInquir__Reaso__15702A09" Association="Self.FK__tblInquir__Reaso__15702A09">
+      <End Role="tlkpProgram" EntitySet="tlkpProgram" />
+      <End Role="tblInquiryReferralStatus" EntitySet="tblInquiryReferralStatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblInquir__Reaso__16644E42" Association="Self.FK__tblInquir__Reaso__16644E42">
+      <End Role="tlkpAppRejectedProg" EntitySet="tlkpAppRejectedProg" />
+      <End Role="tblInquiryReferralStatus" EntitySet="tblInquiryReferralStatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblInquir__Reaso__1758727B" Association="Self.FK__tblInquir__Reaso__1758727B">
+      <End Role="tlkpAppRejectedFFCN" EntitySet="tlkpAppRejectedFFCN" />
+      <End Role="tblInquiryReferralStatus" EntitySet="tblInquiryReferralStatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblInquir__Reaso__30592A6F" Association="Self.FK__tblInquir__Reaso__30592A6F">
+      <End Role="tlkpInactive" EntitySet="tlkpInactive" />
+      <End Role="tblInquiryReferralStatus" EntitySet="tblInquiryReferralStatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblInquir__Staff__00750D23" Association="Self.FK__tblInquir__Staff__00750D23">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblInquiryReferralStatus" EntitySet="tblInquiryReferralStatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblInquir__Staff__0169315C" Association="Self.FK__tblInquir__Staff__0169315C">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblInquiryReferralStatus" EntitySet="tblInquiryReferralStatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblInquir__Staff__025D5595" Association="Self.FK__tblInquir__Staff__025D5595">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblInquiryReferralStatus" EntitySet="tblInquiryReferralStatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblInquir__Staff__035179CE" Association="Self.FK__tblInquir__Staff__035179CE">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblInquiryReferralStatus" EntitySet="tblInquiryReferralStatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblInquir__Staff__04459E07" Association="Self.FK__tblInquir__Staff__04459E07">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblInquiryReferralStatus" EntitySet="tblInquiryReferralStatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblInquir__Staff__0539C240" Association="Self.FK__tblInquir__Staff__0539C240">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblInquiryReferralStatus" EntitySet="tblInquiryReferralStatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblInquir__Staff__062DE679" Association="Self.FK__tblInquir__Staff__062DE679">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblInquiryReferralStatus" EntitySet="tblInquiryReferralStatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblInquir__Staff__07220AB2" Association="Self.FK__tblInquir__Staff__07220AB2">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblInquiryReferralStatus" EntitySet="tblInquiryReferralStatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblInquir__Staff__08162EEB" Association="Self.FK__tblInquir__Staff__08162EEB">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblInquiryReferralStatus" EntitySet="tblInquiryReferralStatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblInquir__Staff__090A5324" Association="Self.FK__tblInquir__Staff__090A5324">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblInquiryReferralStatus" EntitySet="tblInquiryReferralStatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblInquir__Staff__09FE775D" Association="Self.FK__tblInquir__Staff__09FE775D">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblInquiryReferralStatus" EntitySet="tblInquiryReferralStatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblInquir__Staff__0AF29B96" Association="Self.FK__tblInquir__Staff__0AF29B96">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblInquiryReferralStatus" EntitySet="tblInquiryReferralStatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblInquir__Staff__60083D91" Association="Self.FK__tblInquir__Staff__60083D91">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblInquiryReferralStatus" EntitySet="tblInquiryReferralStatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblInquir__Staff__60FC61CA" Association="Self.FK__tblInquir__Staff__60FC61CA">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblInquiryReferralStatus" EntitySet="tblInquiryReferralStatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblInquir__Staff__61F08603" Association="Self.FK__tblInquir__Staff__61F08603">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblInquiryReferralStatus" EntitySet="tblInquiryReferralStatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblInquir__Staff__62E4AA3C" Association="Self.FK__tblInquir__Staff__62E4AA3C">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblInquiryReferralStatus" EntitySet="tblInquiryReferralStatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblInquir__Staff__63D8CE75" Association="Self.FK__tblInquir__Staff__63D8CE75">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblInquiryReferralStatus" EntitySet="tblInquiryReferralStatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblInquir__Staff__64CCF2AE" Association="Self.FK__tblInquir__Staff__64CCF2AE">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblInquiryReferralStatus" EntitySet="tblInquiryReferralStatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblInquir__Staff__65C116E7" Association="Self.FK__tblInquir__Staff__65C116E7">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblInquiryReferralStatus" EntitySet="tblInquiryReferralStatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblInquir__Staff__66B53B20" Association="Self.FK__tblInquir__Staff__66B53B20">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblInquiryReferralStatus" EntitySet="tblInquiryReferralStatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblInquir__Staff__67A95F59" Association="Self.FK__tblInquir__Staff__67A95F59">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblInquiryReferralStatus" EntitySet="tblInquiryReferralStatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblInquir__Staff__689D8392" Association="Self.FK__tblInquir__Staff__689D8392">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblInquiryReferralStatus" EntitySet="tblInquiryReferralStatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblInquir__Staff__6991A7CB" Association="Self.FK__tblInquir__Staff__6991A7CB">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblInquiryReferralStatus" EntitySet="tblInquiryReferralStatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblInquir__Staff__6A85CC04" Association="Self.FK__tblInquir__Staff__6A85CC04">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblInquiryReferralStatus" EntitySet="tblInquiryReferralStatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblInquir__Staff__6B79F03D" Association="Self.FK__tblInquir__Staff__6B79F03D">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblInquiryReferralStatus" EntitySet="tblInquiryReferralStatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblInquir__Staff__6C6E1476" Association="Self.FK__tblInquir__Staff__6C6E1476">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblInquiryReferralStatus" EntitySet="tblInquiryReferralStatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblInquir__Staff__6D6238AF" Association="Self.FK__tblInquir__Staff__6D6238AF">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblInquiryReferralStatus" EntitySet="tblInquiryReferralStatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblInquir__Staff__6E565CE8" Association="Self.FK__tblInquir__Staff__6E565CE8">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblInquiryReferralStatus" EntitySet="tblInquiryReferralStatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblInquir__Staff__7CA47C3F" Association="Self.FK__tblInquir__Staff__7CA47C3F">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblInquiryReferralStatus" EntitySet="tblInquiryReferralStatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblInquir__Staff__7D98A078" Association="Self.FK__tblInquir__Staff__7D98A078">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblInquiryReferralStatus" EntitySet="tblInquiryReferralStatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblInquir__Staff__7E8CC4B1" Association="Self.FK__tblInquir__Staff__7E8CC4B1">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblInquiryReferralStatus" EntitySet="tblInquiryReferralStatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblInquir__Staff__7F80E8EA" Association="Self.FK__tblInquir__Staff__7F80E8EA">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblInquiryReferralStatus" EntitySet="tblInquiryReferralStatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblPhones__CareG__558AAF1E" Association="Self.FK__tblPhones__CareG__558AAF1E">
+      <End Role="tblPrimaryCaregiverdata" EntitySet="tblPrimaryCaregiverdata" />
+      <End Role="tblPhones" EntitySet="tblPhones" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblPhones__Phone__5A4F643B" Association="Self.FK__tblPhones__Phone__5A4F643B">
+      <End Role="tlkpPhoneTypes" EntitySet="tlkpPhoneTypes" />
+      <End Role="tblPhones" EntitySet="tblPhones" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblPrimar__Heard__58671BC9" Association="Self.FK__tblPrimar__Heard__58671BC9">
+      <End Role="tlkpRecruitmentCategories" EntitySet="tlkpRecruitmentCategories" />
+      <End Role="tblPrimaryCaregiverdata" EntitySet="tblPrimaryCaregiverdata" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblRelate__CareG__5772F790" Association="Self.FK__tblRelate__CareG__5772F790">
+      <End Role="tblPrimaryCaregiverdata" EntitySet="tblPrimaryCaregiverdata" />
+      <End Role="tblRelatedCaregiver" EntitySet="tblRelatedCaregiver" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblRelate__Relat__595B4002" Association="Self.FK__tblRelate__Relat__595B4002">
+      <End Role="tlkpRelationship" EntitySet="tlkpRelationship" />
+      <End Role="tblRelatedCaregiver" EntitySet="tblRelatedCaregiver" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblTraini__Ongoi__5E1FF51F" Association="Self.FK__tblTraini__Ongoi__5E1FF51F">
+      <End Role="tlkpOngoingTraining" EntitySet="tlkpOngoingTraining" />
+      <End Role="tblTrainingHistoryMain" EntitySet="tblTrainingHistoryMain" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblTraini__Staff__7226EDCC" Association="Self.FK__tblTraini__Staff__7226EDCC">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblTrainingHistoryMain" EntitySet="tblTrainingHistoryMain" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblTraini__Staff__731B1205" Association="Self.FK__tblTraini__Staff__731B1205">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblTrainingHistoryMain" EntitySet="tblTrainingHistoryMain" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblTraini__Staff__740F363E" Association="Self.FK__tblTraini__Staff__740F363E">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblTrainingHistoryMain" EntitySet="tblTrainingHistoryMain" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblTraini__Staff__75035A77" Association="Self.FK__tblTraini__Staff__75035A77">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblTrainingHistoryMain" EntitySet="tblTrainingHistoryMain" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblTraini__Staff__75F77EB0" Association="Self.FK__tblTraini__Staff__75F77EB0">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblTrainingHistoryMain" EntitySet="tblTrainingHistoryMain" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblTraini__Staff__76EBA2E9" Association="Self.FK__tblTraini__Staff__76EBA2E9">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblTrainingHistoryMain" EntitySet="tblTrainingHistoryMain" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblTraini__Staff__77DFC722" Association="Self.FK__tblTraini__Staff__77DFC722">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblTrainingHistoryMain" EntitySet="tblTrainingHistoryMain" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblTraini__Staff__78D3EB5B" Association="Self.FK__tblTraini__Staff__78D3EB5B">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblTrainingHistoryMain" EntitySet="tblTrainingHistoryMain" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblTraini__Staff__79C80F94" Association="Self.FK__tblTraini__Staff__79C80F94">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblTrainingHistoryMain" EntitySet="tblTrainingHistoryMain" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblTraini__Staff__7ABC33CD" Association="Self.FK__tblTraini__Staff__7ABC33CD">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblTrainingHistoryMain" EntitySet="tblTrainingHistoryMain" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblTraini__Train__0BE6BFCF" Association="Self.FK__tblTraini__Train__0BE6BFCF">
+      <End Role="tlkpTrainPreserviceComp" EntitySet="tlkpTrainPreserviceComp" />
+      <End Role="tblTrainingHistoryMain" EntitySet="tblTrainingHistoryMain" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblTraini__Train__0CDAE408" Association="Self.FK__tblTraini__Train__0CDAE408">
+      <End Role="tlkpTrainPreservice2009" EntitySet="tlkpTrainPreservice2009" />
+      <End Role="tblTrainingHistoryMain" EntitySet="tblTrainingHistoryMain" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblTraini__Train__0DCF0841" Association="Self.FK__tblTraini__Train__0DCF0841">
+      <End Role="tlkpTrainPreservice2" EntitySet="tlkpTrainPreservice2" />
+      <End Role="tblTrainingHistoryMain" EntitySet="tblTrainingHistoryMain" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblTraini__Train__0EC32C7A" Association="Self.FK__tblTraini__Train__0EC32C7A">
+      <End Role="tlkpTrainPreserviceRSVP" EntitySet="tlkpTrainPreserviceRSVP" />
+      <End Role="tblTrainingHistoryMain" EntitySet="tblTrainingHistoryMain" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblTraini__Train__184C96B4" Association="Self.FK__tblTraini__Train__184C96B4">
+      <End Role="tlkpTrainPreservice1" EntitySet="tlkpTrainPreservice1" />
+      <End Role="tblTrainingHistoryMain" EntitySet="tblTrainingHistoryMain" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblTraini__Train__1940BAED" Association="Self.FK__tblTraini__Train__1940BAED">
+      <End Role="tlkpTrainIntroRSVP" EntitySet="tlkpTrainIntroRSVP" />
+      <End Role="tblTrainingHistoryMain" EntitySet="tblTrainingHistoryMain" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblTraini__Train__1A34DF26" Association="Self.FK__tblTraini__Train__1A34DF26">
+      <End Role="tlkpTrainAttendIntro" EntitySet="tlkpTrainAttendIntro" />
+      <End Role="tblTrainingHistoryMain" EntitySet="tblTrainingHistoryMain" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblUsers__Agency__703EA55A" Association="Self.FK__tblUsers__Agency__703EA55A">
+      <End Role="tlkpAgencies" EntitySet="tlkpAgencies" />
+      <End Role="tblUsers" EntitySet="tblUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblUsers__UserGr__6F4A8121" Association="Self.FK__tblUsers__UserGr__6F4A8121">
+      <End Role="tlkpUserGroups" EntitySet="tlkpUserGroups" />
+      <End Role="tblUsers" EntitySet="tblUsers" />
+    </AssociationSet>
+    <AssociationSet Name="tblInquiryReferralStatus$tblPrimaryCaregiverdatatblInquiryReferralStatus" Association="Self.tblInquiryReferralStatus$tblPrimaryCaregiverdatatblInquiryReferralStatus">
+      <End Role="tblPrimaryCaregiverdata" EntitySet="tblPrimaryCaregiverdata" />
+      <End Role="tblInquiryReferralStatus" EntitySet="tblInquiryReferralStatus" />
+    </AssociationSet>
+    <AssociationSet Name="tblTrainingHistoryMain$tblPrimaryCaregiverdatatblTrainingHistoryMain" Association="Self.tblTrainingHistoryMain$tblPrimaryCaregiverdatatblTrainingHistoryMain">
+      <End Role="tblPrimaryCaregiverdata" EntitySet="tblPrimaryCaregiverdata" />
+      <End Role="tblTrainingHistoryMain" EntitySet="tblTrainingHistoryMain" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

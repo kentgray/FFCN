@@ -1,0 +1,445 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="FFCNv3ModelStoreContainer" CdmEntityContainer="FFCNv3Entities">
+    <EntitySetMapping Name="tblAddresses">
+      <EntityTypeMapping TypeName="FFCNv3Model.tblAddress">
+        <MappingFragment StoreEntitySet="tblAddresses">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="CareGiverID" ColumnName="CareGiverID" />
+          <ScalarProperty Name="Street1" ColumnName="Street1" />
+          <ScalarProperty Name="Street2" ColumnName="Street2" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Zip" ColumnName="Zip" />
+          <ScalarProperty Name="AddressType" ColumnName="AddressType" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="SSMA_TimeStamp" ColumnName="SSMA_TimeStamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEmails">
+      <EntityTypeMapping TypeName="FFCNv3Model.tblEmail">
+        <MappingFragment StoreEntitySet="tblEmails">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="CareGiverID" ColumnName="CareGiverID" />
+          <ScalarProperty Name="EMail" ColumnName="EMail" />
+          <ScalarProperty Name="EmailType" ColumnName="EmailType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblInquiryReferralStatus">
+      <EntityTypeMapping TypeName="FFCNv3Model.tblInquiryReferralStatu">
+        <MappingFragment StoreEntitySet="tblInquiryReferralStatus">
+          <ScalarProperty Name="CareGiverID" ColumnName="CareGiverID" />
+          <ScalarProperty Name="InitialInquiry1" ColumnName="InitialInquiry1" />
+          <ScalarProperty Name="DateInitialInquiry" ColumnName="DateInitialInquiry" />
+          <ScalarProperty Name="StaffInitialInquiry" ColumnName="StaffInitialInquiry" />
+          <ScalarProperty Name="DidntPass2" ColumnName="DidntPass2" />
+          <ScalarProperty Name="DateDidntPass" ColumnName="DateDidntPass" />
+          <ScalarProperty Name="StaffDidntPass" ColumnName="StaffDidntPass" />
+          <ScalarProperty Name="LookingJob3" ColumnName="LookingJob3" />
+          <ScalarProperty Name="DateLookingJob" ColumnName="DateLookingJob" />
+          <ScalarProperty Name="StaffLookingJob" ColumnName="StaffLookingJob" />
+          <ScalarProperty Name="OutOfState4" ColumnName="OutOfState4" />
+          <ScalarProperty Name="DateOutOfStat" ColumnName="DateOutOfStat" />
+          <ScalarProperty Name="StaffOutOfStat" ColumnName="StaffOutOfStat" />
+          <ScalarProperty Name="Inactive5" ColumnName="Inactive5" />
+          <ScalarProperty Name="DateInactive" ColumnName="DateInactive" />
+          <ScalarProperty Name="StaffInactive" ColumnName="StaffInactive" />
+          <ScalarProperty Name="Active6" ColumnName="Active6" />
+          <ScalarProperty Name="DateActive" ColumnName="DateActive" />
+          <ScalarProperty Name="StaffActive" ColumnName="StaffActive" />
+          <ScalarProperty Name="AppReceived7" ColumnName="AppReceived7" />
+          <ScalarProperty Name="DateAppReceived" ColumnName="DateAppReceived" />
+          <ScalarProperty Name="StaffAppReceived" ColumnName="StaffAppReceived" />
+          <ScalarProperty Name="AppProgram8" ColumnName="AppProgram8" />
+          <ScalarProperty Name="DateAppProgram" ColumnName="DateAppProgram" />
+          <ScalarProperty Name="StaffAppProgram" ColumnName="StaffAppProgram" />
+          <ScalarProperty Name="AppReferrdProg9" ColumnName="AppReferrdProg9" />
+          <ScalarProperty Name="DateAppReferredProg" ColumnName="DateAppReferredProg" />
+          <ScalarProperty Name="StaffAppReferredProg" ColumnName="StaffAppReferredProg" />
+          <ScalarProperty Name="HomeCert10" ColumnName="HomeCert10" />
+          <ScalarProperty Name="DateHomeCert1" ColumnName="DateHomeCert1" />
+          <ScalarProperty Name="StaffHomeCert" ColumnName="StaffHomeCert" />
+          <ScalarProperty Name="HomeClosed11" ColumnName="HomeClosed11" />
+          <ScalarProperty Name="DateHomeClosed" ColumnName="DateHomeClosed" />
+          <ScalarProperty Name="StaffHomeClosed" ColumnName="StaffHomeClosed" />
+          <ScalarProperty Name="AppOnHold12" ColumnName="AppOnHold12" />
+          <ScalarProperty Name="DateAppOnHold" ColumnName="DateAppOnHold" />
+          <ScalarProperty Name="StaffAppOnHold" ColumnName="StaffAppOnHold" />
+          <ScalarProperty Name="AppReturned13" ColumnName="AppReturned13" />
+          <ScalarProperty Name="DateAppReturned" ColumnName="DateAppReturned" />
+          <ScalarProperty Name="StaffAppReturned" ColumnName="StaffAppReturned" />
+          <ScalarProperty Name="AppReferredtoAnother14" ColumnName="AppReferredtoAnother14" />
+          <ScalarProperty Name="DateAppReferredtoAnother" ColumnName="DateAppReferredtoAnother" />
+          <ScalarProperty Name="StaffAppReferredtoAnother" ColumnName="StaffAppReferredtoAnother" />
+          <ScalarProperty Name="AppRejectedProg15" ColumnName="AppRejectedProg15" />
+          <ScalarProperty Name="DateAppRejectedFFCN" ColumnName="DateAppRejectedFFCN" />
+          <ScalarProperty Name="StaffAppRejectedFFCN" ColumnName="StaffAppRejectedFFCN" />
+          <ScalarProperty Name="AppRejectedFFCN16" ColumnName="AppRejectedFFCN16" />
+          <ScalarProperty Name="DateAppRejectedProg" ColumnName="DateAppRejectedProg" />
+          <ScalarProperty Name="StaffAppRejectedProg" ColumnName="StaffAppRejectedProg" />
+          <ScalarProperty Name="ReasonAppProgram" ColumnName="ReasonAppProgram" />
+          <ScalarProperty Name="ReasonAppReferredProg" ColumnName="ReasonAppReferredProg" />
+          <ScalarProperty Name="ReasonHomeCert" ColumnName="ReasonHomeCert" />
+          <ScalarProperty Name="ReasonHomeClosed" ColumnName="ReasonHomeClosed" />
+          <ScalarProperty Name="ReasonAppOnHold" ColumnName="ReasonAppOnHold" />
+          <ScalarProperty Name="ReasonAppReturned" ColumnName="ReasonAppReturned" />
+          <ScalarProperty Name="ReasonAppReferredAnother" ColumnName="ReasonAppReferredAnother" />
+          <ScalarProperty Name="ReasonAppRejectedProg" ColumnName="ReasonAppRejectedProg" />
+          <ScalarProperty Name="IDIRS" ColumnName="IDIRS" />
+          <ScalarProperty Name="ReasonAppRejectedFFCN" ColumnName="ReasonAppRejectedFFCN" />
+          <ScalarProperty Name="SSMA_TimeStamp" ColumnName="SSMA_TimeStamp" />
+          <ScalarProperty Name="ReasonInactive" ColumnName="ReasonInactive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblPhones">
+      <EntityTypeMapping TypeName="FFCNv3Model.tblPhone">
+        <MappingFragment StoreEntitySet="tblPhones">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="CareGiverID" ColumnName="CareGiverID" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="PhoneType" ColumnName="PhoneType" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="SSMA_TimeStamp" ColumnName="SSMA_TimeStamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblPrimaryCaregiverdatas">
+      <EntityTypeMapping TypeName="FFCNv3Model.tblPrimaryCaregiverdata">
+        <MappingFragment StoreEntitySet="tblPrimaryCaregiverdata">
+          <ScalarProperty Name="CareGiverID" ColumnName="CareGiverID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="BestReached" ColumnName="BestReached" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Certifier" ColumnName="Certifier" />
+          <ScalarProperty Name="Agency" ColumnName="Agency" />
+          <ScalarProperty Name="Neighborhood" ColumnName="Neighborhood" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="LastUpdate" ColumnName="LastUpdate" />
+          <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+          <ScalarProperty Name="PhysicianRel" ColumnName="PhysicianRel" />
+          <ScalarProperty Name="English" ColumnName="English" />
+          <ScalarProperty Name="InternetAccess" ColumnName="InternetAccess" />
+          <ScalarProperty Name="LivesNear" ColumnName="LivesNear" />
+          <ScalarProperty Name="Recovery" ColumnName="Recovery" />
+          <ScalarProperty Name="DHSRelease" ColumnName="DHSRelease" />
+          <ScalarProperty Name="ExtraRoom" ColumnName="ExtraRoom" />
+          <ScalarProperty Name="Income" ColumnName="Income" />
+          <ScalarProperty Name="Over25" ColumnName="Over25" />
+          <ScalarProperty Name="Roommate" ColumnName="Roommate" />
+          <ScalarProperty Name="DUI" ColumnName="DUI" />
+          <ScalarProperty Name="Transportation" ColumnName="Transportation" />
+          <ScalarProperty Name="ParentChild" ColumnName="ParentChild" />
+          <ScalarProperty Name="ChildrenHome" ColumnName="ChildrenHome" />
+          <ScalarProperty Name="Spanish" ColumnName="Spanish" />
+          <ScalarProperty Name="Respite" ColumnName="Respite" />
+          <ScalarProperty Name="ChildrenInHome" ColumnName="ChildrenInHome" />
+          <ScalarProperty Name="Volunteer" ColumnName="Volunteer" />
+          <ScalarProperty Name="Donor" ColumnName="Donor" />
+          <ScalarProperty Name="SSMA_TimeStamp" ColumnName="SSMA_TimeStamp" />
+          <ScalarProperty Name="HeardAbout" ColumnName="HeardAbout" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblRelatedCaregivers">
+      <EntityTypeMapping TypeName="FFCNv3Model.tblRelatedCaregiver">
+        <MappingFragment StoreEntitySet="tblRelatedCaregiver">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Relationship" ColumnName="Relationship" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="CareGiverID" ColumnName="CareGiverID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblTrainingHistoryMains">
+      <EntityTypeMapping TypeName="FFCNv3Model.tblTrainingHistoryMain">
+        <MappingFragment StoreEntitySet="tblTrainingHistoryMain">
+          <ScalarProperty Name="IDTR" ColumnName="IDTR" />
+          <ScalarProperty Name="CareGiverID" ColumnName="CareGiverID" />
+          <ScalarProperty Name="Orientationmtg" ColumnName="Orientationmtg" />
+          <ScalarProperty Name="DateOrient" ColumnName="DateOrient" />
+          <ScalarProperty Name="StaffOrient" ColumnName="StaffOrient" />
+          <ScalarProperty Name="RSVPd" ColumnName="RSVPd" />
+          <ScalarProperty Name="StaffIntro" ColumnName="StaffIntro" />
+          <ScalarProperty Name="IntroFoster" ColumnName="IntroFoster" />
+          <ScalarProperty Name="StaffAttendedIntro" ColumnName="StaffAttendedIntro" />
+          <ScalarProperty Name="RSVPpreservice" ColumnName="RSVPpreservice" />
+          <ScalarProperty Name="StaffPreserviceRSVP" ColumnName="StaffPreserviceRSVP" />
+          <ScalarProperty Name="AttendPreservice1" ColumnName="AttendPreservice1" />
+          <ScalarProperty Name="StaffAttendedPreservice1" ColumnName="StaffAttendedPreservice1" />
+          <ScalarProperty Name="AttendPreservice2" ColumnName="AttendPreservice2" />
+          <ScalarProperty Name="StaffAttendedPreservice2" ColumnName="StaffAttendedPreservice2" />
+          <ScalarProperty Name="OnHold" ColumnName="OnHold" />
+          <ScalarProperty Name="PreFinished8" ColumnName="PreFinished8" />
+          <ScalarProperty Name="DatePreService" ColumnName="DatePreService" />
+          <ScalarProperty Name="StaffPreserviceComp" ColumnName="StaffPreserviceComp" />
+          <ScalarProperty Name="OngoingTraining9" ColumnName="OngoingTraining9" />
+          <ScalarProperty Name="DateOngoing" ColumnName="DateOngoing" />
+          <ScalarProperty Name="StaffOngoing" ColumnName="StaffOngoing" />
+          <ScalarProperty Name="OnetoOneOrientation" ColumnName="OnetoOneOrientation" />
+          <ScalarProperty Name="DateOneOnOne" ColumnName="DateOneOnOne" />
+          <ScalarProperty Name="StaffOneOnOne" ColumnName="StaffOneOnOne" />
+          <ScalarProperty Name="AttendedPrebefore2009" ColumnName="AttendedPrebefore2009" />
+          <ScalarProperty Name="StaffPreservicePrior" ColumnName="StaffPreservicePrior" />
+          <ScalarProperty Name="TrainDateIntro" ColumnName="TrainDateIntro" />
+          <ScalarProperty Name="TrainDateAttendedIntro" ColumnName="TrainDateAttendedIntro" />
+          <ScalarProperty Name="TrainDatePreserviceRSVP" ColumnName="TrainDatePreserviceRSVP" />
+          <ScalarProperty Name="TrainDateAttendedPreservice1" ColumnName="TrainDateAttendedPreservice1" />
+          <ScalarProperty Name="TrainDateAttendedPreservice2" ColumnName="TrainDateAttendedPreservice2" />
+          <ScalarProperty Name="TrainDatePreserviceComp" ColumnName="TrainDatePreserviceComp" />
+          <ScalarProperty Name="TrainDatePreservice2009" ColumnName="TrainDatePreservice2009" />
+          <ScalarProperty Name="SSMA_TimeStamp" ColumnName="SSMA_TimeStamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblUsers">
+      <EntityTypeMapping TypeName="FFCNv3Model.tblUser">
+        <MappingFragment StoreEntitySet="tblUsers">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="First" ColumnName="First" />
+          <ScalarProperty Name="Last" ColumnName="Last" />
+          <ScalarProperty Name="Agency" ColumnName="Agency" />
+          <ScalarProperty Name="UserGroup" ColumnName="UserGroup" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="SSMA_TimeStamp" ColumnName="SSMA_TimeStamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tlkpAddressTypes">
+      <EntityTypeMapping TypeName="FFCNv3Model.tlkpAddressType">
+        <MappingFragment StoreEntitySet="tlkpAddressType">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Descr" ColumnName="Descr" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="SSMA_TimeStamp" ColumnName="SSMA_TimeStamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tlkpAgencies">
+      <EntityTypeMapping TypeName="FFCNv3Model.tlkpAgency">
+        <MappingFragment StoreEntitySet="tlkpAgencies">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Descr" ColumnName="Descr" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="SSMA_TimeStamp" ColumnName="SSMA_TimeStamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tlkpAppOnHolds">
+      <EntityTypeMapping TypeName="FFCNv3Model.tlkpAppOnHold">
+        <MappingFragment StoreEntitySet="tlkpAppOnHold">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Reason" ColumnName="Reason" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tlkpAppRejectedFFCNs">
+      <EntityTypeMapping TypeName="FFCNv3Model.tlkpAppRejectedFFCN">
+        <MappingFragment StoreEntitySet="tlkpAppRejectedFFCN">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Reason" ColumnName="Reason" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tlkpAppRejectedProgs">
+      <EntityTypeMapping TypeName="FFCNv3Model.tlkpAppRejectedProg">
+        <MappingFragment StoreEntitySet="tlkpAppRejectedProg">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Reason" ColumnName="Reason" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tlkpAppReturneds">
+      <EntityTypeMapping TypeName="FFCNv3Model.tlkpAppReturned">
+        <MappingFragment StoreEntitySet="tlkpAppReturned">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Reason" ColumnName="Reason" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tlkpCommunicationTypes">
+      <EntityTypeMapping TypeName="FFCNv3Model.tlkpCommunicationType">
+        <MappingFragment StoreEntitySet="tlkpCommunicationTypes">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Descr" ColumnName="Descr" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="SSMA_TimeStamp" ColumnName="SSMA_TimeStamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tlkpEmailTypes">
+      <EntityTypeMapping TypeName="FFCNv3Model.tlkpEmailType">
+        <MappingFragment StoreEntitySet="tlkpEmailTypes">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Descr" ColumnName="Descr" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tlkpHomeCloseds">
+      <EntityTypeMapping TypeName="FFCNv3Model.tlkpHomeClosed">
+        <MappingFragment StoreEntitySet="tlkpHomeClosed">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Reason" ColumnName="Reason" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tlkpInactives">
+      <EntityTypeMapping TypeName="FFCNv3Model.tlkpInactive">
+        <MappingFragment StoreEntitySet="tlkpInactive">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Action" ColumnName="Action" />
+          <ScalarProperty Name="SSMA_TimeStamp" ColumnName="SSMA_TimeStamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tlkpOngoingTrainings">
+      <EntityTypeMapping TypeName="FFCNv3Model.tlkpOngoingTraining">
+        <MappingFragment StoreEntitySet="tlkpOngoingTraining">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Descr" ColumnName="Descr" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="SSMA_TimeStamp" ColumnName="SSMA_TimeStamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tlkpPhoneTypes">
+      <EntityTypeMapping TypeName="FFCNv3Model.tlkpPhoneType">
+        <MappingFragment StoreEntitySet="tlkpPhoneTypes">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Descr" ColumnName="Descr" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="SSMA_TimeStamp" ColumnName="SSMA_TimeStamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tlkpPrograms">
+      <EntityTypeMapping TypeName="FFCNv3Model.tlkpProgram">
+        <MappingFragment StoreEntitySet="tlkpProgram">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="SSMA_TimeStamp" ColumnName="SSMA_TimeStamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tlkpRecruitmentCategories">
+      <EntityTypeMapping TypeName="FFCNv3Model.tlkpRecruitmentCategory">
+        <MappingFragment StoreEntitySet="tlkpRecruitmentCategories">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Descr" ColumnName="Descr" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="SSMA_TimeStamp" ColumnName="SSMA_TimeStamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tlkpRelationships">
+      <EntityTypeMapping TypeName="FFCNv3Model.tlkpRelationship">
+        <MappingFragment StoreEntitySet="tlkpRelationship">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Descr" ColumnName="Descr" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="SSMA_TimeStamp" ColumnName="SSMA_TimeStamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tlkpTrainAttendIntroes">
+      <EntityTypeMapping TypeName="FFCNv3Model.tlkpTrainAttendIntro">
+        <MappingFragment StoreEntitySet="tlkpTrainAttendIntro">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="TrainDate" ColumnName="TrainDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tlkpTrainIntroRSVPs">
+      <EntityTypeMapping TypeName="FFCNv3Model.tlkpTrainIntroRSVP">
+        <MappingFragment StoreEntitySet="tlkpTrainIntroRSVP">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="TrainDate" ColumnName="TrainDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tlkpTrainPreservice1">
+      <EntityTypeMapping TypeName="FFCNv3Model.tlkpTrainPreservice1">
+        <MappingFragment StoreEntitySet="tlkpTrainPreservice1">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="TrainDate" ColumnName="TrainDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tlkpTrainPreservice2">
+      <EntityTypeMapping TypeName="FFCNv3Model.tlkpTrainPreservice2">
+        <MappingFragment StoreEntitySet="tlkpTrainPreservice2">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="TrainDate" ColumnName="TrainDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tlkpTrainPreservice2009">
+      <EntityTypeMapping TypeName="FFCNv3Model.tlkpTrainPreservice2009">
+        <MappingFragment StoreEntitySet="tlkpTrainPreservice2009">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="TrainDate" ColumnName="TrainDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tlkpTrainPreserviceComps">
+      <EntityTypeMapping TypeName="FFCNv3Model.tlkpTrainPreserviceComp">
+        <MappingFragment StoreEntitySet="tlkpTrainPreserviceComp">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="TrainDate" ColumnName="TrainDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tlkpTrainPreserviceRSVPs">
+      <EntityTypeMapping TypeName="FFCNv3Model.tlkpTrainPreserviceRSVP">
+        <MappingFragment StoreEntitySet="tlkpTrainPreserviceRSVP">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="TrainDate" ColumnName="TrainDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tlkpUserGroups">
+      <EntityTypeMapping TypeName="FFCNv3Model.tlkpUserGroup">
+        <MappingFragment StoreEntitySet="tlkpUserGroups">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Descr" ColumnName="Descr" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="SSMA_TimeStamp" ColumnName="SSMA_TimeStamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCommunications">
+      <EntityTypeMapping TypeName="FFCNv3Model.tblCommunication">
+        <MappingFragment StoreEntitySet="tblCommunications">
+          <ScalarProperty Name="Last" ColumnName="Last" />
+          <ScalarProperty Name="First" ColumnName="First" />
+          <ScalarProperty Name="SSMA_TimeStamp" ColumnName="SSMA_TimeStamp" />
+          <ScalarProperty Name="TypeDescr" ColumnName="TypeDescr" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="Userbak" ColumnName="Userbak" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="CommType" ColumnName="CommType" />
+          <ScalarProperty Name="CommnDate" ColumnName="CommnDate" />
+          <ScalarProperty Name="CareGiverID" ColumnName="CareGiverID" />
+          <ScalarProperty Name="Agency" ColumnName="Agency" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

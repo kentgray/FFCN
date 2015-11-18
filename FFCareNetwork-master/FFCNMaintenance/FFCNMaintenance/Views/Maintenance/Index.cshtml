@@ -1,0 +1,31 @@
+﻿@model IEnumerable<FFCNMaintenance.Models.ApplicationUser>
+
+@{
+    ViewBag.Title = "Index";
+}
+<p>
+    @Html.ActionLink("Change Your Password", "ResetPassword", "Account")
+</p>
+
+<h2>This should be page one of our 4 maintenance pages</h2>
+
+<h4>Here is the drop down list of names for the drop down staff member selection boxes</h4>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UserName)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserName)
+            </td>
+        </tr>
+    }
+
+</table>

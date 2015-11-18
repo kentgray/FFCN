@@ -1,0 +1,63 @@
+﻿@model FFCNMaintenance.Models.MasterModel
+
+@{
+    ViewBag.Title = "Create";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+
+    <div class="row">
+        <div class="col-xs-6">
+            <h3>Primary Contact</h3>
+            <section>
+                @{Html.RenderPartial("_PrimaryPartialView");}<br />
+                @{Html.RenderPartial("_PhonePartialView");}<br />
+
+                @{Html.RenderPartial("_EmailPartialView");}<br />
+
+                @{Html.RenderPartial("_AddressPartialView");}
+                
+
+            </section><!-- / #primary-contact -->
+
+      
+        </div><!-- / .col-xs-6 left col of page-->
+    </div><!-- /.row entire page-->
+
+
+    @*@foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id=item.mandatoryKey }) |
+                    @Html.ActionLink("Details", "Details", new { id=item.mandatoryKey }) |
+                    @Html.ActionLink("Delete", "Delete", new { id=item.mandatoryKey })
+                </td>
+            </tr>
+        }*@
+
+
+    @*@{Html.RenderPartial("_RelatedPartial", Model.Related);}*@
+    @*@{Html.RenderPartial("_TrainingHistoryPartial", Model.Related);} //Need to create _TrainingHistoryPartial view*@
+    @*@{Html.RenderPartial("_RelatedPartial", Model.Related);} //Need to create _RelatedPartial view*@
+
+
+
+
+
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+    </div>
+
+
+}
+<div>
+    <a href="../SelectCaregiver" style=" margin-right: 20px; margin-top:10px;" class="btn btn-default">Back to Search</a>
+</div>
+

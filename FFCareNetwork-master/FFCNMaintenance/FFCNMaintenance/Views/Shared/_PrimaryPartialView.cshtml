@@ -1,0 +1,45 @@
+﻿@model FFCNMaintenance.Models.MasterModel
+
+
+@{if (Model != null)
+    {
+        var model = Model.Primary;
+        <div>
+            @Html.Hidden("masterModel.Primary[0].CareGiverID", model[0].CareGiverID)
+            <label class="label-fixed-width">First:</label>
+            @Html.TextBox("masterModel.Primary[0].FirstName", model[0].FirstName, null, new { style = "width: 600px" })
+            <br />
+            <label class="label-fixed-width">Last:</label>
+            @Html.TextBox("masterModel.Primary[0].LastName", model[0].LastName, null, new { style = "width: 600px" })
+            <br />
+
+
+
+            @*<label>Phone Type</label>
+                @Html.DropDownList("PhoneType", null, item.PhoneType ,new { @class = "form-control-inline dropdown", form-control-inline is custom css in bootstrap
+                @*style = "width: 100px"})*@
+        </div>
+    }
+    else
+    {
+        <div>
+
+            <label class="label-fixed-width">First:</label>
+            @Html.TextBox("masterModel.Primary[0].FirstName", null, new { style = "width: 600px" })
+            <br />
+            <label class="label-fixed-width">Last:</label>
+            @Html.TextBox("masterModel.Primary[0].LastName", null, new { style = "width: 600px" })
+            <br />
+
+
+
+            @*<label>Phone Type</label>
+                @Html.DropDownList("PhoneType", null, item.PhoneType ,new { @class = "form-control-inline dropdown", form-control-inline is custom css in bootstrap
+                @*style = "width: 100px"})*@
+        </div>
+    }
+}
+
+
+
+

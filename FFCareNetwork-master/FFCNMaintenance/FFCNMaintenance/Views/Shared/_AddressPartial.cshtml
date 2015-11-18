@@ -1,0 +1,39 @@
+﻿@model IList<FFCNMaintenance.Models.tblAddress>
+ 
+
+@{ foreach (var item in Model)
+ {
+       ViewBag.AddressType = item.AddressTypeSelectList;
+     {
+        <div>
+            <label class="label-fixed-width">Address:</label>
+            @Html.TextBox("Address", item.Street1, new { style = "width: 600px" })
+            @Html.DropDownList("AddressType", null, new
+                   {
+                       @class = "form-control-inline dropdown",
+                       style = "width: 100px"
+                   })
+            <br />
+            <label class="label-fixed-width">Line 2:</label>
+            @Html.TextBox("Address", item.Street2, new { style = "width: 600px" })<br />
+            <label class="label-fixed-width">City:</label>
+            @Html.TextBox("City", item.City, new { style = "width: 165px" })
+            <label>State:</label>
+            @Html.TextBox("State", item.State, new { style = "width: 30px" })
+            <label>Zip Code: </label>
+            @Html.TextBox("ZipCode", item.Zip, new { style = "width: 50px" })
+        </div>
+     }
+
+ }
+
+
+}
+    
+
+
+
+
+
+
+<h5>Here ends our partial view</h5>

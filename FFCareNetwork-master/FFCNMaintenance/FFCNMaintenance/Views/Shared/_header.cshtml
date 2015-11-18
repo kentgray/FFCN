@@ -1,0 +1,15 @@
+﻿
+
+@model FFCNMaintenance.Models.MasterModel
+
+@{
+    if (Model != null)
+    {
+        <h1>@Model.Primary[0].FirstName  @Model.Primary[0].LastName</h1>
+    }
+    else
+    {
+        <h1>Welcome. Please Select a Caregiver.</h1>
+    }
+    
+}

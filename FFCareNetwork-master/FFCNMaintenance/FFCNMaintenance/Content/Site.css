@@ -1,0 +1,137 @@
+﻿body {
+    padding-top: 0px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.label-fixed-width{
+    width: 75px;
+}
+.label-fixed-width-wide{
+    width: 120px;
+}
+header h1 {
+	background-color: #77a13f;
+	/*border-radius: 5px;*/
+    padding: 10px;
+	color:white;
+    width:1110px;
+    
+   
+}
+
+
+h3, h4 {
+	color: #77a13f;
+}
+
+section {
+	border: 3px solid #77a13f;
+	border-radius: 15px;
+	background-color: #F6F6F6;
+    padding: 20px; 
+}
+
+label {
+	font-size:1.2em;
+}
+
+.input-group {
+	margin:20px 0px;
+}
+
+.dropdown {
+    height:23px;
+    padding:0;
+    margin:0;
+}
+
+#check-all {
+	float:right;
+}
+
+table, th, td{
+    border:solid 1px #999999;
+    padding: 5px;
+}
+
+#comm-labels {
+	border: 3px solid #77a13f;
+	border-bottom-width:0px;
+	border-radius:15px 15px 0px 0px;
+	background-color: #E5E5E5;
+	padding:10px;
+}
+
+#comm-data {
+	border-top-width:0;
+	border-top-left-radius:0px;
+	border-top-right-radius:0px;
+
+}
+
+.scroll-partial-address {
+    overflow: auto;
+    overflow-x: hidden;
+    max-height:180px;
+
+}
+
+.scroll-partial-phone {
+    overflow: auto;
+    overflow-x: hidden;
+    max-height:48px;
+
+}
+
+.scroll-partial-email {
+    overflow: auto;
+    overflow-x: hidden;
+    max-height:72px;
+
+}
+.scroll-partial-related {
+    overflow: auto;
+    overflow-x: hidden;
+    max-height: 130px;
+
+}
+.new-field{
+    color: #77a13f;
+}
+
+.container-non-responsive {
+  /* Margin/padding copied from Bootstrap */
+  margin-left: 10px;
+
+  padding-left: 5px;
+  padding-right: 5px;
+
+  /* Set width to your desired site width */
+  width: 1100px;
+ 
+  overflow:auto;
+}
+
+#primary-contact{
+    overflow-x:auto
+}

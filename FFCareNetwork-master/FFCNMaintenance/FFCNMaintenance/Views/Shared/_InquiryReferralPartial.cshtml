@@ -1,0 +1,473 @@
+﻿@model FFCNMaintenance.Models.MasterModel
+@Scripts.Render("~/bundles/jqueryui")
+<script type="text/javascript">
+    $(function () { // will trigger when the document is ready
+        $(".datepicker").datepicker(); //Initialise any date pickers
+    });
+</script>
+@{SelectList userSelectList = ViewBag.UserList;}
+@{SelectList vbinactive = ViewBag.Inactive;}
+@{SelectList vbhomeclose = ViewBag.HomeClosed;}
+@{SelectList vbapponhold = ViewBag.AppOnHold;}
+@{SelectList vbappreturned = ViewBag.AppReturned;}
+@{SelectList vbapprejectFFCN = ViewBag.AppRejectFFCN;}
+@{SelectList vbapprejectprog = ViewBag.AppRejectProg;}
+@{SelectList vbprogram = ViewBag.Program;}
+
+
+<!-- partial view can contain this code. The "row" breaks the section into 2 columns -->
+@if (Model != null)
+{
+    <section id="training-history">
+    <style>
+        .space_down{ height: 44px;}
+        .space_drop {
+            margin-top: 29px;
+        }
+        .space_sec {
+            margin-top:28px;
+        }
+    </style>
+        <div class="row">
+            <!--column names only-->
+            <div class="col-xs-4">
+            </div>
+            <div class="col-xs-2">
+                <h4>Date</h4>
+            </div>
+            <div class="col-xs-2">
+                <h4>Staff</h4>
+            </div>
+            <div class="col-xs-4">
+                <h4>Reason/Program</h4>
+            </div>
+        </div><!--/.row -->
+        <div class="row">
+            <div class="col-xs-4">
+                <!-- #Training History Checkbox Column -->
+                @Html.Hidden("masterModel.InquiryReferral[0].IDIRS", Model.InquiryReferral[0].IDIRS)
+                @Html.Hidden("masterModel.InquiryReferral[0].CareGiverID", Model.InquiryReferral[0].CareGiverID)
+
+                @Html.CheckBox("masterModel.InquiryReferral[0].InitialInquiry1", Model.InquiryReferral[0].InitialInquiry1)<label class="space_down">&nbsp; Initial Inquiry</label>
+                <br />
+                @Html.CheckBox("masterModel.InquiryReferral[0].DidntPass2", Model.InquiryReferral[0].DidntPass2)<label class="space_down">&nbsp; Didn't Pass Pre-Screening</label>
+                <br />
+                @Html.CheckBox("masterModel.InquiryReferral[0].LookingJob3", Model.InquiryReferral[0].LookingJob3)<label class="space_down">&nbsp; Looking for Job</label>
+                <br />
+                @Html.CheckBox("masterModel.InquiryReferral[0].OutOfState4", Model.InquiryReferral[0].OutOfState4)<label class="space_down">&nbsp; Out of State</label>
+                <br />
+                @Html.CheckBox("masterModel.InquiryReferral[0].Inactive5", Model.InquiryReferral[0].Inactive5)<label class="space_down">&nbsp; Inactive</label>
+                <br />
+                @Html.CheckBox("masterModel.InquiryReferral[0].Active6", Model.InquiryReferral[0].Active6)<label class="space_down">&nbsp; Active Contact/no longer inq.</label>
+                <br />
+                @Html.CheckBox("masterModel.InquiryReferral[0].AppReceived7", Model.InquiryReferral[0].AppReceived7)<label class="space_down">&nbsp; Application Received</label>
+                <br />
+                @Html.CheckBox("masterModel.InquiryReferral[0].AppProgram8", Model.InquiryReferral[0].AppProgram8)<label class="space_down">&nbsp; App Received Directly from Program</label>
+                <br />
+                @Html.CheckBox("masterModel.InquiryReferral[0].AppReferrdProg9", Model.InquiryReferral[0].AppReferrdProg9)<label class="space_down">&nbsp; App Referred to Program</label>
+                <br />
+                @Html.CheckBox("masterModel.InquiryReferral[0].HomeCert10", Model.InquiryReferral[0].HomeCert10)<label class="space_down">&nbsp; Home Certified by Program</label>
+                <br />
+                @Html.CheckBox("masterModel.InquiryReferral[0].HomeClosed11", Model.InquiryReferral[0].HomeClosed11)<label class="space_down">&nbsp; Home Closed by Program</label>
+                <br />
+                @Html.CheckBox("masterModel.InquiryReferral[0].AppOnHold12", Model.InquiryReferral[0].AppOnHold12)<label class="space_down">&nbsp; App on Hold by Program</label>
+                <br />
+                @Html.CheckBox("masterModel.InquiryReferral[0].AppReturned13", Model.InquiryReferral[0].AppReturned13)<label class="space_down">&nbsp; App Returned from Program</label>
+                <br />
+                @Html.CheckBox("masterModel.InquiryReferral[0].AppReferredtoAother14", Model.InquiryReferral[0].AppReferredtoAnother14)<label class="space_down">&nbsp; App Referred to another Program</label>
+                <br />
+                @Html.CheckBox("masterModel.InquiryReferral[0].AppRejectedFFCN16", Model.InquiryReferral[0].AppRejectedFFCN16)<label class="space_down">&nbsp; App not Referred by FFCN</label>
+                <br />
+                @Html.CheckBox("masterModel.InquiryReferral[0].AppRejectedProg15", Model.InquiryReferral[0].AppRejectedProg15)<label class="space_down">&nbsp; Rejected - Do Not Contact</label>
+                <br />
+            </div><!-- / .col-xs-4 checkboxes -->
+            <div class="col-xs-2" id="training-date">
+                @Html.TextBox("masterModel.InquiryReferral[0].DateInitialInquiry", Model.InquiryReferral[0].DateInitialInquiry, new { @class = "form-control datepicker " })
+                <br />
+                @Html.TextBox("masterModel.InquiryReferral[0].DateDidntPass", Model.InquiryReferral[0].DateDidntPass, new { @class = "form-control datepicker " })
+                <br />
+                @Html.TextBox("masterModel.InquiryReferral[0].DateLookingJob", Model.InquiryReferral[0].DateLookingJob, new { @class = "form-control datepicker" })
+                <br />
+                @Html.TextBox("masterModel.InquiryReferral[0].DateOutOfStat", Model.InquiryReferral[0].DateOutOfStat, new { @class = "form-control datepicker " })
+                <br />
+                @Html.TextBox("masterModel.InquiryReferral[0].DateInactive", Model.InquiryReferral[0].DateInactive, new { @class = "form-control datepicker " })
+                <br />
+                @Html.TextBox("masterModel.InquiryReferral[0].DateActive", Model.InquiryReferral[0].DateActive, new { @class = "form-control datepicker " })
+                <br />
+                @Html.TextBox("masterModel.InquiryReferral[0].DateAppReceived", Model.InquiryReferral[0].DateAppReceived, new { @class = "form-control datepicker " })
+                <br />
+                @Html.TextBox("masterModel.InquiryReferral[0].DateAppProgram", Model.InquiryReferral[0].DateAppProgram, new { @class = "form-control datepicker " })
+                <br />
+                @Html.TextBox("masterModel.InquiryReferral[0].DateAppReferredProg", Model.InquiryReferral[0].DateAppReferredProg, new { @class = "form-control datepicker " })
+                <br />
+                @Html.TextBox("masterModel.InquiryReferral[0].DateHomeCert", Model.InquiryReferral[0].DateHomeCert1, new { @class = "form-control datepicker " })
+                <br />
+                @Html.TextBox("masterModel.InquiryReferral[0].DateHomeClosed", Model.InquiryReferral[0].DateHomeClosed, new { @class = "form-control datepicker " })
+                <br />
+                @Html.TextBox("masterModel.InquiryReferral[0].DateAppOnHold", Model.InquiryReferral[0].DateAppOnHold, new { @class = "form-control datepicker " })
+                <br />
+                @Html.TextBox("masterModel.InquiryReferral[0].DateAppReturned", Model.InquiryReferral[0].DateAppReturned, new { @class = "form-control datepicker " })
+                <br />
+                @Html.TextBox("masterModel.InquiryReferral[0].DateAppReferredtoAnother", Model.InquiryReferral[0].DateAppReferredtoAnother, new { @class = "form-control datepicker " })
+                <br />
+                @Html.TextBox("masterModel.InquiryReferral[0].DateAppRejectedFFCN", Model.InquiryReferral[0].DateAppRejectedFFCN, new { @class = "form-control datepicker " })
+                <br />
+                @Html.TextBox("masterModel.InquiryReferral[0].DateAppRejectedProg", Model.InquiryReferral[0].DateAppRejectedProg, new { @class = "form-control datepicker " })
+                <br />
+                <!--insert the rest of the dates here-->
+            </div><!--/#training-date -->
+            <div class="col-xs-2" id="training-staff">
+
+                @Html.DropDownList("masterModel.InquiryReferral[0].StaffInitialInquiry", Model.InquiryReferral[0].UserSelectList1, "--------", new
+           {
+               @class = "form-control-inline dropdown"
+           })
+                <br />
+                @Html.DropDownList("masterModel.InquiryReferral[0].StaffDidntPass", Model.InquiryReferral[0].UserSelectList2, "--------", new
+           {
+               @class = "form-control-inline dropdown space_drop"
+           })
+                <br />
+                @Html.DropDownList("masterModel.InquiryReferral[0].StaffLookingJob", Model.InquiryReferral[0].UserSelectList3, "--------", new
+           {
+               @class = "form-control-inline dropdown space_drop"
+           })
+                <br />
+                @Html.DropDownList("masterModel.InquiryReferral[0].StaffOutOfStat", Model.InquiryReferral[0].UserSelectList4, "--------", new
+           {
+               @class = "form-control-inline dropdown space_drop"
+           })
+                <br />
+                @Html.DropDownList("masterModel.InquiryReferral[0].StaffInactive", Model.InquiryReferral[0].UserSelectList5, "--------", new
+           {
+               @class = "form-control-inline dropdown space_drop"
+           })
+                <br />
+                @Html.DropDownList("masterModel.InquiryReferral[0].StaffActive", Model.InquiryReferral[0].UserSelectList6, "--------", new
+           {
+               @class = "form-control-inline dropdown space_drop"
+           })
+                <br />
+                @Html.DropDownList("masterModel.InquiryReferral[0].StaffAppReceived", Model.InquiryReferral[0].UserSelectList7, "--------", new
+           {
+               @class = "form-control-inline dropdown space_drop"
+           })
+                <br />
+                @Html.DropDownList("masterModel.InquiryReferral[0].StaffAppProgram", Model.InquiryReferral[0].UserSelectList8, "--------", new
+           {
+               @class = "form-control-inline dropdown space_drop"
+           })
+                <br />
+                @Html.DropDownList("masterModel.InquiryReferral[0].StaffAppReferredProg", Model.InquiryReferral[0].UserSelectList9, "--------", new
+           {
+               @class = "form-control-inline dropdown space_drop"
+           })
+                <br />
+                @Html.DropDownList("masterModel.InquiryReferral[0].StaffHomeCert", Model.InquiryReferral[0].UserSelectList10, "--------", new
+           {
+               @class = "form-control-inline dropdown space_drop"
+           })
+                <br />
+                @Html.DropDownList("masterModel.InquiryReferral[0].StaffHomeClosed", Model.InquiryReferral[0].UserSelectList11, "--------", new
+           {
+               @class = "form-control-inline dropdown space_drop"
+           })
+                <br />
+                @Html.DropDownList("masterModel.InquiryReferral[0].StaffAppOnHold", Model.InquiryReferral[0].UserSelectList12, "--------", new
+           {
+               @class = "form-control-inline dropdown space_drop"
+           })
+                <br />
+                @Html.DropDownList("masterModel.InquiryReferral[0].StaffAppReturned", Model.InquiryReferral[0].UserSelectList13, "--------", new
+           {
+               @class = "form-control-inline dropdown space_drop"
+           })
+                <br />
+                @Html.DropDownList("masterModel.InquiryReferral[0].StaffAppReferredtoAnother", Model.InquiryReferral[0].UserSelectList14, "--------", new
+           {
+               @class = "form-control-inline dropdown space_drop"
+           })
+                <br />
+                @Html.DropDownList("masterModel.InquiryReferral[0].StaffAppRejectedFFCN", Model.InquiryReferral[0].UserSelectList15, "--------", new
+           {
+               @class = "form-control-inline dropdown space_drop"
+           })
+                <br />
+                @Html.DropDownList("masterModel.InquiryReferral[0].StaffAppRejectedProg", Model.InquiryReferral[0].UserSelectList16, "--------", new
+           {
+               @class = "form-control-inline dropdown space_drop"
+           })
+                <!-- the staff dropboxes go here-->
+            </div><!--/#training-staff -->
+            <div class="col-xs-4" id="training-dates">
+                <!-- the training dates drop downs goes here-->
+                <label>Reason &nbsp;</label>
+                @Html.DropDownList("masterModel.InquiryReferral[0].ReasonInactive", Model.InquiryReferral[0].ReasonInactiveList, "--------", new
+           {
+               @class = "form-control-inline dropdown",
+               @style = "margin-top:208px;"
+           })
+                <br />
+                <label>Program &nbsp;</label>
+                @Html.DropDownList("masterModel.InquiryReferral[0].ReasonAppProgram", Model.InquiryReferral[0].Program1, "--------", new
+           {
+               @class = "form-control-inline dropdown space_sec",
+               @style = "margin-top:132px;"
+           })
+                <br />
+                <label>Program &nbsp;</label>
+                @Html.DropDownList("masterModel.InquiryReferral[0].ReasonAppReferredProg", Model.InquiryReferral[0].Program2, "--------", new
+           {
+               @class = "form-control-inline dropdown space_sec"
+           })
+                <br />
+                <label>Program &nbsp;</label>
+                @Html.DropDownList("masterModel.InquiryReferral[0].ReasonHomeCert", Model.InquiryReferral[0].Program3, "--------", new
+           {
+               @class = "form-control-inline dropdown space_sec"
+           })
+                <br />
+                <label>Reason &nbsp;</label>
+                @Html.DropDownList("masterModel.InquiryReferral[0].ReasonHomeClosed", Model.InquiryReferral[0].ReasonHomeClosedList, "--------", new
+           {
+               @class = "form-control-inline dropdown space_sec"
+           })
+                <br />
+                <label>Reason &nbsp;</label>
+                @Html.DropDownList("masterModel.InquiryReferral[0].ReasonAppOnHold", Model.InquiryReferral[0].ReasonAppOnHoldList, "--------", new
+           {
+               @class = "form-control-inline dropdown space_sec"
+           })
+                <br />
+                <label>Reason &nbsp;</label>
+                @Html.DropDownList("masterModel.InquiryReferral[0].ReasonAppReturned", Model.InquiryReferral[0].ReasonAppReturnedList, "--------", new
+           {
+               @class = "form-control-inline dropdown space_sec"
+           })
+                <br />
+                <label>Program &nbsp;</label>
+                @Html.DropDownList("masterModel.InquiryReferral[0].ReasonAppReferredAnother", Model.InquiryReferral[0].Program4, "--------", new
+           {
+               @class = "form-control-inline dropdown space_sec"
+           })
+                <br />
+                <label>Reason &nbsp;</label>
+                @Html.DropDownList("masterModel.InquiryReferral[0].ReasonAppRejectedFFCN", Model.InquiryReferral[0].ReasonAppRejectedFFCNList, "--------", new
+           {
+               @class = "form-control-inline dropdown space_sec"
+           })
+                <br />
+                <label>Reason &nbsp;</label>
+                @Html.DropDownList("masterModel.InquiryReferral[0].ReasonAppRejectedProg", Model.InquiryReferral[0].ReasonAppRejectedProgList, "--------", new
+           {
+               @class = "form-control-inline dropdown space_sec"
+           })
+            </div><!--/#training-dates -->
+        </div><!-- / .row -->
+
+    </section><!-- / #training-history-->
+}
+else
+{
+    <section id="training-history">
+        <div class="row">
+            <!--column names only-->
+            <div class="col-xs-4">
+            </div>
+            <div class="col-xs-2">
+                <h4>Date</h4>
+            </div>
+            <div class="col-xs-2">
+                <h4>Staff</h4>
+            </div>
+            <div class="col-xs-4">
+                <h4>Reason/Program</h4>
+            </div>
+        </div><!--/.row -->
+        <div class="row">
+            <div class="col-xs-4">
+                <!-- #Training History Checkbox Column -->
+                @Html.CheckBox("masterModel.InquiryReferral[0].InitialInquiry1")<label>&nbsp; Intial Inquiry</label>
+                <br />
+                @Html.CheckBox("masterModel.InquiryReferral[0].DidntPass2")<label>&nbsp; Didn't Pass Pre-screening</label>
+                <br />
+                @Html.CheckBox("masterModel.InquiryReferral[0].LookingJob3")<label>&nbsp; Looking for Job</label>
+                <br />
+                @Html.CheckBox("masterModel.InquiryReferral[0].OutOfState4")<label>&nbsp; Out of State</label>
+                <br />
+                @Html.CheckBox("masterModel.InquiryReferral[0].Inactive5")<label>&nbsp; Inactive</label>
+                <br />
+                @Html.CheckBox("masterModel.InquiryReferral[0].Active6")<label>&nbsp; Active Contact/no longer inq.</label>
+                <br />
+                @Html.CheckBox("masterModel.InquiryReferral[0].AppReceived7")<label>&nbsp; Application Received</label>
+                <br />
+                @Html.CheckBox("masterModel.InquiryReferral[0].AppProgram8")<label>&nbsp; App Received Directly from Program</label>
+                <br />
+                @Html.CheckBox("masterModel.InquiryReferral[0].AppReferrdProg9")<label>&nbsp; App Referred to Program</label>
+                <br />
+                @Html.CheckBox("masterModel.InquiryReferral[0].HomeCert10")<label>&nbsp; Home Certified by Program</label>
+                <br />
+                @Html.CheckBox("masterModel.InquiryReferral[0].HomeClosed11")<label>&nbsp; Home Closed by Program</label>
+                <br />
+                @Html.CheckBox("masterModel.InquiryReferral[0].AppOnHold12")<label>&nbsp; App on Hold by Program</label>
+                <br />
+                @Html.CheckBox("masterModel.InquiryReferral[0].AppReturned13")<label>&nbsp; App Retrurned from Program</label>
+                <br />
+                @Html.CheckBox("masterModel.InquiryReferral[0].AppReferredtoAother14")<label>&nbsp; App Referred to another Program</label>
+                <br />
+                @Html.CheckBox("masterModel.InquiryReferral[0].AppRejected15")<label>&nbsp; App not Referred</label>
+                <br />
+                @Html.CheckBox("masterModel.InquiryReferral[0].AppRejectedFFCN16")<label>&nbsp; Rejected - Do Not Contact</label>
+                <br />
+            </div><!-- / .col-xs-4 checkboxes -->
+            <div class="col-xs-2" id="training-date">
+                <h4>Date</h4>
+                @Html.TextBox("masterModel.InquiryReferral[0].DateInitialInquiry", null, new { @class = "form-control datepicker" })
+                <br />
+                @Html.TextBox("masterModel.InquiryReferral[0].DateDidntPass", null, new { @class = "form-control datepicker" })
+                <br />
+                @Html.TextBox("masterModel.InquiryReferral[0].DateLookingJob", null, new { @class = "form-control datepicker" })
+                <br />
+                @Html.TextBox("masterModel.InquiryReferral[0].DateOutOfStat", null, new { @class = "form-control datepicker" })
+                <br />
+                @Html.TextBox("masterModel.InquiryReferral[0].DateInactive", null, new { @class = "form-control datepicker" })
+                <br />
+                @Html.TextBox("masterModel.InquiryReferral[0].DateActive", null, new { @class = "form-control datepicker" })
+                <br />
+                @Html.TextBox("masterModel.InquiryReferral[0].DateAppReceived", null, new { @class = "form-control datepicker" })
+                <br />
+                @Html.TextBox("masterModel.InquiryReferral[0].DateAppProgram", null, new { @class = "form-control datepicker" })
+                <br />
+                @Html.TextBox("masterModel.InquiryReferral[0].DateAppReferredProg", null, new { @class = "form-control datepicker" })
+                <br />
+                @Html.TextBox("masterModel.InquiryReferral[0].DateHomeCert1", null, new { @class = "form-control datepicker" })
+                <br />
+                @Html.TextBox("masterModel.InquiryReferral[0].DateHomeClosed", null, new { @class = "form-control datepicker" })
+                <br />
+                @Html.TextBox("masterModel.InquiryReferral[0].DateAppOnHold", null, new { @class = "form-control datepicker" })
+                <br />
+                @Html.TextBox("masterModel.InquiryReferral[0].DateAppReturned", null, new { @class = "form-control datepicker" })
+                <br />
+                @Html.TextBox("masterModel.InquiryReferral[0].DateAppReferredtoAnother", null, new { @class = "form-control datepicker" })
+                <br />
+                @Html.TextBox("masterModel.InquiryReferral[0].DateAppRejectedProg", null, new { @class = "form-control datepicker" })
+                <br />
+                @Html.TextBox("masterModel.InquiryReferral[0].DateAppRejectedFFCN", null, new { @class = "form-control datepicker" })
+                <br />
+                <!--insert the rest of the dates here-->
+            </div><!--/#training-date -->
+            <div class="col-xs-2" id="training-staff">
+                <!-- the staff dropboxes go here-->
+                @Html.DropDownList("masterModel.InquiryReferral[0].StaffOrient", userSelectList, "--------", new
+           {
+               @class = "form-control-inline dropdown"
+           })
+                <br />
+                @Html.DropDownList("masterModel.InquiryReferral[0].StaffOneOnOne", userSelectList, "--------", new
+           {
+               @class = "form-control-inline dropdown"
+           })
+                <br />
+                @Html.DropDownList("masterModel.InquiryReferral[0].StaffIntro", userSelectList, "--------", new
+           {
+               @class = "form-control-inline dropdown"
+           })
+                <br />
+                @Html.DropDownList("masterModel.InquiryReferral[0].StaffAttendedIntro", userSelectList, "--------", new
+           {
+               @class = "form-control-inline dropdown"
+           })
+                <br />
+                @Html.DropDownList("masterModel.InquiryReferral[0].StaffPreserviceRSVP", userSelectList, "--------", new
+           {
+               @class = "form-control-inline dropdown"
+           })
+                <br />
+                @Html.DropDownList("masterModel.InquiryReferral[0].StaffAttendedPreservice1", userSelectList, "--------", new
+           {
+               @class = "form-control-inline dropdown"
+           })
+                <br />
+                @Html.DropDownList("masterModel.InquiryReferral[0].StaffAttendedPreservice2", userSelectList, "--------", new
+           {
+               @class = "form-control-inline dropdown"
+           })
+                <br />
+                @Html.DropDownList("masterModel.InquiryReferral[0].StaffPreserviceComp", userSelectList, "--------", new
+           {
+               @class = "form-control-inline dropdown"
+           })
+                <br />
+                @Html.DropDownList("masterModel.InquiryReferral[0].StaffPreservicePrior", userSelectList, "--------", new
+           {
+               @class = "form-control-inline dropdown"
+           })
+            </div><!--/#training-staff -->
+            <div class="col-xs-4" id="training-dates">
+                <!-- the training dates drop downs goes here-->
+                <label>Reason &nbsp;</label>
+                @Html.DropDownList("masterModel.InquiryReferral[0].ReasonInactive", vbinactive, "--------", new
+           {
+               @class = "form-control-inline dropdown"
+           })
+                <br />
+                <label>Program &nbsp;</label>
+                @*@Html.DropDownList("masterModel.InquiryReferral[0].ReasonAppProgram", vbprogram, "--------", new
+                    {
+                        @class = "form-control-inline dropdown"
+                    })*@
+                <br />
+                <label>Program &nbsp;</label>
+                @*@Html.DropDownList("masterModel.InquiryReferral[0].ReasonAppReferredProg", vbprogram, "--------", new
+                    {
+                        @class = "form-control-inline dropdown"
+                    })*@
+                <br />
+                <label>Program &nbsp;</label>
+                @*@Html.DropDownList("masterModel.InquiryReferral[0].ReasonHomeCert", vbprogram, "--------", new
+                    {
+                        @class = "form-control-inline dropdown"
+                    })*@
+                <br />
+                <label>Reason &nbsp;</label>
+                @Html.DropDownList("masterModel.InquiryReferral[0].ReasonHomeClosed", vbhomeclose, "--------", new
+           {
+               @class = "form-control-inline dropdown"
+           })
+                <br />
+                <label>Reason &nbsp;</label>
+                @Html.DropDownList("masterModel.InquiryReferral[0].ReasonAppOnHold", vbapponhold, "--------", new
+           {
+               @class = "form-control-inline dropdown"
+           })
+                <br />
+                <label>Reason &nbsp;</label>
+                @Html.DropDownList("masterModel.InquiryReferral[0].ReasonAppReturned", vbappreturned, "--------", new
+           {
+               @class = "form-control-inline dropdown"
+           })
+                <br />
+                <label>Program &nbsp;</label>
+                @*@Html.DropDownList("masterModel.InquiryReferral[0].ReasonAppReferredAnother", vbprogram, "--------", new
+                    {
+                        @class = "form-control-inline dropdown"
+                    })*@
+                <br />
+                <label>Reason &nbsp;</label>
+                @Html.DropDownList("masterModel.InquiryReferral[0].ReasonAppRejectedFFCN", vbapprejectFFCN, "--------", new
+           {
+               @class = "form-control-inline dropdown"
+           })
+                <br />
+                <label>Reason &nbsp;</label>
+                @Html.DropDownList("masterModel.InquiryReferral[0].ReasonAppRejectedProg", vbapprejectprog, "--------", new
+           {
+               @class = "form-control-inline dropdown"
+           })
+            </div><!--/#training-dates -->
+        </div><!-- / .row -->
+
+    </section><!-- / #training-history-->
+}
+
+

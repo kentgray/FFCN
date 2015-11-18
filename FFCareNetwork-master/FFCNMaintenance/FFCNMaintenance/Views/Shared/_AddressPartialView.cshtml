@@ -1,0 +1,92 @@
+﻿@model FFCNMaintenance.Models.MasterModel
+
+@{SelectList addresstypes = ViewBag.AddressType;}
+
+@if (Model == null)
+{
+
+    <div class="scroll-partial-address">
+        <label class="label-fixed-width">Address:</label>
+        @Html.TextBox("masterModel.Address[0].Street1", null, new { style = "width: 600px" })
+        @Html.DropDownList("masterModel.Address[0].AddressType", addresstypes, "--------", new
+   {
+       @class = "form-control-inline dropdown",
+       style = "width: 100px;"
+   })
+        <br />
+        <label class="label-fixed-width">Line 2:</label>
+        @Html.TextBox("masterModel.Address[0].Street2", null, new { style = "width: 600px" })<br />
+        <label class="label-fixed-width">City:</label>
+        @Html.TextBox("masterModel.Address[0].City", null, new { style = "width: 165px" })
+        <label>State:</label>
+        @Html.TextBox("masterModel.Address[0].State", null, new { style = "width: 30px" })
+        <label>Zip Code: </label>
+        @Html.TextBox("masterModel.Address[0].Zip", null, new { style = "width: 50px" })
+        <hr />
+
+
+    </div>
+
+
+
+}
+
+else
+{
+    var model = Model.Address;
+    <div class="scroll-partial-address">
+
+        @for (int i = 0; i <= model.Count(); i++)
+        {
+            if (i < model.Count())
+            {
+                if (model[i].Street1 != null)
+                {
+                    @Html.Hidden("masterModel.Address[0].id", model[i].id)
+                    @Html.Hidden("masterModel.Address[0].CareGiverID", model[i].CareGiverID)
+                    <label class="label-fixed-width">Address:</label>
+                    @Html.TextBox("masterModel.Address[" + i + "].Street1", model[i].Street1, null, new { style = "width: 600px" })
+                    @Html.DropDownList("masterModel.Address[" + i + "].Street1", model[i].AddressTypeSelectList, "--------", new
+          {
+              @class = "form-control-inline dropdown",
+              style = "width: 100px;"
+          })<br />
+                    <label class="label-fixed-width">Line 2:</label>
+                    @Html.TextBox("masterModel.Address[" + i + "].Street2", model[i].Street2, new { style = "width: 600px" })<br />
+                    <label class="label-fixed-width">City:</label>
+                    @Html.TextBox("masterModel.Address[" + i + "].City", model[i].City, new { style = "width: 165px" })
+                    <label>State:</label>
+                    @Html.TextBox("masterModel.Address[" + i + "].State", model[i].State, new { style = "width: 30px" })
+                    <label>Zip Code: </label>
+                    @Html.TextBox("masterModel.Address[" + i + "].Zip", model[i].Zip, new { style = "width: 50px" })
+                    <br /><br />
+
+                }
+
+            }
+            else
+            {
+
+                <label class="label-fixed-width">Address:</label>
+                @Html.TextBox("masterModel.Address[" + i + "].Street1", null, new { style = "width: 600px" })
+                @Html.DropDownList("masterModel.Address[" + i + "].Street1", addresstypes, "--------", new
+      {
+          @class = "form-control-inline dropdown",
+          style = "width: 100px;"
+      })
+                <label class="label-fixed-width">Line 2:</label>
+                @Html.TextBox("masterModel.Address[" + i + "].Street2", null, new { style = "width: 600px" })<br />
+                <label class="label-fixed-width">City:</label>
+                @Html.TextBox("masterModel.Address[" + i + "].City", null, new { style = "width: 165px" })
+                <label>State:</label>
+                @Html.TextBox("masterModel.Address[" + i + "].State", null, new { style = "width: 30px" })
+                <label>Zip Code: </label>
+                @Html.TextBox("masterModel.Address[" + i + "].Zip", null, new { style = "width: 50px" })
+            }
+
+        }
+
+
+    </div>
+
+}

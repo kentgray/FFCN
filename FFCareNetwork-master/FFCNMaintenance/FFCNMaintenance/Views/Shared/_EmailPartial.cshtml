@@ -1,0 +1,30 @@
+﻿@model IList<FFCNMaintenance.Models.tblEmail>
+
+@{ foreach (var item in Model)
+ {
+       //Do we want an email type drop down displayed? If so, un-comment-out below.
+           ViewBag.EmailTypeSelectList = item.EmailTypeSelectList;
+     {
+        <div>
+            <label class="label-fixed-width">Email:</label>
+            @Html.TextBox("Email", item.EMail, new { style = "width: 600px" })
+
+            @if (ViewBag.EmailTypeSelectList != null) 
+            { 
+                
+            @Html.DropDownList("EmailTypeSelectList", null, new
+                   {
+                       @class = "form-control-inline dropdown",
+                       style = "width: 100px"
+                   })
+
+                     }
+
+        </div>
+     }
+
+ }
+
+
+}
+

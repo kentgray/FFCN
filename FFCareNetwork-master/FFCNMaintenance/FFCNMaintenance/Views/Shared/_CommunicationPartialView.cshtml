@@ -1,0 +1,60 @@
+﻿
+@model FFCNMaintenance.Models.MasterModel
+
+@{
+    if (Model.Communication != null)
+    {
+        <div style="margin-right:auto; margin-left:auto; width: 80%; margin-top: 25px;">
+            <div>
+                <span><b>First:</b> @Model.Primary[0].FirstName</span>
+                <span><b>Last:</b> @Model.Primary[0].LastName</span>
+                @Html.Hidden("masterModel.Communication[0].First", Model.First)
+                @Html.Hidden("masterModel.Communication[0].Last", Model.Last)
+                <span style="margin-left:20px;"><b>Need To Know:@Html.TextBox("masterModel.Communication[0].Notes", null, new { style = " margin-left: 20px; width: 600px" })</b></span>
+                <br />
+                <br />
+            </div>
+            <table border="1">
+                <thead>
+                <th>Date</th>
+                <th>Name</th>
+                <th>Need To Know</th>
+                </thead>
+                @for (int i = 0; i < Model.Communication.Count(); i++)
+                {
+
+                    string name = "";
+                    try
+                    {
+                        name = Model.Communication[i].tblUser.First + " " + Model.Communication[i].tblUser.Last;
+
+                    }
+                    catch
+                    {
+                        try
+                        {
+                            name = Model.Communication[i].tblUser.First;
+                        }
+                        catch { name = Model.Communication[i].First + " " + Model.Communication[i].Last; }
+                    }
+                    
+
+                    if (Model.Communication[i].CommnDate != null)
+                    {
+                        <tr>
+                            <td>@Model.Communication[i].CommnDate</td>
+                            <td>@name</td>
+                            <td>@Model.Communication[i].Notes</td>
+                        </tr>
+                    }
+                }
+            </table>
+        </div>
+    }
+    else
+    {
+        <div>Nothing</div>
+    }
+
+
+}

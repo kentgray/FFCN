@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foster Family Care Network</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+@if (Model != null)
+{ 
+    <body>
+        <header>
+            @{Html.RenderPartial("_header");}
+        </header>
+        <div class="container-non-responsive" >
+            @RenderBody()
+            <hr />
+        </div>
+
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @Scripts.Render("-/bundles/jqueryval")
+        @RenderSection("scripts", required: false)
+    </body>
+}
+else
+{
+    <body>
+        <header>
+            <h1>Create New Caregiver</h1>@*@{Html.RenderPartial("_header");}*@
+        </header>
+        <div class="container">
+            @RenderBody()
+            <hr />
+        </div>
+
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @Scripts.Render("-/bundles/jqueryval")
+        @RenderSection("scripts", required: false)
+    </body>
+}
+</html>

@@ -1,0 +1,80 @@
+﻿@model FFCNMaintenance.Models.MasterModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="row">
+        <script>
+        function toggle(id, tab)
+        {
+            document.getElementById("FirstTab").style.display = "none";
+            document.getElementById("SecondTab").style.display = "none";
+            document.getElementById("ThirdTab").style.display = "none";
+            document.getElementById("FourthTab").style.display = "none";
+            document.getElementById("tab1").style.backgroundColor = "#DDDDDD";
+            document.getElementById("tab2").style.backgroundColor = "#DDDDDD";
+            document.getElementById("tab3").style.backgroundColor = "#DDDDDD";
+            document.getElementById("tab4").style.backgroundColor = "#DDDDDD";
+            document.getElementById(id).style.display = "block";
+            document.getElementById(tab).style.backgroundColor = "#FFFFFF";
+        }
+        </script>
+        <input type="submit" style="float:right; margin-right: 20px; margin-top:10px;" class="btn btn-default" value="Save" />
+        <a href="../Create" style="float:right; margin-right: 20px; margin-top:10px;" class="btn btn-default">Create</a>
+        <a href="../../SelectCaregiver" style="float:right; margin-right: 20px; margin-top:10px;" class="btn btn-default">Back to Search</a>
+        <div style="margin-left: 150px; margin-top:20px; cursor:pointer;" class="topNav">
+            <span id="tab1" onclick="toggle('FirstTab', 'tab1');" style="padding:5px; border:2px solid black;">Contact Info and Communication</span>
+            <span id="tab2" onclick="toggle('SecondTab', 'tab2');" style="padding:5px; border:2px solid black;  background-color:#DDDDDD;">Inquiry and Referal Status</span>
+            <span id="tab3" onclick="toggle('ThirdTab', 'tab3');" style="padding:5px; border:2px solid black;  background-color:#DDDDDD;">Training History</span>
+            <span id="tab4" onclick="toggle('FourthTab', 'tab4');" style="padding:5px; border:2px solid black;  background-color:#DDDDDD;">Communication and Activity Log</span>
+        </div>
+        <div style="display:block;" id="FirstTab">
+            <div class="col-xs-6">
+                <h3>Primary Contact</h3>
+                <section id="primary-contact">
+                    <label class="label-fixed-width">First:</label>
+                    @Html.TextBox("masterModel.Primary[0].FirstName", Model.Primary[0].FirstName, new { style = "width: 600px" })
+                    <br />
+                    <label class="label-fixed-width">Last:</label>
+                    @Html.TextBox("masterModel.Primary[0].LastName", Model.Primary[0].LastName, new { style = "width: 600px" })
+                    <br />
+                    @{Html.RenderPartial("_PhonePartialView");}
+                    <br />
+                    @{Html.RenderPartial("_EmailPartialView");}
+                    <br />
+                    @{Html.RenderPartial("_AddressPartialView");}
+                </section><!-- / #primary-contact -->
+
+                <h3>Secondary Contact</h3>
+                <section id="secondary-contact">
+
+                    <!-- insert secondary contact info here-->
+                    @{Html.RenderPartial("_RelatedPartial");}
+
+                </section><!-- / #secondary-contact -->
+            </div><!-- / .col-xs-6 left col of page-->
+            @{Html.RenderPartial("_PreScreenPartialView");}
+        </div><!-- /.row entire page-->
+    </div>
+
+    <div id="ThirdTab" style="display:none;">
+        @{Html.RenderPartial("_TrainingHistPartial");}
+    </div>
+    <div id="SecondTab" style="display:none;">
+        @{Html.RenderPartial("_InquiryReferralPartial"); }
+    </div>
+    <div id="FourthTab" style="display:none;">
+        @{Html.RenderPartial("_CommunicationPartialView"); }
+    </div>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+
+                </div>
+            </div>
+            }

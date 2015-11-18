@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d8aabdf448ad42f2a933b72b0fd41aed" Name="Diagram1">
+        <EntityTypeShape EntityType="FFCNv5Model.tblAddress" Width="1.5" PointX="5.25" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FFCNv5Model.tblCommunication" Width="1.5" PointX="5.25" PointY="20.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FFCNv5Model.tblEmail" Width="1.5" PointX="5.25" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FFCNv5Model.tblInquiryReferralStatu" Width="1.5" PointX="8.25" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FFCNv5Model.tblPhone" Width="1.5" PointX="11.25" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FFCNv5Model.tblPrimaryCaregiverdata" Width="1.5" PointX="3" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="FFCNv5Model.tblRelatedCaregiver" Width="1.5" PointX="11.25" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FFCNv5Model.tblTrainingHistoryMain" Width="1.5" PointX="11.25" PointY="16.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FFCNv5Model.tblUser" Width="1.5" PointX="3" PointY="16.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FFCNv5Model.tlkpAddressType" Width="1.5" PointX="3" PointY="31.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FFCNv5Model.tlkpAgency" Width="1.5" PointX="0.75" PointY="21" IsExpanded="true" />
+        <EntityTypeShape EntityType="FFCNv5Model.tlkpAppOnHold" Width="1.5" PointX="6" PointY="13.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FFCNv5Model.tlkpAppRejectedFFCN" Width="1.5" PointX="6" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="FFCNv5Model.tlkpAppRejectedProg" Width="1.5" PointX="6" PointY="25.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FFCNv5Model.tlkpAppReturned" Width="1.5" PointX="6" PointY="27.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FFCNv5Model.tlkpCommunicationType" Width="1.5" PointX="3" PointY="29" IsExpanded="true" />
+        <EntityTypeShape EntityType="FFCNv5Model.tlkpEmailType" Width="1.5" PointX="3" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FFCNv5Model.tlkpHomeClosed" Width="1.5" PointX="6" PointY="30" IsExpanded="true" />
+        <EntityTypeShape EntityType="FFCNv5Model.tlkpInactive" Width="1.5" PointX="6" PointY="32.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FFCNv5Model.tlkpOngoingTraining" Width="1.5" PointX="9" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FFCNv5Model.tlkpPhoneType" Width="1.5" PointX="9" PointY="46.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FFCNv5Model.tlkpProgram" Width="1.5" PointX="6" PointY="34.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FFCNv5Model.tlkpRecruitmentCategory" Width="1.5" PointX="0.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FFCNv5Model.tlkpRelationship" Width="1.5" PointX="9" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FFCNv5Model.tlkpTrainAttendIntro" Width="1.5" PointX="9" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FFCNv5Model.tlkpTrainIntroRSVP" Width="1.5" PointX="9" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FFCNv5Model.tlkpTrainPreservice1" Width="1.5" PointX="9" PointY="34" IsExpanded="true" />
+        <EntityTypeShape EntityType="FFCNv5Model.tlkpTrainPreservice2" Width="1.5" PointX="9" PointY="36.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FFCNv5Model.tlkpTrainPreservice2009" Width="1.5" PointX="9" PointY="38.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FFCNv5Model.tlkpTrainPreserviceComp" Width="1.5" PointX="9" PointY="41.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FFCNv5Model.tlkpTrainPreserviceRSVP" Width="1.5" PointX="9" PointY="43.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FFCNv5Model.tlkpUserGroup" Width="1.5" PointX="0.75" PointY="18" IsExpanded="true" />
+        <AssociationConnector Association="FFCNv5Model.FK__tblAddres__Addre__5F141958" ManuallyRouted="false" />
+        <AssociationConnector Association="FFCNv5Model.FK__tblAddres__CareG__53A266AC" ManuallyRouted="false" />
+        <AssociationConnector Association="FFCNv5Model.FK__tblCommun__CareG__567ED357" ManuallyRouted="false" />
+        <AssociationConnector Association="FFCNv5Model.FK__tblCommun__CommT__7132C993" ManuallyRouted="false" />
+        <AssociationConnector Association="FFCNv5Model.FK__tblCommun__UserI__7BB05806" ManuallyRouted="false" />
+        <AssociationConnector Association="FFCNv5Model.FK__tblEmails__CareG__54968AE5" ManuallyRouted="false" />
+        <AssociationConnector Association="FFCNv5Model.FK__tblEmails__Email__5D2BD0E6" ManuallyRouted="false" />
+        <AssociationConnector Association="FFCNv5Model.FK__tblInquir__Reaso__0FB750B3" ManuallyRouted="false" />
+        <AssociationConnector Association="FFCNv5Model.FK__tblInquir__Reaso__10AB74EC" ManuallyRouted="false" />
+        <AssociationConnector Association="FFCNv5Model.FK__tblInquir__Reaso__119F9925" ManuallyRouted="false" />
+        <AssociationConnector Association="FFCNv5Model.FK__tblInquir__Reaso__1293BD5E" ManuallyRouted="false" />
+        <AssociationConnector Association="FFCNv5Model.FK__tblInquir__Reaso__1387E197" ManuallyRouted="false" />
+        <AssociationConnector Association="FFCNv5Model.FK__tblInquir__Reaso__147C05D0" ManuallyRouted="false" />
+        <AssociationConnector Association="FFCNv5Model.FK__tblInquir__Reaso__15702A09" ManuallyRouted="false" />
+        <AssociationConnector Association="FFCNv5Model.FK__tblInquir__Reaso__16644E42" ManuallyRouted="false" />
+        <AssociationConnector Association="FFCNv5Model.FK__tblInquir__Reaso__1758727B" ManuallyRouted="false" />
+        <AssociationConnector Association="FFCNv5Model.FK__tblInquir__Reaso__30592A6F" ManuallyRouted="false" />
+        <AssociationConnector Association="FFCNv5Model.FK__tblInquir__Staff__00750D23" ManuallyRouted="false" />
+        <AssociationConnector Association="FFCNv5Model.FK__tblInquir__Staff__0169315C" ManuallyRouted="false" />
+        <AssociationConnector Association="FFCNv5Model.FK__tblInquir__Staff__025D5595" ManuallyRouted="false" />
+        <AssociationConnector Association="FFCNv5Model.FK__tblInquir__Staff__035179CE" ManuallyRouted="false" />
+        <AssociationConnector Association="FFCNv5Model.FK__tblInquir__Staff__04459E07" ManuallyRouted="false" />
+        <AssociationConnector Association="FFCNv5Model.FK__tblInquir__Staff__0539C240" ManuallyRouted="false" />
+        <AssociationConnector Association="FFCNv5Model.FK__tblInquir__Staff__062DE679" ManuallyRouted="false" />
+        <AssociationConnector Association="FFCNv5Model.FK__tblInquir__Staff__07220AB2" ManuallyRouted="false" />
+        <AssociationConnector Association="FFCNv5Model.FK__tblInquir__Staff__08162EEB" ManuallyRouted="false" />
+        <AssociationConnector Association="FFCNv5Model.FK__tblInquir__Staff__090A5324" ManuallyRouted="false" />
+        <AssociationConnector Association="FFCNv5Model.FK__tblInquir__Staff__09FE775D" ManuallyRouted="false" />
+        <AssociationConnector Association="FFCNv5Model.FK__tblInquir__Staff__0AF29B96" ManuallyRouted="false" />
+        <AssociationConnector Association="FFCNv5Model.FK__tblInquir__Staff__60083D91" ManuallyRouted="false" />
+        <AssociationConnector Association="FFCNv5Model.FK__tblInquir__Staff__60FC61CA" ManuallyRouted="false" />
+        <AssociationConnector Association="FFCNv5Model.FK__tblInquir__Staff__61F08603" ManuallyRouted="false" />
+        <AssociationConnector Association="FFCNv5Model.FK__tblInquir__Staff__62E4AA3C" ManuallyRouted="false" />
+        <AssociationConnector Association="FFCNv5Model.FK__tblInquir__Staff__63D8CE75" ManuallyRouted="false" />
+        <AssociationConnector Association="FFCNv5Model.FK__tblInquir__Staff__64CCF2AE" ManuallyRouted="false" />
+        <AssociationConnector Association="FFCNv5Model.FK__tblInquir__Staff__65C116E7" ManuallyRouted="false" />
+        <AssociationConnector Association="FFCNv5Model.FK__tblInquir__Staff__66B53B20" ManuallyRouted="false" />
+        <AssociationConnector Association="FFCNv5Model.FK__tblInquir__Staff__67A95F59" ManuallyRouted="false" />
+        <AssociationConnector Association="FFCNv5Model.FK__tblInquir__Staff__689D8392" ManuallyRouted="false" />
+        <AssociationConnector Association="FFCNv5Model.FK__tblInquir__Staff__6991A7CB" ManuallyRouted="false" />
+        <AssociationConnector Association="FFCNv5Model.FK__tblInquir__Staff__6A85CC04" ManuallyRouted="false" />
+        <AssociationConnector Association="FFCNv5Model.FK__tblInquir__Staff__6B79F03D" ManuallyRouted="false" />
+        <AssociationConnector Association="FFCNv5Model.FK__tblInquir__Staff__6C6E1476" ManuallyRouted="false" />
+        <AssociationConnector Association="FFCNv5Model.FK__tblInquir__Staff__6D6238AF" ManuallyRouted="false" />
+        <AssociationConnector Association="FFCNv5Model.FK__tblInquir__Staff__6E565CE8" ManuallyRouted="false" />
+        <AssociationConnector Association="FFCNv5Model.FK__tblInquir__Staff__7CA47C3F" ManuallyRouted="false" />
+        <AssociationConnector Association="FFCNv5Model.FK__tblInquir__Staff__7D98A078" ManuallyRouted="false" />
+        <AssociationConnector Association="FFCNv5Model.FK__tblInquir__Staff__7E8CC4B1" ManuallyRouted="false" />
+        <AssociationConnector Association="FFCNv5Model.FK__tblInquir__Staff__7F80E8EA" ManuallyRouted="false" />
+        <AssociationConnector Association="FFCNv5Model.tblInquiryReferralStatus_tblPrimaryCaregiverdatatblInquiryReferralStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="FFCNv5Model.FK__tblPhones__CareG__558AAF1E" ManuallyRouted="false" />
+        <AssociationConnector Association="FFCNv5Model.FK__tblPhones__Phone__5A4F643B" ManuallyRouted="false" />
+        <AssociationConnector Association="FFCNv5Model.FK__tblPrimar__Heard__58671BC9" ManuallyRouted="false" />
+        <AssociationConnector Association="FFCNv5Model.FK__tblRelate__CareG__5772F790" ManuallyRouted="false" />
+        <AssociationConnector Association="FFCNv5Model.tblTrainingHistoryMain_tblPrimaryCaregiverdatatblTrainingHistoryMain" ManuallyRouted="false" />
+        <AssociationConnector Association="FFCNv5Model.FK__tblRelate__Relat__595B4002" ManuallyRouted="false" />
+        <AssociationConnector Association="FFCNv5Model.FK__tblTraini__Ongoi__5E1FF51F" ManuallyRouted="false" />
+        <AssociationConnector Association="FFCNv5Model.FK__tblTraini__Staff__7226EDCC" ManuallyRouted="false" />
+        <AssociationConnector Association="FFCNv5Model.FK__tblTraini__Staff__731B1205" ManuallyRouted="false" />
+        <AssociationConnector Association="FFCNv5Model.FK__tblTraini__Staff__740F363E" ManuallyRouted="false" />
+        <AssociationConnector Association="FFCNv5Model.FK__tblTraini__Staff__75035A77" ManuallyRouted="false" />
+        <AssociationConnector Association="FFCNv5Model.FK__tblTraini__Staff__75F77EB0" ManuallyRouted="false" />
+        <AssociationConnector Association="FFCNv5Model.FK__tblTraini__Staff__76EBA2E9" ManuallyRouted="false" />
+        <AssociationConnector Association="FFCNv5Model.FK__tblTraini__Staff__77DFC722" ManuallyRouted="false" />
+        <AssociationConnector Association="FFCNv5Model.FK__tblTraini__Staff__78D3EB5B" ManuallyRouted="false" />
+        <AssociationConnector Association="FFCNv5Model.FK__tblTraini__Staff__79C80F94" ManuallyRouted="false" />
+        <AssociationConnector Association="FFCNv5Model.FK__tblTraini__Staff__7ABC33CD" ManuallyRouted="false" />
+        <AssociationConnector Association="FFCNv5Model.FK__tblTraini__Train__0BE6BFCF" ManuallyRouted="false" />
+        <AssociationConnector Association="FFCNv5Model.FK__tblTraini__Train__0CDAE408" ManuallyRouted="false" />
+        <AssociationConnector Association="FFCNv5Model.FK__tblTraini__Train__0DCF0841" ManuallyRouted="false" />
+        <AssociationConnector Association="FFCNv5Model.FK__tblTraini__Train__0EC32C7A" ManuallyRouted="false" />
+        <AssociationConnector Association="FFCNv5Model.FK__tblTraini__Train__184C96B4" ManuallyRouted="false" />
+        <AssociationConnector Association="FFCNv5Model.FK__tblTraini__Train__1940BAED" ManuallyRouted="false" />
+        <AssociationConnector Association="FFCNv5Model.FK__tblTraini__Train__1A34DF26" ManuallyRouted="false" />
+        <AssociationConnector Association="FFCNv5Model.FK__tblUsers__Agency__703EA55A" ManuallyRouted="false" />
+        <AssociationConnector Association="FFCNv5Model.FK__tblUsers__UserGr__6F4A8121" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

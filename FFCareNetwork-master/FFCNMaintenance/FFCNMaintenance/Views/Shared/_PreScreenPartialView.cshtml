@@ -1,0 +1,175 @@
+﻿@model FFCNMaintenance.Models.MasterModel
+@{List<SelectListItem> childrenInHome = ViewBag.ChildrenInHome;
+    SelectList heardAboutType = ViewBag.HeardAboutType;}
+
+<div class="col-xs-6">
+    <h3>Pre-Screening Questions</h3>
+    <section id="pre-screening-questions">
+        <div class="row">
+            <!-- partial view can contain this code. The "row" breaks the section into 2 columns -->
+            @if (Model != null)
+            {<div class="col-xs-6">
+            <!-- #pre-screening-questions column 1 -->
+            @Html.Hidden("masterModel.Primary[0].CareGiverID", Model.Primary[0].CareGiverID)
+            @Html.CheckBox("masterModel.Primary[0].PhysicianRel", Model.Primary[0].PhysicianRel)<label>&nbsp; Physician's Release</label>
+            <br />
+            @Html.CheckBox("masterModel.Primary[0].English", Model.Primary[0].English)<label>&nbsp; Communicate in English</label>
+            <br />
+            @Html.CheckBox("masterModel.Primary[0].InternetAccess", Model.Primary[0].InternetAccess)<label>&nbsp; Kerr: Internet Access</label>
+            <br />
+            @Html.CheckBox("masterModel.Primary[0].LivesNear", Model.Primary[0].LivesNear)<label>&nbsp; Lives within 45 Minute Drive</label>
+            <br />
+            @Html.CheckBox("masterModel.Primary[0].Recovery", Model.Primary[0].Recovery)<label>&nbsp; In Recovery 5+ Years</label>
+            <br />
+            @Html.CheckBox("masterModel.Primary[0].DHSRelease", Model.Primary[0].DHSRelease)<label>&nbsp; If DHS, Release Form</label>
+            <br />
+            @Html.CheckBox("masterModel.Primary[0].ExtraRoom", Model.Primary[0].ExtraRoom)<label>&nbsp; Extra Room</label>
+            <br />
+
+
+        </div><!-- / #pre-screening-questions column 1-->
+
+                <div class="col-xs-6">
+                    <!-- #pre-screening-questions column 2 -->
+                    <button type="button" class="btn btn-default" id="check-all">Check All</button>
+
+                    @Html.CheckBox("masterModel.Primary[0].Income", Model.Primary[0].Income)<label>&nbsp; Income</label>
+                    <br />
+                    @Html.CheckBox("masterModel.Primary[0].Over25", Model.Primary[0].Over25)<label>&nbsp; Over 25 of Age</label>
+                    <br />
+                    @Html.CheckBox("masterModel.Primary[0].Roommate", Model.Primary[0].Roommate)<label>&nbsp; Roommates?</label>
+                    <br />
+                    @Html.CheckBox("masterModel.Primary[0].DUI", Model.Primary[0].DUI)<label>&nbsp; No DUI Past 5-10 years</label>
+                    <br />
+                    @Html.CheckBox("masterModel.Primary[0].Transportation", Model.Primary[0].Transportation)<label>&nbsp; Reliable Transportation</label>
+                    <br />
+                    @Html.CheckBox("masterModel.Primary[0].ParentChild", Model.Primary[0].ParentChild)<label>&nbsp; Parent to Child Ratio</label>
+                    <br />
+                    <br />
+                    <label>Children in the home</label>
+
+                    @Html.DropDownList("masterModel.Primary[0].ChildrenHome", Model.Primary[0].ChildrenInHomeSelectList, "--------", new
+           {
+               @class = "form-control-inline dropdown",
+               style = "width: 60px"
+           })
+                    <br />
+                    <label>Heard About</label>
+                    @Html.DropDownList("masterModel.Primary[0].HeardAbout", Model.Primary[0].HeardAboutSelectList, "--------", new
+           {
+               @class = "form-control-inline dropdown",
+               style = "width: 125px",
+
+           })
+                    <br />
+
+
+
+
+                </div><!-- / #pre-screening-questions column 2-->
+
+
+            }
+            else
+            {
+                <div class="col-xs-6">
+                    <!-- #pre-screening-questions column 1 -->
+                    @Html.CheckBox("masterModel.Primary[0].PhysicianRel")<label>&nbsp; Physician's Release</label>
+                    <br />
+                    @Html.CheckBox("masterModel.Primary[0].English")<label>&nbsp; Communicate in English</label>
+                    <br />
+                    @Html.CheckBox("masterModel.Primary[0].InternetAccess")<label>&nbsp; Kerr: Internet Access</label>
+                    <br />
+                    @Html.CheckBox("masterModel.Primary[0].LivesNear")<label>&nbsp; Lives within 45 Minute Drive</label>
+                    <br />
+                    @Html.CheckBox("masterModel.Primary[0].Recovery")<label>&nbsp; In Recovery 5+ Years</label>
+                    <br />
+                    @Html.CheckBox("masterModel.Primary[0].DHSRelease")<label>&nbsp; If DHS, Release Form</label>
+                    <br />
+                    @Html.CheckBox("masterModel.Primary[0].ExtraRoom")<label>&nbsp; Extra Room</label>
+                    <br />
+                    <label>Children in the Home</label>
+                    <br />
+                    <label>Heard About FCCN</label>
+
+                </div><!-- / #pre-screening-questions column 1-->
+
+                <div class="col-xs-6">
+                    <!-- #pre-screening-questions column 2 -->
+                    <button type="button" class="btn btn-default" id="check-all">Check All</button>
+
+                    @Html.CheckBox("masterModel.Primary[0]].Income")<label>&nbsp; Income</label>
+                    <br />
+                    @Html.CheckBox("masterModel.Primary[0].Over25")<label>&nbsp; Over 25 of Age</label>
+                    <br />
+                    @Html.CheckBox("masterModel.Primary[0].Roommate")<label>&nbsp; Roommates?</label>
+                    <br />
+                    @Html.CheckBox("masterModel.Primary[0].DUI")<label>&nbsp; No DUI Past 5-10 years</label>
+                    <br />
+                    @Html.CheckBox("masterModel.Primary[0].Transportation")<label>&nbsp; Reliable Transportation</label>
+                    <br />
+                    @Html.CheckBox("masterModel.Primary[0].ParentChild")<label>&nbsp; Parent to Child Ratio</label>
+
+                    <br />
+                    <br />
+                    <label>Children in the home</label>
+
+                    @Html.DropDownList("masterModel.Primary[0].ChildrenHome", childrenInHome, "--------",
+                 new
+                 {
+                     @class = "form-control-inline dropdown",
+                     style = "width: 60px"
+                 })
+                    <br />
+                    <label>Heard About</label>
+                    @Html.DropDownList("masterModel.Primary[0].HeardAbout", heardAboutType, "--------", new
+           {
+               @class = "form-control-inline dropdown",
+               style = "width: 125px",
+
+           })
+                    <br />
+
+
+
+                </div><!-- / #pre-screening-questions column 2-->
+            }
+
+
+        </div><!-- / .row of 2 columns -->
+    </section><!-- / #pre-screening-questions -->
+
+    <h3>Interests</h3>
+    <section id="interests">
+        <div class="row">
+            @if (Model != null)
+            {
+                <div class="col-xs-6">
+                    @Html.CheckBox("masterModel.Primary[0].Spanish", Model.Primary[0].Spanish)<label>&nbsp; Speaks Spanish</label>
+                    <br />
+                    @Html.CheckBox("masterModel.Primary[0].Respite", Model.Primary[0].Respite)<label>&nbsp; Volunteer</label>
+                </div><!-- / #intersts column 1 -->
+
+                <div class="col-xs-6">
+                    @Html.CheckBox("masterModel.Primary[0].Volunteer", Model.Primary[0].Volunteer)<label>&nbsp; Interested in Respite</label>
+                    <br />
+                    @Html.CheckBox("masterModel.Primary[0].Donor", Model.Primary[0].Donor)<label>&nbsp; Donor</label>
+                </div><!-- / #intersts column 2 -->
+            }
+            else
+            {
+                <div class="col-xs-6">
+                    @Html.CheckBox("masterModel.Primary[0].Spanish")<label>&nbsp; Speaks Spanish</label>
+                    <br />
+                    @Html.CheckBox("masterModel.Primary[0].Respite")<label>&nbsp; Volunteer</label>
+                </div><!-- / #intersts column 1 -->
+
+                <div class="col-xs-6">
+                    @Html.CheckBox("masterModel.Primary[0].Volunteer")<label>&nbsp; Interested in Respite</label>
+                    <br />
+                    @Html.CheckBox("masterModel.Primary[0].Donor")<label>&nbsp; Donor</label>
+                </div><!-- / #intersts column 2 -->
+            }
+        </div><!-- / .row -->
+    </section><!-- / #interests -->
+</div><!-- / .col-xs-6 right col of page-->

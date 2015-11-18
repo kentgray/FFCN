@@ -1,0 +1,48 @@
+﻿@model IEnumerable<FFCNMaintenance.Models.ApplicationUser>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>User Logins Maintenance</h2>
+<p>
+    @Html.ActionLink("Back to Admin Home", "Index", "Admin")
+</p>
+
+<br />
+
+<p>
+    @Html.ActionLink("Change the Admin Password", "ChangeAdminWarning", "UsersAdmin")
+</p>
+
+<br />
+
+<p>
+    @Html.ActionLink("Create New User", "Register", "Account")
+</p>
+
+<br />
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UserName)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserName)
+            </td>
+            <td>
+                  @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                  @Html.ActionLink("Delete", "Delete", new { id = item.Id }) |
+                  @Html.ActionLink("Edit", "Edit", new { id = item.Id })
+                
+            </td>
+        </tr>
+    }
+
+</table>

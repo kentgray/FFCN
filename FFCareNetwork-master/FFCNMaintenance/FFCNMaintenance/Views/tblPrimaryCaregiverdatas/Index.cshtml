@@ -1,0 +1,237 @@
+﻿@model IEnumerable<FFCNMaintenance.Models.tblPrimaryCaregiverdata>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BestReached)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DOB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gender)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Certifier)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Agency)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Neighborhood)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Notes)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreateDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreateBy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastUpdate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UpdateBy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PhysicianRel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.English)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InternetAccess)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LivesNear)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Recovery)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DHSRelease)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ExtraRoom)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Income)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Over25)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Roommate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DUI)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Transportation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ParentChild)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ChildrenHome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HeardAbout)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Spanish)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Respite)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ChildrenInHome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Volunteer)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Donor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SSMA_TimeStamp)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BestReached)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DOB)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Gender)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Certifier)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Agency)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Neighborhood)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Notes)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreateDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreateBy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastUpdate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UpdateBy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PhysicianRel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.English)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.InternetAccess)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LivesNear)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Recovery)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DHSRelease)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExtraRoom)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Income)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Over25)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Roommate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DUI)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Transportation)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ParentChild)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ChildrenHome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HeardAbout)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Spanish)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Respite)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ChildrenInHome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Volunteer)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Donor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SSMA_TimeStamp)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CareGiverID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CareGiverID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CareGiverID })
+        </td>
+    </tr>
+}
+
+</table>

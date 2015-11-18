@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "ChangeAdminWarning";
+}
+
+<h1>Warning</h1>
+<h2>Consider carefully what you are about to do!</h2>
+<h2>Before changing the system administrator's password, choose a new STRONG password and record it in a safe and accessible location.</h2>
+<br />
+<p>
+    @Html.ActionLink("Back to Users", "Index")
+</p>
+
+<br />
+<p>
+    @Html.ActionLink("Proceed with changing password", "ResetPassword", "Account")
+</p>
+

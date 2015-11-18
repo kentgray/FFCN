@@ -1,0 +1,45 @@
+﻿@model FFCNMaintenance.Models.MasterModel
+
+@if (Model == null)
+{
+    <div class="scroll-partial-email">
+        <label class="label-fixed-width">Email:</label>
+        @Html.TextBox("masterModel.Email[0].EMail", null, new { style = "width: 600px" })
+
+    </div>
+}
+else
+{
+    var model = Model.Email;
+    <div class="scroll-partial-email">
+
+
+
+        @for (int i = 0; i <= model.Count(); i++)
+        {
+            if (i < model.Count())
+            {
+                if (model[i].EMail != null)
+                {
+                    <label class="label-fixed-width">Email:</label>
+
+                    @Html.TextBox("masterModel.Email[" + i + "].EMail", model[i].EMail, new { style = "width: 600px" })
+                    @Html.Hidden("masterModel.Email[" + i + "].id", model[i].id)
+                    @Html.Hidden("masterModel.Email[" + i + "].CareGiverID", model[i].CareGiverID)
+                    <br />
+                }
+            }
+            else
+            {
+                <label class="label-fixed-width">Email:</label>
+                @Html.TextBox("masterModel.Email[" + i + "].EMail", null, new { style = "width: 600px" })
+                <br />
+            }
+        }
+    </div>
+}
+
+
+
+
+

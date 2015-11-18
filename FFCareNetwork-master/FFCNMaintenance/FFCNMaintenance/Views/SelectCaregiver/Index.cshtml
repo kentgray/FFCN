@@ -1,0 +1,48 @@
+﻿@model FFCNMaintenance.ViewModels.SelectCaregiverViewModel
+
+@{
+    ViewBag.Title = "Index";
+
+}
+<p style="padding-left: 10px; padding-right: 5px; float:right">   @Html.ActionLink("logoff", "Index", "Home")</p>
+<p style="padding-left: 5px; padding-right: 5px; float:right">   @Html.ActionLink("change password", "ResetPassword", "Account")</p>
+<a class="btn btn-default" href="../MasterModels/Create">Create New</a>
+<h2>Select Caregiver</h2>
+@using (Html.BeginForm("form"))
+{
+    @Html.AntiForgeryToken()
+
+    <p>Click in this box to search by last name, first name, or phone number.</p>
+
+    <input list="lastnames" name="lastNameSelected" id="lastNameSelected" />
+    <datalist id="lastnames">
+        <input type="hidden" id="cidSelect" name="cid" value="" />
+        @foreach (var item in Model.LastNameList)
+        {
+            string value = item.LastNameFirstName;
+            string cid = Convert.ToString(item.caregiverId);
+            string valueC = "#"+cid;
+            <option value="@value @valueC"></option>
+        }
+        @foreach (var item in Model.FirstNameList)
+        {
+            string value = item.FirstNameLastName;
+            string cid = Convert.ToString(item.caregiverId);
+            string valueC = "#" + cid;
+            <option value="@value @valueC"></option>
+        }
+        @foreach (var item in Model.PhoneNumberList)
+        {
+            string value = item.PhoneNumber;
+            string cid = Convert.ToString(item.caregiverId);
+            string valueC = "#" + cid;
+            <option value="@value @valueC"></option>
+        }
+    </datalist>
+    <br />
+    <br />
+
+    <div class="form-actions no-color">
+        <input type="submit" value="Go To Selected Caregiver" class="btn btn-default" />
+    </div>
+}

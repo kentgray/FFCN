@@ -1,0 +1,304 @@
+﻿@model FFCNMaintenance.Models.tblPrimaryCaregiverdata
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>tblPrimaryCaregiverdata</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BestReached)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BestReached)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DOB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DOB)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gender)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gender)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Certifier)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Certifier)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Agency)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Agency)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Neighborhood)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Neighborhood)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Notes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Notes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreateDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreateDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreateBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreateBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastUpdate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastUpdate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UpdateBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UpdateBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PhysicianRel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhysicianRel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.English)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.English)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InternetAccess)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InternetAccess)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LivesNear)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LivesNear)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Recovery)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Recovery)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DHSRelease)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DHSRelease)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ExtraRoom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExtraRoom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Income)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Income)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Over25)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Over25)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Roommate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Roommate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DUI)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DUI)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Transportation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Transportation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ParentChild)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ParentChild)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ChildrenHome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ChildrenHome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HeardAbout)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HeardAbout)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Spanish)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Spanish)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Respite)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Respite)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ChildrenInHome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ChildrenInHome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Volunteer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Volunteer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Donor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Donor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SSMA_TimeStamp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SSMA_TimeStamp)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
