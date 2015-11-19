@@ -6,8 +6,8 @@
 }
 <p style="padding-left: 10px; padding-right: 5px; float:right">   @Html.ActionLink("logoff", "Index", "Home")</p>
 <p style="padding-left: 5px; padding-right: 5px; float:right">   @Html.ActionLink("change password", "ResetPassword", "Account")</p>
-<a class="btn btn-default" href="../MasterModels/Create">Create New</a>
-<h2>Select Caregiver</h2>
+<a class="btn btn-default" href="../MasterModels/Create">Create New Contact</a>
+<h2>Contact List</h2>
 @using (Html.BeginForm("form"))
 {
     @Html.AntiForgeryToken()
