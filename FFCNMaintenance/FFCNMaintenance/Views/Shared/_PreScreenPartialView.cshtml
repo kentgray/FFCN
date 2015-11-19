@@ -15,12 +15,9 @@
             <br />
             @Html.CheckBox("masterModel.Primary[0].English", Model.Primary[0].English)<label>&nbsp; Communicate in English</label>
             <br />
-            @Html.CheckBox("masterModel.Primary[0].InternetAccess", Model.Primary[0].InternetAccess)<label>&nbsp; Kerr: Internet Access</label>
-            <br />
-            @Html.CheckBox("masterModel.Primary[0].LivesNear", Model.Primary[0].LivesNear)<label>&nbsp; Lives within 45 Minute Drive</label>
-            <br />
-            @Html.CheckBox("masterModel.Primary[0].Recovery", Model.Primary[0].Recovery)<label>&nbsp; In Recovery 5+ Years</label>
-            <br />
+            @Html.CheckBox("masterModel.Primary[0].Recovery", Model.Primary[0].Recovery)<label>&nbsp; In Recovery 3+ Years</label>
+                 <!-- updated "5+" to "3+" --><br />                    
+           
             @Html.CheckBox("masterModel.Primary[0].DHSRelease", Model.Primary[0].DHSRelease)<label>&nbsp; If DHS, Release Form</label>
             <br />
             @Html.CheckBox("masterModel.Primary[0].ExtraRoom", Model.Primary[0].ExtraRoom)<label>&nbsp; Extra Room</label>
@@ -39,8 +36,8 @@
                     <br />
                     @Html.CheckBox("masterModel.Primary[0].Roommate", Model.Primary[0].Roommate)<label>&nbsp; Roommates?</label>
                     <br />
-                    @Html.CheckBox("masterModel.Primary[0].DUI", Model.Primary[0].DUI)<label>&nbsp; No DUI Past 5-10 years</label>
-                    <br />
+                    @Html.CheckBox("masterModel.Primary[0].DUI", Model.Primary[0].DUI)<label>&nbsp; No DUI Past 3+ years</label>
+                    <!-- updated "5+" to "3+" --> <br />
                     @Html.CheckBox("masterModel.Primary[0].Transportation", Model.Primary[0].Transportation)<label>&nbsp; Reliable Transportation</label>
                     <br />
                     @Html.CheckBox("masterModel.Primary[0].ParentChild", Model.Primary[0].ParentChild)<label>&nbsp; Parent to Child Ratio</label>
@@ -173,3 +170,12 @@
         </div><!-- / .row -->
     </section><!-- / #interests -->
 </div><!-- / .col-xs-6 right col of page-->
+
+
+
+<!--THESE BUTTONS REMOVED FROM LINE 20-21
+
+    /(AT)Html.CheckBox("masterModel.Primary[0].InternetAccess", Model.Primary[0].InternetAccess)<label>&nbsp; Kerr: Internet Access</label>
+            <br />-->
+<!-- /(AT)Html.CheckBox("masterModel.Primary[0].LivesNear", Model.Primary[0].LivesNear)<label>&nbsp; Lives within 45 Minute Drive</label>
+      <br /> <!-- / remove () around AT to active the checkboxes-->
