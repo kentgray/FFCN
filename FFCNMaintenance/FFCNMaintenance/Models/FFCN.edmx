@@ -161,8 +161,9 @@
           <Property Name="Over25" Type="bit" />
           <Property Name="Roommate" Type="bit" />
           <Property Name="DUI" Type="bit" />
-          <Property Name="Transportation" Type="bit" />
+          <Property Name="Transportation" Type="bit" /> 
           <Property Name="ParentChild" Type="bit" />
+          <Property Name="MovingViolations" Type="bit" />
           <Property Name="ChildrenHome" Type="nvarchar" MaxLength="255" />
           <Property Name="HeardAbout" Type="nvarchar" MaxLength="255" />
           <Property Name="Spanish" Type="bit" />
@@ -172,6 +173,7 @@
           <Property Name="Donor" Type="bit" />
           <Property Name="SSMA_TimeStamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
         </EntityType>
+       
         <EntityType Name="tblRelatedCaregiver">
           <Key>
             <PropertyRef Name="ID" />

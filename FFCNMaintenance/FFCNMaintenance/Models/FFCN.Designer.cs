@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\Brandon\Desktop\FFCareNetwork-master2\FFCareNetwork-master\FFCNMaintenance\FFCNMaintenance\Models\FFCN.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\Owner\Documents\GitHubVisualStudio\FFCN\FFCNMaintenance\FFCNMaintenance\Models\FFCN.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.
