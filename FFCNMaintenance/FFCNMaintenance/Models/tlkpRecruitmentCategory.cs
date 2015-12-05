@@ -14,18 +14,16 @@ namespace FFCNMaintenance.Models
     
     public partial class tlkpRecruitmentCategory
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public tlkpRecruitmentCategory()
         {
             this.tblPrimaryCaregiverdatas = new HashSet<tblPrimaryCaregiverdata>();
         }
     
-        public int id { get; set; }
+        public int ID { get; set; }
         public string Descr { get; set; }
         public Nullable<bool> Active { get; set; }
         public byte[] SSMA_TimeStamp { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblPrimaryCaregiverdata> tblPrimaryCaregiverdatas { get; set; }
     }
 }

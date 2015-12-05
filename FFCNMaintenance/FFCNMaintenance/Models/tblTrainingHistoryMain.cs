@@ -11,7 +11,6 @@ namespace FFCNMaintenance.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.Web.Mvc;
     
     public partial class tblTrainingHistoryMain
     {
@@ -42,14 +41,17 @@ namespace FFCNMaintenance.Models
         public Nullable<int> StaffOneOnOne { get; set; }
         public Nullable<bool> AttendedPrebefore2009 { get; set; }
         public Nullable<int> StaffPreservicePrior { get; set; }
-        public Nullable<int> TrainDateIntro { get; set; }
-        public Nullable<int> TrainDateAttendedIntro { get; set; }
-        public Nullable<int> TrainDatePreserviceRSVP { get; set; }
-        public Nullable<int> TrainDateAttendedPreservice1 { get; set; }
-        public Nullable<int> TrainDateAttendedPreservice2 { get; set; }
-        public Nullable<int> TrainDatePreserviceComp { get; set; }
-        public Nullable<int> TrainDatePreservice2009 { get; set; }
+        public string TrainDateIntro { get; set; }
+        public string TrainDateAttendedIntro { get; set; }
+        public string TrainDatePreserviceRSVP { get; set; }
+        public string TrainDateAttendedPreservice1 { get; set; }
+        public string TrainDateAttendedPreservice2 { get; set; }
+        public string TrainDateAppProgram { get; set; }
+        public string TrainDatePreservice2009 { get; set; }
         public byte[] SSMA_TimeStamp { get; set; }
+        public string FingerprintScheduled { get; set; }
+        public string DateFprint { get; set; }
+        public string StaffFprint { get; set; }
     
         public virtual tblPrimaryCaregiverdata tblPrimaryCaregiverdata { get; set; }
         public virtual tlkpOngoingTraining tlkpOngoingTraining { get; set; }
@@ -63,32 +65,5 @@ namespace FFCNMaintenance.Models
         public virtual tblUser tblUser7 { get; set; }
         public virtual tblUser tblUser8 { get; set; }
         public virtual tblUser tblUser9 { get; set; }
-        public virtual tlkpTrainPreserviceComp tlkpTrainPreserviceComp { get; set; }
-        public virtual tlkpTrainPreservice2009 tlkpTrainPreservice2009 { get; set; }
-        public virtual tlkpTrainPreservice2 tlkpTrainPreservice2 { get; set; }
-        public virtual tlkpTrainPreserviceRSVP tlkpTrainPreserviceRSVP { get; set; }
-        public virtual tlkpTrainPreservice1 tlkpTrainPreservice1 { get; set; }
-        public virtual tlkpTrainIntroRSVP tlkpTrainIntroRSVP { get; set; }
-        public virtual tlkpTrainAttendIntro tlkpTrainAttendIntro { get; set; }
-
-        public virtual SelectList UserSelectList1 { get; set; }
-        public virtual SelectList UserSelectList2 { get; set; }
-        public virtual SelectList UserSelectList3 { get; set; }
-        public virtual SelectList UserSelectList4 { get; set; }
-        public virtual SelectList UserSelectList5 { get; set; }
-        public virtual SelectList UserSelectList6 { get; set; }
-        public virtual SelectList UserSelectList7 { get; set; }
-        public virtual SelectList UserSelectList8 { get; set; }
-        public virtual SelectList UserSelectList9 { get; set; }
-        public virtual SelectList UserSelectList10 { get; set; }
-
-        public virtual SelectList TrainIntroRSVP { get; set; }
-        public virtual SelectList TrainAttendedIntro { get; set; }
-        public virtual SelectList TrainPreserviceRSVP { get; set; }
-        public virtual SelectList TrainAttendPreservice1 { get; set; }
-        public virtual SelectList TrainAttendPreservice2 { get; set; }
-        public virtual SelectList TrainPreserviceComp { get; set; }
-        public virtual SelectList TrainPreservice2009 { get; set; }
-        public virtual SelectList OngoingTraingingList { get; set; }
     }
 }

@@ -11,11 +11,10 @@ namespace FFCNMaintenance.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.Web.Mvc;
     
     public partial class tblAddress
     {
-        public int id { get; set; }
+        public int ID { get; set; }
         public Nullable<int> CareGiverID { get; set; }
         public string Street1 { get; set; }
         public string Street2 { get; set; }
@@ -28,6 +27,5 @@ namespace FFCNMaintenance.Models
     
         public virtual tlkpAddressType tlkpAddressType { get; set; }
         public virtual tblPrimaryCaregiverdata tblPrimaryCaregiverdata { get; set; }
-        public virtual SelectList AddressTypeSelectList { get; set; }
     }
 }

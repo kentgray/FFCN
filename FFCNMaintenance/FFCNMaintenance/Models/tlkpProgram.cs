@@ -14,27 +14,20 @@ namespace FFCNMaintenance.Models
     
     public partial class tlkpProgram
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public tlkpProgram()
         {
             this.tblInquiryReferralStatus = new HashSet<tblInquiryReferralStatu>();
             this.tblInquiryReferralStatus1 = new HashSet<tblInquiryReferralStatu>();
             this.tblInquiryReferralStatus2 = new HashSet<tblInquiryReferralStatu>();
-            this.tblInquiryReferralStatus3 = new HashSet<tblInquiryReferralStatu>();
         }
     
-        public int id { get; set; }
+        public int ID { get; set; }
         public string Description { get; set; }
         public Nullable<bool> Active { get; set; }
         public byte[] SSMA_TimeStamp { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblInquiryReferralStatu> tblInquiryReferralStatus { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblInquiryReferralStatu> tblInquiryReferralStatus1 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblInquiryReferralStatu> tblInquiryReferralStatus2 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblInquiryReferralStatu> tblInquiryReferralStatus3 { get; set; }
     }
 }

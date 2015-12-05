@@ -14,7 +14,7 @@ namespace FFCNMaintenance.Models
     
     public partial class tblCommunication
     {
-        public int id { get; set; }
+        public int ID { get; set; }
         public Nullable<int> Agency { get; set; }
         public Nullable<int> CareGiverID { get; set; }
         public Nullable<System.DateTime> CommnDate { get; set; }
@@ -23,8 +23,6 @@ namespace FFCNMaintenance.Models
         public Nullable<int> Userbak { get; set; }
         public string Notes { get; set; }
         public string TypeDescr { get; set; }
-        public string First { get; set; }
-        public string Last { get; set; }
         public byte[] SSMA_TimeStamp { get; set; }
     
         public virtual tblPrimaryCaregiverdata tblPrimaryCaregiverdata { get; set; }

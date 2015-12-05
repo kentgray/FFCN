@@ -14,16 +14,7 @@ namespace FFCNMaintenance.Models
     
     public partial class tlkpTrainPreservice1
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public tlkpTrainPreservice1()
-        {
-            this.tblTrainingHistoryMains = new HashSet<tblTrainingHistoryMain>();
-        }
-    
         public int id { get; set; }
         public Nullable<System.DateTime> TrainDate { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblTrainingHistoryMain> tblTrainingHistoryMains { get; set; }
     }
 }

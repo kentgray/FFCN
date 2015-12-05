@@ -14,7 +14,6 @@ namespace FFCNMaintenance.Models
     
     public partial class tlkpEmailType
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public tlkpEmailType()
         {
             this.tblEmails = new HashSet<tblEmail>();
@@ -24,7 +23,6 @@ namespace FFCNMaintenance.Models
         public string Descr { get; set; }
         public bool Active { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblEmail> tblEmails { get; set; }
     }
 }

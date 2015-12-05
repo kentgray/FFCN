@@ -1472,6 +1472,9 @@
           <NavigationProperty Name="tblUser7" Relationship="Self.FK__tblTraini__Staff__330B79E8" FromRole="tblTrainingHistoryMain" ToRole="tblUsers" />
           <NavigationProperty Name="tblUser8" Relationship="Self.FK__tblTraini__Staff__33FF9E21" FromRole="tblTrainingHistoryMain" ToRole="tblUsers" />
           <NavigationProperty Name="tblUser9" Relationship="Self.FK__tblTraini__Staff__34F3C25A" FromRole="tblTrainingHistoryMain" ToRole="tblUsers" />
+          <Property Name="FingerprintScheduled" Type="String" Nullable="false" />
+          <Property Name="DateFprint" Type="String" Nullable="false" />
+          <Property Name="StaffFprint" Type="String" Nullable="false" />
         </EntityType>
         <EntityType Name="tblUser">
           <Key>

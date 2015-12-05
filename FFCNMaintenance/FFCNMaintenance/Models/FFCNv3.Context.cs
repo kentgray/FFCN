@@ -13,10 +13,10 @@ namespace FFCNMaintenance.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class FFCNEntitiesOld : DbContext
+    public partial class FFCNEntitiesv3 : DbContext
     {
-        public FFCNEntitiesOld()
-            : base("name=FFCNEntitiesOld")
+        public FFCNEntitiesv3()
+            : base("name=FFCNEntitiesv3")
         {
         }
     
@@ -58,6 +58,6 @@ namespace FFCNMaintenance.Models
         public virtual DbSet<tlkpTrainPreserviceComp> tlkpTrainPreserviceComps { get; set; }
         public virtual DbSet<tlkpTrainPreserviceRSVP> tlkpTrainPreserviceRSVPs { get; set; }
         public virtual DbSet<tlkpUserGroup> tlkpUserGroups { get; set; }
-
+    //    public virtual DbSet<tlkpFprintScheduled> tlkpFprintScheduled { get; set; }
     }
 }

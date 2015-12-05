@@ -14,7 +14,6 @@ namespace FFCNMaintenance.Models
     
     public partial class tblUser
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public tblUser()
         {
             this.tblCommunications = new HashSet<tblCommunication>();
@@ -34,22 +33,6 @@ namespace FFCNMaintenance.Models
             this.tblInquiryReferralStatus13 = new HashSet<tblInquiryReferralStatu>();
             this.tblInquiryReferralStatus14 = new HashSet<tblInquiryReferralStatu>();
             this.tblInquiryReferralStatus15 = new HashSet<tblInquiryReferralStatu>();
-            this.tblInquiryReferralStatus16 = new HashSet<tblInquiryReferralStatu>();
-            this.tblInquiryReferralStatus17 = new HashSet<tblInquiryReferralStatu>();
-            this.tblInquiryReferralStatus18 = new HashSet<tblInquiryReferralStatu>();
-            this.tblInquiryReferralStatus19 = new HashSet<tblInquiryReferralStatu>();
-            this.tblInquiryReferralStatus20 = new HashSet<tblInquiryReferralStatu>();
-            this.tblInquiryReferralStatus21 = new HashSet<tblInquiryReferralStatu>();
-            this.tblInquiryReferralStatus22 = new HashSet<tblInquiryReferralStatu>();
-            this.tblInquiryReferralStatus23 = new HashSet<tblInquiryReferralStatu>();
-            this.tblInquiryReferralStatus24 = new HashSet<tblInquiryReferralStatu>();
-            this.tblInquiryReferralStatus25 = new HashSet<tblInquiryReferralStatu>();
-            this.tblInquiryReferralStatus26 = new HashSet<tblInquiryReferralStatu>();
-            this.tblInquiryReferralStatus27 = new HashSet<tblInquiryReferralStatu>();
-            this.tblInquiryReferralStatus28 = new HashSet<tblInquiryReferralStatu>();
-            this.tblInquiryReferralStatus29 = new HashSet<tblInquiryReferralStatu>();
-            this.tblInquiryReferralStatus30 = new HashSet<tblInquiryReferralStatu>();
-            this.tblInquiryReferralStatus31 = new HashSet<tblInquiryReferralStatu>();
             this.tblTrainingHistoryMains = new HashSet<tblTrainingHistoryMain>();
             this.tblTrainingHistoryMains1 = new HashSet<tblTrainingHistoryMain>();
             this.tblTrainingHistoryMains2 = new HashSet<tblTrainingHistoryMain>();
@@ -71,91 +54,32 @@ namespace FFCNMaintenance.Models
         public Nullable<bool> Active { get; set; }
         public byte[] SSMA_TimeStamp { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblCommunication> tblCommunications { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblInquiryReferralStatu> tblInquiryReferralStatus { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblInquiryReferralStatu> tblInquiryReferralStatus1 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblInquiryReferralStatu> tblInquiryReferralStatus2 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblInquiryReferralStatu> tblInquiryReferralStatus3 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblInquiryReferralStatu> tblInquiryReferralStatus4 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblInquiryReferralStatu> tblInquiryReferralStatus5 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblInquiryReferralStatu> tblInquiryReferralStatus6 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblInquiryReferralStatu> tblInquiryReferralStatus7 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblInquiryReferralStatu> tblInquiryReferralStatus8 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblInquiryReferralStatu> tblInquiryReferralStatus9 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblInquiryReferralStatu> tblInquiryReferralStatus10 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblInquiryReferralStatu> tblInquiryReferralStatus11 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblInquiryReferralStatu> tblInquiryReferralStatus12 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblInquiryReferralStatu> tblInquiryReferralStatus13 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblInquiryReferralStatu> tblInquiryReferralStatus14 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblInquiryReferralStatu> tblInquiryReferralStatus15 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblInquiryReferralStatu> tblInquiryReferralStatus16 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblInquiryReferralStatu> tblInquiryReferralStatus17 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblInquiryReferralStatu> tblInquiryReferralStatus18 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblInquiryReferralStatu> tblInquiryReferralStatus19 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblInquiryReferralStatu> tblInquiryReferralStatus20 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblInquiryReferralStatu> tblInquiryReferralStatus21 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblInquiryReferralStatu> tblInquiryReferralStatus22 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblInquiryReferralStatu> tblInquiryReferralStatus23 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblInquiryReferralStatu> tblInquiryReferralStatus24 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblInquiryReferralStatu> tblInquiryReferralStatus25 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblInquiryReferralStatu> tblInquiryReferralStatus26 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblInquiryReferralStatu> tblInquiryReferralStatus27 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblInquiryReferralStatu> tblInquiryReferralStatus28 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblInquiryReferralStatu> tblInquiryReferralStatus29 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblInquiryReferralStatu> tblInquiryReferralStatus30 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblInquiryReferralStatu> tblInquiryReferralStatus31 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblTrainingHistoryMain> tblTrainingHistoryMains { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblTrainingHistoryMain> tblTrainingHistoryMains1 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblTrainingHistoryMain> tblTrainingHistoryMains2 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblTrainingHistoryMain> tblTrainingHistoryMains3 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblTrainingHistoryMain> tblTrainingHistoryMains4 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblTrainingHistoryMain> tblTrainingHistoryMains5 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblTrainingHistoryMain> tblTrainingHistoryMains6 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblTrainingHistoryMain> tblTrainingHistoryMains7 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblTrainingHistoryMain> tblTrainingHistoryMains8 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblTrainingHistoryMain> tblTrainingHistoryMains9 { get; set; }
         public virtual tlkpAgency tlkpAgency { get; set; }
         public virtual tlkpUserGroup tlkpUserGroup { get; set; }

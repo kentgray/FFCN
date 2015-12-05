@@ -14,18 +14,16 @@ namespace FFCNMaintenance.Models
     
     public partial class tlkpAgency
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public tlkpAgency()
         {
             this.tblUsers = new HashSet<tblUser>();
         }
     
-        public int id { get; set; }
+        public int ID { get; set; }
         public string Descr { get; set; }
         public Nullable<bool> Active { get; set; }
         public byte[] SSMA_TimeStamp { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblUser> tblUsers { get; set; }
     }
 }

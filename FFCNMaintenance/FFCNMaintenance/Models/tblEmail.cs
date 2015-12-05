@@ -11,17 +11,15 @@ namespace FFCNMaintenance.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.Web.Mvc;
     
     public partial class tblEmail
     {
-        public int id { get; set; }
+        public int ID { get; set; }
         public Nullable<int> CareGiverID { get; set; }
         public string EMail { get; set; }
         public Nullable<int> EmailType { get; set; }
     
         public virtual tblPrimaryCaregiverdata tblPrimaryCaregiverdata { get; set; }
         public virtual tlkpEmailType tlkpEmailType { get; set; }
-        public virtual SelectList EmailTypeSelectList { get; set; }
     }
 }

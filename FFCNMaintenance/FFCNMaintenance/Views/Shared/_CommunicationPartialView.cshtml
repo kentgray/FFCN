@@ -1,5 +1,4 @@
-﻿
-@model FFCNMaintenance.Models.MasterModel
+﻿@model FFCNMaintenance.Models.MasterModel
 
 @{
     if (Model.Communication != null)
@@ -10,7 +9,7 @@
                 <span><b>Last:</b> @Model.Primary[0].LastName</span>
                 @Html.Hidden("masterModel.Communication[0].First", Model.First)
                 @Html.Hidden("masterModel.Communication[0].Last", Model.Last)
-                <span style="margin-left:20px;"><b>Need To Know:@Html.TextBox("masterModel.Communication[0].Notes", null, new { style = " margin-left: 20px; width: 600px" })</b></span>
+                <span style="margin-left:20px;"><b>Communication/Activity:@Html.TextArea("masterModel.Communication[0].Notes", null, new { style = "margin-left: 20px; width: 1000px; height: 400px;" })</b></span>
                 <br />
                 <br />
             </div>
@@ -18,7 +17,7 @@
                 <thead>
                 <th>Date</th>
                 <th>Name</th>
-                <th>Need To Know</th>
+                <th>Communication/Activity</th>
                 </thead>
                 @for (int i = 0; i < Model.Communication.Count(); i++)
                 {
@@ -37,7 +36,7 @@
                         }
                         catch { name = Model.Communication[i].First + " " + Model.Communication[i].Last; }
                     }
-                    
+
 
                     if (Model.Communication[i].CommnDate != null)
                     {

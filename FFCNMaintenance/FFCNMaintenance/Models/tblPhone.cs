@@ -11,11 +11,10 @@ namespace FFCNMaintenance.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.Web.Mvc;
     
     public partial class tblPhone
     {
-        public int id { get; set; }
+        public int ID { get; set; }
         public Nullable<int> CareGiverID { get; set; }
         public string Phone { get; set; }
         public Nullable<int> PhoneType { get; set; }
@@ -24,7 +23,5 @@ namespace FFCNMaintenance.Models
     
         public virtual tblPrimaryCaregiverdata tblPrimaryCaregiverdata { get; set; }
         public virtual tlkpPhoneType tlkpPhoneType { get; set; }
-
-        public virtual SelectList PhoneTypeSelectList { get; set; }
     }
 }

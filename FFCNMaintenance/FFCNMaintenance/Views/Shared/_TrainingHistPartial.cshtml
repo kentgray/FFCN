@@ -1,4 +1,4 @@
-﻿@model FFCNMaintenance.Models.MasterModel
+﻿﻿@model FFCNMaintenance.Models.MasterModel
 @Scripts.Render("~/bundles/jqueryui")
 <script type="text/javascript">
     $(function () { // will trigger when the document is ready
@@ -18,189 +18,246 @@
 <!-- partial view can contain this code. The "row" breaks the section into 2 columns -->
 @if (Model != null)
 {
+
+
+
+
+
     <section id="training-history">
-        <div class="row">
-            <!--column names only-->
-            <div class="col-xs-4">
-            </div>
-            <div class="col-xs-2">
-                <h4>Date</h4>
-            </div>
-            <div class="col-xs-2">
-                <h4>Staff</h4>
-            </div>
-            <div class="col-xs-4">
-                <h4>Training Dates</h4>
-            </div>
-        </div><!--/.row -->
-        <div class="row">
-        <style>
-             .Tspace_down
-             {
-                 margin-top:29px;
-             }
 
-             .TSspace_down
-             {
-                 margin-top:31px;
-             }
-        </style>
-            <div class="col-xs-4">
-                <!-- #Training History Checkbox Column -->
-                @Html.Hidden("masterModel.TrainingHistory[0].IDTR", Model.TrainingHistory[0].IDTR)
-                @Html.Hidden("masterModel.TrainingHistory[0].CareGiverID", Model.TrainingHistory[0].CareGiverID)
-                @Html.CheckBox("masterModel.TrainingHistory[0].Orientationmtg", Model.TrainingHistory[0].Orientationmtg)<label>&nbsp; Orientation Meeting</label>
-                <br />
-                @Html.CheckBox("masterModel.TrainingHistory[0].OnetoOneOrientation", Model.TrainingHistory[0].OnetoOneOrientation)<label class="Tspace_down">&nbsp;  One-on-One Orientation</label>
-                <br />
-                @Html.CheckBox("masterModel.TrainingHistory[0].RSVPd", Model.TrainingHistory[0].RSVPd)<label class="Tspace_down">&nbsp;  Intro - RSVP</label>
-                <br />
-                @Html.CheckBox("masterModel.TrainingHistory[0].IntroFoster", Model.TrainingHistory[0].IntroFoster)<label class="Tspace_down">&nbsp;  Attended Intro</label>
-                <br />
-                @Html.CheckBox("masterModel.TrainingHistory[0].RSVPpreservice", Model.TrainingHistory[0].RSVPpreservice)<label class="Tspace_down">&nbsp;  Preservice - RSVP</label>
-                <br />
-                @Html.CheckBox("masterModel.TrainingHistory[0].AttendPreservice1", Model.TrainingHistory[0].AttendPreservice1)<label class="Tspace_down">&nbsp;  Attended Preservice Day 1</label>
-                <br />
-                @Html.CheckBox("masterModel.TrainingHistory[0].AttendPreservice2", Model.TrainingHistory[0].AttendPreservice2)<label class="Tspace_down">&nbsp;  Attended Preservice Day 2</label>
-                <br />
-                @Html.CheckBox("masterModel.TrainingHistory[0].PreFinished8", Model.TrainingHistory[0].PreFinished8)<label class="Tspace_down">&nbsp;  Pre-Service Cert of Completion</label>
-                <br />
-                @Html.CheckBox("masterModel.TrainingHistory[0].AttendedPrebefore2009", Model.TrainingHistory[0].AttendedPrebefore2009)<label class="Tspace_down">&nbsp;  Attended Preservice prior to 2009</label>
-            </div><!-- / .col-xs-4 checkboxes -->
-            <div class="col-xs-2" id="training-date">
-                @Html.TextBox("masterModel.TrainingHistory[0].DateOrient", Model.TrainingHistory[0].DateOrient, new { @class = "form-control datepicker" })
-                <br />
-                @Html.TextBox("masterModel.TrainingHistory[0].DateOneOnOne", Model.TrainingHistory[0].DateOneOnOne, new { @class = "form-control datepicker" })
-                <br />
-                @Html.TextBox("masterModel.TrainingHistory[0].TrainDatePreserviceComp", Model.TrainingHistory[0].TrainDatePreserviceComp, new { @class = "form-control datepicker", @style = "margin-top:270px" })
-                <br />
+        <!--This table holds all of the information on MasterModels/Index/7280 --  Training History tab
+          --The table contains the 4 columns: date and staff -->
 
-                <!--insert the rest of the dates here-->
-            </div><!--/#training-date -->
-            <div class="col-xs-2" id="training-staff">
+        <table id="subtle-shading">
+            <thead>
+                <tr>
+                    <td></td>
+                    <td><h4>Date</h4></td>
+                    <td><h4>Staff</h4></td>
+                    <td></td>
+                </tr>
+            </thead>
 
-                @Html.DropDownList("masterModel.TrainingHistory[0].StaffOrient", Model.TrainingHistory[0].UserSelectList1, "--------", new
-           {
-               @class = "form-control-inline dropdown"
-           })
-                <br />
-                @Html.DropDownList("masterModel.TrainingHistory[0].StaffOneOnOne", Model.TrainingHistory[0].UserSelectList2, "--------", new
-           {
-               @class = "form-control-inline dropdown TSspace_down"
-           })
-                <br />
-                @Html.DropDownList("masterModel.TrainingHistory[0].StaffIntro", Model.TrainingHistory[0].UserSelectList3, "--------", new
-           {
-               @class = "form-control-inline dropdown TSspace_down"
-           })
-                <br />
-                @Html.DropDownList("masterModel.TrainingHistory[0].StaffAttendedIntro", Model.TrainingHistory[0].UserSelectList4, "--------", new
-           {
-               @class = "form-control-inline dropdown TSspace_down"
-           })
-                <br />
-                @Html.DropDownList("masterModel.TrainingHistory[0].StaffPreserviceRSVP", Model.TrainingHistory[0].UserSelectList5, "--------", new
-           {
-               @class = "form-control-inline dropdown TSspace_down"
-           })
-                <br />
-                @Html.DropDownList("masterModel.TrainingHistory[0].StaffAttendedPreservice1", Model.TrainingHistory[0].UserSelectList6, "--------", new
-           {
-               @class = "form-control-inline dropdown TSspace_down"
-           })
-                <br />
-                @Html.DropDownList("masterModel.TrainingHistory[0].StaffAttendedPreservice2", Model.TrainingHistory[0].UserSelectList7, "--------", new
-           {
-               @class = "form-control-inline dropdown TSspace_down"
-           })
-                <br />
-                @Html.DropDownList("masterModel.TrainingHistory[0].StaffPreserviceComp", Model.TrainingHistory[0].UserSelectList8, "--------", new
-           {
-               @class = "form-control-inline dropdown TSspace_down"
-           })
-                <br />
-                @Html.DropDownList("masterModel.TrainingHistory[0].StaffPreservicePrior", Model.TrainingHistory[0].UserSelectList9, "--------", new
-           {
-               @class = "form-control-inline dropdown TSspace_down"
-           })
-                <!-- the staff dropboxes go here-->
-            </div><!--/#training-staff -->
-            <div class="col-xs-4" id="training-dates">
-                <!-- the training dates drop downs goes here-->
-                @Html.DropDownList("masterModel.TrainingHistory[0].TrainDateIntro", Model.TrainingHistory[0].TrainIntroRSVP, "--------", new
-           {
-               @class = "form-control-inline dropdown",
-               @style = "margin-top:110px;"
-           })
-                <br />
-                @Html.DropDownList("masterModel.TrainingHistory[0].TrainDateAttendedIntro", Model.TrainingHistory[0].TrainAttendedIntro, "--------", new
-           {
-               @class = "form-control-inline dropdown",
-               @style = "margin-top:30px;"
-           })
-                <br />
-                @Html.DropDownList("masterModel.TrainingHistory[0].TrainDatePreserviceRSVP", Model.TrainingHistory[0].TrainPreserviceRSVP, "--------", new
-           {
-               @class = "form-control-inline dropdown",
-               @style = "margin-top:30px;"
-           })
-                <br />
-                @Html.DropDownList("masterModel.TrainingHistory[0].TrainDateAttendedPreservice1", Model.TrainingHistory[0].TrainAttendPreservice1, "--------", new
-           {
-               @class = "form-control-inline dropdown",
-               @style = "margin-top:30px;"
-           })
-                <br />
-                @Html.DropDownList("masterModel.TrainingHistory[0].TrainDateAttendedPreservice2", Model.TrainingHistory[0].TrainAttendPreservice2, "--------", new
-           {
-               @class = "form-control-inline dropdown",
-               @style = "margin-top:30px;"
-           })
-                <br />
-                @Html.DropDownList("masterModel.TrainingHistory[0].TrainDatePreserviceComp", Model.TrainingHistory[0].TrainPreserviceComp, "--------", new
-           {
-               @class = "form-control-inline dropdown",
-               @style = "margin-top:30px;"
-           })
-                <br />
-                @Html.DropDownList("masterModel.TrainingHistory[0].TrainDatePreservice2009", Model.TrainingHistory[0].TrainPreservice2009, "--------", new
-           {
-               @class = "form-control-inline dropdown",
-               @style = "margin-top:30px;"
-           })
-            </div><!--/#training-dates -->
-        </div><!-- / .row -->
-        <div class="row">
-            <!--dropdowns at bottom-->
-            <div class="col-xs-4">
-                <h4>Ongoing Training</h4>
-                <br>
-                <!-- dropdown for ongoing training-->
-                @Html.DropDownList("masterModel.TrainingHistory[0].OngoingTraining9", Model.TrainingHistory[0].OngoingTraingingList, "--------", new
-           {
-               @class = "form-control-inline dropdown"
-           })
-            </div>
-            <div class="col-xs-2">
-                <h4>Date</h4>
-                <br>
-                @Html.TextBox("masterModel.TrainingHistory[0].DateOngoing", Model.TrainingHistory[0].DateOngoing, new { @class = "form-control datepicker" })
-                <br />
-                <!-- box for date-->
-            </div>
-            <div class="col-xs-2">
-                <h4>Staff</h4>
-                <br>
-                @Html.DropDownList("masterModel.TrainingHistory[0].StaffOngoing", Model.TrainingHistory[0].UserSelectList10, "--------", new
-           {
-               @class = "form-control-inline dropdown"
-           })
-                <!-- dropdown for staff-->
-            </div>
-            <div class="col-xs-4">
-            </div>
-        </div><!--/.row -->
+            <tbody>
+                <!--Orientation Meeting-->
+                <tr>
+                    <td>
+                        @Html.Hidden("masterModel.TrainingHistory[0].IDTR", Model.TrainingHistory[0].IDTR)
+                        @Html.Hidden("masterModel.TrainingHistory[0].CareGiverID", Model.TrainingHistory[0].CareGiverID)
+                        @Html.CheckBox("masterModel.TrainingHistory[0].Orientationmtg", Model.TrainingHistory[0].Orientationmtg)<label>&nbsp; Orientation Meeting</label>
+                    </td>
+                    <td>
+                        @Html.TextBox("masterModel.TrainingHistory[0].DateOrient", Model.TrainingHistory[0].DateOrient, new { @class = "form-control datepicker" })
+                    </td>
+                    <td>
+                        @Html.DropDownList("masterModel.TrainingHistory[0].StaffOrient", Model.TrainingHistory[0].UserSelectList1, "--------", new
+                           {
+                               @class = "form-control-inline dropdown"
+                           })
+                    </td>
+                    <td></td>
+                </tr>
+                <!--One-on-One Orientation-->
+                <tr>
+                    <td>
+                        @Html.CheckBox("masterModel.TrainingHistory[0].OnetoOneOrientation", Model.TrainingHistory[0].OnetoOneOrientation)<label class="Tspace_down">&nbsp;  One-on-One Orientation</label>
+                    </td>
+                    <td>
+                        @Html.TextBox("masterModel.TrainingHistory[0].DateOneOnOne", Model.TrainingHistory[0].DateOneOnOne, new { @class = "form-control datepicker" })
+                    </td>
+                    <td>
+                        @Html.DropDownList("masterModel.TrainingHistory[0].StaffOneOnOne", Model.TrainingHistory[0].UserSelectList2, "--------", new
+                           {
+                               @class = "form-control-inline dropdown TSspace_down"
+                           })
+                    </td>
+                    <td></td>
+                </tr>
+                <!--Intro - RSVP-->
+                <tr>
+                    <td>
+                        @Html.CheckBox("masterModel.TrainingHistory[0].RSVPd", Model.TrainingHistory[0].RSVPd)<label class="Tspace_down">&nbsp;  Intro - RSVP</label>
+                    </td>
+                    <td></td>
+                    <td>
+                        @Html.DropDownList("masterModel.TrainingHistory[0].StaffIntro", Model.TrainingHistory[0].UserSelectList3, "--------", new
+                           {
+                               @class = "form-control-inline dropdown TSspace_down"
+                           })
+                    </td>
+                    <td>
+                        @Html.DropDownList("masterModel.TrainingHistory[0].TrainDateIntro", Model.TrainingHistory[0].TrainIntroRSVP, "RSVP Date", new
+                           {
+                               @class = "form-control-inline dropdown",
+                               @style = "margin-top:110px;"
+                           })
+                    </td>
+                </tr>
+                <!-- Attended Intro-->
+                <tr>
+                    <td>
+                        @Html.CheckBox("masterModel.TrainingHistory[0].IntroFoster", Model.TrainingHistory[0].IntroFoster)<label class="Tspace_down">&nbsp;  Attended Intro</label>
+                    </td>
+                    <td></td>
+                    <td>
+                        @Html.DropDownList("masterModel.TrainingHistory[0].StaffAttendedIntro", Model.TrainingHistory[0].UserSelectList4, "--------", new
+                           {
+                               @class = "form-control-inline dropdown TSspace_down"
+                           })
+                    </td>
+                    <td>
+                        @Html.DropDownList("masterModel.TrainingHistory[0].TrainDateAttendedIntro", Model.TrainingHistory[0].TrainAttendedIntro, "Date", new
+                           {
+                               @class = "form-control-inline dropdown",
+                               @style = "margin-top:30px;"
+                           })
+                    </td>
+                </tr>
+                <!--Preservice - RSVP-->
+                <tr>
+                    <td>
+                        @Html.CheckBox("masterModel.TrainingHistory[0].RSVPpreservice", Model.TrainingHistory[0].RSVPpreservice)<label class="Tspace_down">&nbsp;  Preservice - RSVP</label>
+                    </td>
+                    <td></td>
+                    <td>
+                        @Html.DropDownList("masterModel.TrainingHistory[0].StaffPreserviceRSVP", Model.TrainingHistory[0].UserSelectList5, "--------", new
+                           {
+                               @class = "form-control-inline dropdown TSspace_down"
+                           })
+                    </td>
+                    <td>
+                        @Html.DropDownList("masterModel.TrainingHistory[0].TrainDatePreserviceRSVP", Model.TrainingHistory[0].TrainPreserviceRSVP, "RSVP Date", new
+                           {
+                               @class = "form-control-inline dropdown",
+                               @style = "margin-top:30px;"
+                           })
+                    </td>
+                </tr>
+                <!--Attended Preservice Day 1-->
+                <tr>
+                    <td>
+                        @Html.CheckBox("masterModel.TrainingHistory[0].AttendPreservice1", Model.TrainingHistory[0].AttendPreservice1)<label class="Tspace_down">&nbsp;  Attended Preservice Day 1</label>
+                    </td>
+                    <td></td>
+                    <td>
+                        @Html.DropDownList("masterModel.TrainingHistory[0].StaffAttendedPreservice1", Model.TrainingHistory[0].UserSelectList6, "--------", new
+                           {
+                               @class = "form-control-inline dropdown TSspace_down"
+                           })
+                    </td>
+                    <td>
+                        @Html.DropDownList("masterModel.TrainingHistory[0].TrainDateAttendedPreservice1", Model.TrainingHistory[0].TrainAttendPreservice1, "Date", new
+                           {
+                               @class = "form-control-inline dropdown",
+                               @style = "margin-top:30px;"
+                           })
+                    </td>
+                </tr>
+                <!--Attended Preservice Day 2-->
+                <tr>
+                    <td>
+                        @Html.CheckBox("masterModel.TrainingHistory[0].AttendPreservice2", Model.TrainingHistory[0].AttendPreservice2)<label class="Tspace_down">&nbsp;  Attended Preservice Day 2</label>
+                    </td>
+                    <td></td>
+                    <td>
+                        @Html.DropDownList("masterModel.TrainingHistory[0].StaffAttendedPreservice2", Model.TrainingHistory[0].UserSelectList7, "--------", new
+                           {
+                               @class = "form-control-inline dropdown TSspace_down"
+                           })
+                    </td>
+                    <td>
+                        @Html.DropDownList("masterModel.TrainingHistory[0].TrainDateAttendedPreservice2", Model.TrainingHistory[0].TrainAttendPreservice2, "Date", new
+                           {
+                               @class = "form-control-inline dropdown",
+                               @style = "margin-top:30px;"
+                           })
+                    </td>
+                </tr>
+                <!--Pre-Service Cert of Completion-->
+                <tr>
+                    <td>
+                        @Html.CheckBox("masterModel.TrainingHistory[0].PreFinished8", Model.TrainingHistory[0].PreFinished8)<label class="Tspace_down">&nbsp;  Pre-Service Cert of Completion</label>
+                    </td>
+                    <td>
+                        @Html.TextBox("masterModel.TrainingHistory[0].TrainDatePreserviceComp", Model.TrainingHistory[0].TrainDatePreserviceComp, new { @class = "form-control datepicker", @style = "margin-top:0px" })
+                    </td>
+                    <td>
+                        @Html.DropDownList("masterModel.TrainingHistory[0].StaffPreserviceComp", Model.TrainingHistory[0].UserSelectList8, "--------", new
+                           {
+                               @class = "form-control-inline dropdown TSspace_down"
+                           })
+                    </td>
+                    <td>
+                        @Html.DropDownList("masterModel.TrainingHistory[0].TrainDatePreserviceComp", Model.TrainingHistory[0].TrainPreserviceComp, "# of Hours", new
+                           {
+                               @class = "form-control-inline dropdown",
+                               @style = "margin-top:30px;"
+                           })
+                    </td>
+                </tr>
+                <!--Attended Preservice prior to 2009-->
+                <tr>
+                    <td>
+                        @Html.CheckBox("masterModel.TrainingHistory[0].AttendedPrebefore2009", Model.TrainingHistory[0].AttendedPrebefore2009)<label class="Tspace_down">&nbsp;  Attended Preservice prior to 2009</label>
+                    </td>
+                    <td></td>
+                    <td>
+                        @Html.DropDownList("masterModel.TrainingHistory[0].StaffPreservicePrior", Model.TrainingHistory[0].UserSelectList9, "--------", new
+                           {
+                               @class = "form-control-inline dropdown TSspace_down"
+                           })
+                    </td>
+                    <td>
+                        @Html.DropDownList("masterModel.TrainingHistory[0].TrainDatePreservice2009", Model.TrainingHistory[0].TrainPreservice2009, "Date", new
+                           {
+                               @class = "form-control-inline dropdown",
+                               @style = "margin-top:30px;"
+                           })
+                    </td>
+                </tr>
+                <!--Ongoing Training-->
+                <tr>
+                    <td><h4>Ongoing Training</h4></td>
+                    <td><h4>Date</h4></td>
+                    <td><h4>Staff</h4></td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DropDownList("masterModel.TrainingHistory[0].OngoingTraining9", Model.TrainingHistory[0].OngoingTraingingList, "--------", new
+                           {
+                               @class = "form-control-inline dropdown"
+                           })
+                    </td>
+                    <td>
+                        @Html.TextBox("masterModel.TrainingHistory[0].DateOngoing", Model.TrainingHistory[0].DateOngoing, new { @class = "form-control datepicker" })
+                    </td>
+                    <td>
+                        @Html.DropDownList("masterModel.TrainingHistory[0].StaffOngoing", Model.TrainingHistory[0].UserSelectList10, "--------", new
+                           {
+                               @class = "form-control-inline dropdown"
+                           })
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+
+
+
+
     </section><!-- / #training-history-->
+
+
+
+
+
+
+
+
+
+
+
+
 }
 else
 {
@@ -215,8 +272,8 @@ else
             <div class="col-xs-2">
                 <h4>Staff</h4>
             </div>
+            <!-- 12/1/15: Removed h4 header "Training Date" from div below. Leaving div in place for any future use-->
             <div class="col-xs-4">
-                <h4>Training Dates</h4>
             </div>
         </div><!--/.row -->
         <div class="row">
@@ -254,86 +311,86 @@ else
             <div class="col-xs-2" id="training-staff">
                 <!-- the staff dropboxes go here-->
                 @Html.DropDownList("masterModel.TrainingHistory[0].StaffOrient", userSelectList, "--------", new
-           {
-               @class = "form-control-inline dropdown"
-           })
+                   {
+                       @class = "form-control-inline dropdown"
+                   })
                 <br />
                 @Html.DropDownList("masterModel.TrainingHistory[0].StaffOneOnOne", userSelectList, "--------", new
-           {
-               @class = "form-control-inline dropdown"
-           })
+                   {
+                       @class = "form-control-inline dropdown"
+                   })
                 <br />
                 @Html.DropDownList("masterModel.TrainingHistory[0].StaffIntro", userSelectList, "--------", new
-           {
-               @class = "form-control-inline dropdown"
-           })
+                   {
+                       @class = "form-control-inline dropdown"
+                   })
                 <br />
                 @Html.DropDownList("masterModel.TrainingHistory[0].StaffAttendedIntro", userSelectList, "--------", new
-           {
-               @class = "form-control-inline dropdown"
-           })
+                   {
+                       @class = "form-control-inline dropdown"
+                   })
                 <br />
                 @Html.DropDownList("masterModel.TrainingHistory[0].StaffPreserviceRSVP", userSelectList, "--------", new
-           {
-               @class = "form-control-inline dropdown"
-           })
+                   {
+                       @class = "form-control-inline dropdown"
+                   })
                 <br />
                 @Html.DropDownList("masterModel.TrainingHistory[0].StaffAttendedPreservice1", userSelectList, "--------", new
-           {
-               @class = "form-control-inline dropdown"
-           })
+                   {
+                       @class = "form-control-inline dropdown"
+                   })
                 <br />
                 @Html.DropDownList("masterModel.TrainingHistory[0].StaffAttendedPreservice2", userSelectList, "--------", new
-           {
-               @class = "form-control-inline dropdown"
-           })
+                   {
+                       @class = "form-control-inline dropdown"
+                   })
                 <br />
                 @Html.DropDownList("masterModel.TrainingHistory[0].StaffPreserviceComp", userSelectList, "--------", new
-           {
-               @class = "form-control-inline dropdown"
-           })
+                   {
+                       @class = "form-control-inline dropdown"
+                   })
                 <br />
                 @Html.DropDownList("masterModel.TrainingHistory[0].StaffPreservicePrior", userSelectList, "--------", new
-           {
-               @class = "form-control-inline dropdown"
-           })
+                   {
+                       @class = "form-control-inline dropdown"
+                   })
             </div><!--/#training-staff -->
             <div class="col-xs-4" id="training-dates">
                 <!-- the training dates drop downs goes here-->
-                @Html.DropDownList("masterModel.TrainingHistory[0].TrainDateIntro", vbintrorsvp, "--------", new
-           {
-               @class = "form-control-inline dropdown"
-           })
+                @Html.DropDownList("masterModel.TrainingHistory[0].TrainDateIntro", vbintrorsvp, "RSVP Date", new
+                   {
+                       @class = "form-control-inline dropdown"
+                   })
                 <br />
-                @Html.DropDownList("masterModel.TrainingHistory[0].TrainDateAttendedIntro", vbattendintro, "--------", new
-           {
-               @class = "form-control-inline dropdown"
-           })
+                @Html.DropDownList("masterModel.TrainingHistory[0].TrainDateAttendedIntro", vbattendintro, "Date", new
+                   {
+                       @class = "form-control-inline dropdown"
+                   })
                 <br />
-                @Html.DropDownList("masterModel.TrainingHistory[0].TrainDatePreserviceRSVP", vbpsrsvp, "--------", new
-           {
-               @class = "form-control-inline dropdown"
-           })
+                @Html.DropDownList("masterModel.TrainingHistory[0].TrainDatePreserviceRSVP", vbpsrsvp, "RSVP Date", new
+                   {
+                       @class = "form-control-inline dropdown"
+                   })
                 <br />
-                @Html.DropDownList("masterModel.TrainingHistory[0].TrainDateAttendedPreservice1", vbps1, "--------", new
-           {
-               @class = "form-control-inline dropdown"
-           })
+                @Html.DropDownList("masterModel.TrainingHistory[0].TrainDateAttendedPreservice1", vbps1, "Date", new
+                   {
+                       @class = "form-control-inline dropdown"
+                   })
                 <br />
-                @Html.DropDownList("masterModel.TrainingHistory[0].TrainDateAttendedPreservice2", vbps2, "--------", new
-           {
-               @class = "form-control-inline dropdown"
-           })
+                @Html.DropDownList("masterModel.TrainingHistory[0].TrainDateAttendedPreservice2", vbps2, "Date", new
+                   {
+                       @class = "form-control-inline dropdown"
+                   })
                 <br />
-                @Html.DropDownList("masterModel.TrainingHistory[0].TrainDatePreserviceComp", vbpscomp, "--------", new
-           {
-               @class = "form-control-inline dropdown"
-           })
+                @Html.DropDownList("masterModel.TrainingHistory[0].TrainDatePreserviceComp", vbpscomp, "# of Hours", new
+                   {
+                       @class = "form-control-inline dropdown"
+                   })
                 <br />
-                @Html.DropDownList("masterModel.TrainingHistory[0].TrainDatePreservice2009", vbps2009, "--------", new
-           {
-               @class = "form-control-inline dropdown"
-           })
+                @Html.DropDownList("masterModel.TrainingHistory[0].TrainDatePreservice2009", vbps2009, "Date", new
+                   {
+                       @class = "form-control-inline dropdown"
+                   })
             </div><!--/#training-dates -->
         </div><!-- / .row -->
         <div class="row">
@@ -343,9 +400,9 @@ else
                 <br>
                 <!-- dropdown for ongoing training-->
                 @Html.DropDownList("masterModel.TrainingHistory[0].OngoingTraining9", vbongoing, "--------", new
-           {
-               @class = "form-control-inline dropdown"
-           })
+                   {
+                       @class = "form-control-inline dropdown"
+                   })
             </div>
             <div class="col-xs-2">
                 <h4>Date</h4>
@@ -359,9 +416,9 @@ else
                 <br>
                 <!-- dropdown for staff-->
                 @Html.DropDownList("masterModel.TrainingHistory[0].StaffOngoing", userSelectList, "--------", new
-           {
-               @class = "form-control-inline dropdown"
-           })
+                   {
+                       @class = "form-control-inline dropdown"
+                   })
             </div>
             <div class="col-xs-4">
             </div>

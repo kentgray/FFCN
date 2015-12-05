@@ -10,7 +10,7 @@ namespace FFCNMaintenance.Models
         public int caregiverId { get; set; }
         public string LastNameFirstName { get; set; }
 
-        public LastNameLookup(int cg, string lf)
+        public LastNameLookup(int cg, string lf)  
         {
             this.caregiverId = cg;
             this.LastNameFirstName = lf;
@@ -22,7 +22,7 @@ namespace FFCNMaintenance.Models
         public int caregiverId { get; set; }
         public string FirstNameLastName { get; set; }
 
-        public FirstNameLookup(int cg, string fl)
+        public FirstNameLookup(int cg, string fl)  
         {
             this.caregiverId = cg;
             this.FirstNameLastName = fl;
@@ -35,7 +35,7 @@ namespace FFCNMaintenance.Models
         public int caregiverId { get; set; }
         public string PhoneNumber { get; set; }
 
-        public PhoneNumberLookup(int cg, string pn)
+        public PhoneNumberLookup(int cg, string pn)  
         {
             this.caregiverId = cg;
             this.PhoneNumber = pn;

@@ -11,11 +11,10 @@ namespace FFCNMaintenance.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.Web.Mvc;
     
     public partial class tblRelatedCaregiver
     {
-        public int id { get; set; }
+        public int ID { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public Nullable<int> Relationship { get; set; }
@@ -27,7 +26,5 @@ namespace FFCNMaintenance.Models
     
         public virtual tblPrimaryCaregiverdata tblPrimaryCaregiverdata { get; set; }
         public virtual tlkpRelationship tlkpRelationship { get; set; }
-
-        public virtual SelectList RelationshipSelectList { get; set; }
     }
 }

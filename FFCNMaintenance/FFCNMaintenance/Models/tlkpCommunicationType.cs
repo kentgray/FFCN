@@ -14,18 +14,16 @@ namespace FFCNMaintenance.Models
     
     public partial class tlkpCommunicationType
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public tlkpCommunicationType()
         {
             this.tblCommunications = new HashSet<tblCommunication>();
         }
     
-        public int id { get; set; }
+        public int ID { get; set; }
         public string Descr { get; set; }
         public Nullable<bool> Active { get; set; }
         public byte[] SSMA_TimeStamp { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblCommunication> tblCommunications { get; set; }
     }
 }

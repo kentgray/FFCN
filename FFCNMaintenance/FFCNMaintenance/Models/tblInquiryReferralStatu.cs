@@ -11,7 +11,6 @@ namespace FFCNMaintenance.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.Web.Mvc;
     
     public partial class tblInquiryReferralStatu
     {
@@ -65,28 +64,21 @@ namespace FFCNMaintenance.Models
         public Nullable<System.DateTime> DateAppRejectedProg { get; set; }
         public Nullable<int> StaffAppRejectedProg { get; set; }
         public Nullable<int> ReasonAppProgram { get; set; }
-        public Nullable<int> ReasonAppReferredProg { get; set; }
+        public string ReasonAppReferredProg { get; set; }
         public Nullable<int> ReasonHomeCert { get; set; }
-        public Nullable<int> ReasonHomeClosed { get; set; }
-        public Nullable<int> ReasonAppOnHold { get; set; }
-        public Nullable<int> ReasonAppReturned { get; set; }
+        public string ReasonHomeClosed { get; set; }
+        public string ReasonAppOnHold { get; set; }
+        public string ReasonAppReturned { get; set; }
         public Nullable<int> ReasonAppReferredAnother { get; set; }
-        public Nullable<int> ReasonAppRejectedProg { get; set; }
+        public string ReasonAppRejectedProg { get; set; }
         public int IDIRS { get; set; }
-        public Nullable<int> ReasonAppRejectedFFCN { get; set; }
-        public Nullable<int> ReasonInactive { get; set; }
+        public string ReasonAppRejectedFFCN { get; set; }
         public byte[] SSMA_TimeStamp { get; set; }
+        public string ReasonInactive { get; set; }
     
-        public virtual tlkpHomeClosed tlkpHomeClosed { get; set; }
-        public virtual tlkpAppOnHold tlkpAppOnHold { get; set; }
-        public virtual tlkpAppReturned tlkpAppReturned { get; set; }
         public virtual tlkpProgram tlkpProgram { get; set; }
         public virtual tlkpProgram tlkpProgram1 { get; set; }
         public virtual tlkpProgram tlkpProgram2 { get; set; }
-        public virtual tlkpProgram tlkpProgram3 { get; set; }
-        public virtual tlkpAppRejectedProg tlkpAppRejectedProg { get; set; }
-        public virtual tlkpAppRejectedFFCN tlkpAppRejectedFFCN { get; set; }
-        public virtual tlkpInactive tlkpInactive { get; set; }
         public virtual tblUser tblUser { get; set; }
         public virtual tblUser tblUser1 { get; set; }
         public virtual tblUser tblUser2 { get; set; }
@@ -103,51 +95,6 @@ namespace FFCNMaintenance.Models
         public virtual tblUser tblUser13 { get; set; }
         public virtual tblUser tblUser14 { get; set; }
         public virtual tblUser tblUser15 { get; set; }
-        public virtual tblUser tblUser16 { get; set; }
-        public virtual tblUser tblUser17 { get; set; }
-        public virtual tblUser tblUser18 { get; set; }
-        public virtual tblUser tblUser19 { get; set; }
-        public virtual tblUser tblUser20 { get; set; }
-        public virtual tblUser tblUser21 { get; set; }
-        public virtual tblUser tblUser22 { get; set; }
-        public virtual tblUser tblUser23 { get; set; }
-        public virtual tblUser tblUser24 { get; set; }
-        public virtual tblUser tblUser25 { get; set; }
-        public virtual tblUser tblUser26 { get; set; }
-        public virtual tblUser tblUser27 { get; set; }
-        public virtual tblUser tblUser28 { get; set; }
-        public virtual tblUser tblUser29 { get; set; }
-        public virtual tblUser tblUser30 { get; set; }
-        public virtual tblUser tblUser31 { get; set; }
         public virtual tblPrimaryCaregiverdata tblPrimaryCaregiverdata { get; set; }
-
-        public virtual SelectList UserSelectList1 { get; set; }
-        public virtual SelectList UserSelectList2 { get; set; }
-        public virtual SelectList UserSelectList3 { get; set; }
-        public virtual SelectList UserSelectList4 { get; set; }
-        public virtual SelectList UserSelectList5 { get; set; }
-        public virtual SelectList UserSelectList6 { get; set; }
-        public virtual SelectList UserSelectList7 { get; set; }
-        public virtual SelectList UserSelectList8 { get; set; }
-        public virtual SelectList UserSelectList9 { get; set; }
-        public virtual SelectList UserSelectList10 { get; set; }
-        public virtual SelectList UserSelectList11 { get; set; }
-        public virtual SelectList UserSelectList12 { get; set; }
-        public virtual SelectList UserSelectList13 { get; set; }
-        public virtual SelectList UserSelectList14 { get; set; }
-        public virtual SelectList UserSelectList15 { get; set; }
-        public virtual SelectList UserSelectList16 { get; set; }
-
-
-        public virtual SelectList ReasonInactiveList { get; set; }
-        public virtual SelectList Program1 { get; set; }
-        public virtual SelectList Program2 { get; set; }
-        public virtual SelectList Program3 { get; set; }
-        public virtual SelectList Program4 { get; set; }
-        public virtual SelectList ReasonHomeClosedList { get; set; }
-        public virtual SelectList ReasonAppOnHoldList { get; set; }
-        public virtual SelectList ReasonAppReturnedList { get; set; }
-        public virtual SelectList ReasonAppRejectedProgList { get; set; }
-        public virtual SelectList ReasonAppRejectedFFCNList { get; set; }
     }
 }

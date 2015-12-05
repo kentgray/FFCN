@@ -1,4 +1,4 @@
-﻿body {
+﻿﻿body {
     padding-top: 0px;
     padding-bottom: 20px;
 }
@@ -59,20 +59,23 @@ label {
 	margin:20px 0px;
 }
 
-.dropdown {
-    height:23px;
+
+.dropdown { 
+    height:30px; /*changed from 37*/
     padding:0;
-    margin:0;
+    margin:0px 0px 20px 0px !important;  /*changed from 10*/
 }
 
 #check-all {
 	float:right;
 }
 
+
 table, th, td{
-    border:solid 1px #999999;
+    /*border:solid 1px #999999;*/
     padding: 5px;
 }
+
 
 #comm-labels {
 	border: 3px solid #77a13f;
@@ -135,3 +138,21 @@ table, th, td{
 #primary-contact{
     overflow-x:auto
 }
+
+
+/*Creates alternating colors on the table
+ *The two tables are located on page: MasterModels/Index/7280
+ *Tabs: Inquiry and Referal Status AND Training History
+*/
+#subtle-shading > tbody > tr:nth-child(odd) {
+    background-color: #C4C4C4;
+}
+#subtle-shading > tbody > tr:nth-child(even) {
+    background-color: #F6F6F6;
+}
+
+/*Makes it so the table fills the screen / section tag*/
+#subtle-shading{
+    width: 100%;
+}
+

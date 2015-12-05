@@ -1,4 +1,4 @@
-﻿@model FFCNMaintenance.ViewModels.SelectCaregiverViewModel
+﻿@Model FFCNMaintenance.ViewModels.SelectCaregiverViewModel
 
 @{
     ViewBag.Title = "Index";
@@ -21,23 +21,23 @@
         {
             string value = item.LastNameFirstName;
             string cid = Convert.ToString(item.caregiverId);
-            string valueC = "" /*+cid*/;
+            string valueC = "#" +cid;
             <option value="@value @valueC"></option>
         }
         @foreach (var item in Model.FirstNameList)
         {
             string value = item.FirstNameLastName;
             string cid = Convert.ToString(item.caregiverId);
-            string valueC = "" /*+cid*/;
+            string valueC = "#" +cid;
             <option value="@value @valueC"></option>
         }
         @foreach (var item in Model.PhoneNumberList)
         {
             string value = item.PhoneNumber;
             string cid = Convert.ToString(item.caregiverId);
-            string valueC = "" /*+cid*/;
-            <option value="@value @valueC"></option>
-        }
+            string valueC = "#" +cid;
+            <option value="@value @valueC"></option> 
+        } 
     </datalist>
     <br />
     <br />

@@ -11,11 +11,9 @@ namespace FFCNMaintenance.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.Web.Mvc;
     
     public partial class tblPrimaryCaregiverdata
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public tblPrimaryCaregiverdata()
         {
             this.tblAddresses = new HashSet<tblAddress>();
@@ -61,26 +59,16 @@ namespace FFCNMaintenance.Models
         public Nullable<int> ChildrenInHome { get; set; }
         public Nullable<bool> Volunteer { get; set; }
         public Nullable<bool> Donor { get; set; }
-        public Nullable<int> HeardAbout { get; set; }
         public byte[] SSMA_TimeStamp { get; set; }
+        public Nullable<int> HeardAbout { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblAddress> tblAddresses { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblCommunication> tblCommunications { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblEmail> tblEmails { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblInquiryReferralStatu> tblInquiryReferralStatus { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblPhone> tblPhones { get; set; }
         public virtual tlkpRecruitmentCategory tlkpRecruitmentCategory { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblRelatedCaregiver> tblRelatedCaregivers { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblTrainingHistoryMain> tblTrainingHistoryMains { get; set; }
-
-        public virtual SelectList HeardAboutSelectList { get; set; }
-        public virtual SelectList ChildrenInHomeSelectList { get; set; }
     }
 }

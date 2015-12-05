@@ -14,16 +14,7 @@ namespace FFCNMaintenance.Models
     
     public partial class tlkpAppReturned
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public tlkpAppReturned()
-        {
-            this.tblInquiryReferralStatus = new HashSet<tblInquiryReferralStatu>();
-        }
-    
         public int id { get; set; }
         public string Reason { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblInquiryReferralStatu> tblInquiryReferralStatus { get; set; }
     }
 }

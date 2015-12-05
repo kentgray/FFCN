@@ -27,12 +27,10 @@ namespace FFCNMaintenance.Controllers
             int i = 0;
             foreach (var caregiver in db.tblPrimaryCaregiverdatas)
             {
-                lastNameSearch[i] = 
-                    new LastNameLookup(caregiver.CareGiverID,
-                        caregiver.LastName + ',' + caregiver.FirstName);
+                lastNameSearch[i] =
+                    new LastNameLookup(caregiver.CareGiverID, caregiver.LastName + ',' + caregiver.FirstName); 
                 firstNameSearch[i] =
-                    new FirstNameLookup(caregiver.CareGiverID,
-                        caregiver.FirstName + ' ' + caregiver.LastName);
+                    new FirstNameLookup(caregiver.CareGiverID, caregiver.FirstName + ' ' + caregiver.LastName);
                 i++;
             }
 
@@ -42,25 +40,25 @@ namespace FFCNMaintenance.Controllers
             foreach (var caregiver in db.tblPhones)
             {
                 if (caregiver.CareGiverID != null)
-                  {
-                     phoneNumberSearch[i] =
-                        new PhoneNumberLookup((int)caregiver.CareGiverID,
-                        caregiver.Phone);
-                   }
+              {
+                    phoneNumberSearch[i] =
+                       new PhoneNumberLookup((int)caregiver.CareGiverID,
+                       caregiver.Phone);
+                }
                 else
-                   {
-                     phoneNumberSearch[i] =
-                         new PhoneNumberLookup(0, caregiver.Phone);
-                   }
+                {
+                    phoneNumberSearch[i] =
+                        new PhoneNumberLookup(0, caregiver.Phone); 
+                }
                 i++;
             }
-            
+
             var viewModel = new SelectCaregiverViewModel
             {
                 FirstNameList = firstNameSearch.OrderBy(x => x.FirstNameLastName).ToList(),
                 LastNameList = lastNameSearch.OrderBy(x => x.LastNameFirstName).ToList(),
                 PhoneNumberList = phoneNumberSearch.OrderBy(x => x.PhoneNumber).ToList(),
-             };
+            };
             return View(viewModel);
         }
 
@@ -68,18 +66,19 @@ namespace FFCNMaintenance.Controllers
         // POST: SelectCaregiver
         [HttpPost, ActionName("Index")]
         [ValidateAntiForgeryToken]
-        public ActionResult RedirectToEdit(string lastNameSelected, string firstNameSelected, string phoneSelected, string cgidSelected)
+        public ActionResult RedirectToEdit(string lastNameSelected, string firstNameSelected, string phoneSelected , string cgidSelected )
         {
+            
             int cidi = 0; ;
 
-           if ((SelectionWorks(lastNameSelected.ToString(), ref cidi)) && (validRedirectId(cidi)))
+            if ((SelectionWorks(lastNameSelected.ToString(), ref cidi)) && (validRedirectId(cidi)))
                 return RedirectToAction("Index", "MasterModels", new { id = cidi });
-           if ((SelectionWorks(firstNameSelected.ToString(), ref cidi)) && (validRedirectId(cidi)))
+            if ((SelectionWorks(firstNameSelected.ToString(), ref cidi)) && (validRedirectId(cidi)))
                 return RedirectToAction("Index", "MasterModels", new { id = cidi });
-           if ((SelectionWorks(phoneSelected.ToString(), ref cidi)) && (validRedirectId(cidi)))
+            if ((SelectionWorks(phoneSelected.ToString(), ref cidi)) && (validRedirectId(cidi)))
                 return RedirectToAction("Index", "MasterModels", new { id = cidi });
             //nothing valid was selected, so just redisplay initial selection screen
-            return RedirectToAction("Index");
+            return RedirectToAction("Index");  
         }
 
         private bool validRedirectId(int redirectId)
@@ -94,15 +93,15 @@ namespace FFCNMaintenance.Controllers
             if (s == "") return false;
             try
             {
-                if (s.IndexOf("#") < 1) return false;
+                if (s.IndexOf("#") < 1) return true;
                 string idString = s.Substring(s.IndexOf("#") + 1);
                 id = int.Parse(idString);
             }
             catch (Exception e)
             {
-                return false;
-            }
+                return false; 
+        } 
             return true;
-        }
+        } 
     }
 }
